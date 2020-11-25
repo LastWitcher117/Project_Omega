@@ -8,8 +8,11 @@ public class DashMovement : MonoBehaviour
 
     public float dashSpeed;
     public float dashTime;
+    public float cooldownTime = 2;
+    public float nextDashTime = 0f;
+
     public CharacterController controller;
-    public bool isDashing = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,37 +24,24 @@ public class DashMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //Input Leftclick höhö
+
+        if (Time.time > nextDashTime)
         {
-            
-            StartCoroutine(Dash());          
-            
-            if (isDashing == true)
+            if (Input.GetMouseButtonDown(0)) //Input Leftclick höhö
             {
-                StartCoroutine(Timer());
+                StartCoroutine(Dash());
+                nextDashTime = Time.time + cooldownTime;               
             }
         }
     }
     IEnumerator Dash()
     {
-        float startTime = Time.time;
-        if (isDashing == false)
-        {         
+        float startTime = Time.time;              
             while (Time.time < startTime + dashTime) //Dash movement 
             {
                 moveScript.controller.Move(moveScript.moveDir * dashSpeed * Time.deltaTime);
-                isDashing = true;
                 yield return null;
                 
-            }
-        }
-        
+            }       
     }
-
-    IEnumerator Timer() //Couldown timer
-    {    
-        yield return new WaitForSeconds(4.0f);
-        isDashing = false;
-    }
-
 }
