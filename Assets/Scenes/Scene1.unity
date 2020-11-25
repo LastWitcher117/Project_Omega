@@ -10773,6 +10773,7 @@ GameObject:
   - component: {fileID: 1599377657}
   - component: {fileID: 1599377658}
   - component: {fileID: 1599377659}
+  - component: {fileID: 1599377660}
   m_Layer: 9
   m_Name: Third Person Player
   m_TagString: Player
@@ -10830,6 +10831,7 @@ MonoBehaviour:
   cam: {fileID: 963194228}
   speed: 10
   turnSmoothTime: 0.1
+  moveDir: {x: 0, y: 0, z: 0}
 --- !u!114 &1599377659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10843,6 +10845,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gms: {fileID: 1450037076}
+--- !u!114 &1599377660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599377655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140b76e3311e9df469314de82f4d1479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 20
+  dashTime: 0.25
+  controller: {fileID: 1599377657}
+  isDashing: 0
 --- !u!1 &1605362888
 GameObject:
   m_ObjectHideFlags: 0
