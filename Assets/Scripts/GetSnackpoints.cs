@@ -7,7 +7,7 @@ public class GetSnackpoints : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Snackpoint")
+        if (other.tag == "Snackpoint")
         {
             gms.snackpoints++;
             Destroy(other.gameObject);
