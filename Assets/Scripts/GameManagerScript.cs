@@ -16,6 +16,9 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (snackpoints == 10)
+        {
+            Debug.Log("TEST");
+        }
     }
 }
