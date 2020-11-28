@@ -19,6 +19,7 @@ public class Switch_Scene : MonoBehaviour
             yield return 0;
         }
         Time.timeScale = 1f;
+        FindObjectOfType<AudioManager>().Play("Theme");
         SceneManager.LoadScene(0);
         Cursor.lockState = CursorLockMode.None;
     }
