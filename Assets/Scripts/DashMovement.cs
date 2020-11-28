@@ -29,8 +29,12 @@ public class DashMovement : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0)) //Input Leftclick höhö
             {
-                StartCoroutine(Dash());
-                nextDashTime = Time.time + cooldownTime;               
+                if (Time.timeScale > 0f)
+                {
+                    StartCoroutine(Dash());
+                    FindObjectOfType<AudioManager>().Play("Player Dash");
+                    nextDashTime = Time.time + cooldownTime;
+                }
             }
         }
     }
@@ -40,8 +44,11 @@ public class DashMovement : MonoBehaviour
             while (Time.time < startTime + dashTime) //Dash movement 
             {
                 moveScript.controller.Move(moveScript.moveDir * dashSpeed * Time.deltaTime);
+
+            
+
                 yield return null;
-                
-            }       
+            
+        }       
     }
 }
