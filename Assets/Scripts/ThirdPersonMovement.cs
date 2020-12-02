@@ -52,11 +52,17 @@ public class ThirdPersonMovement : MonoBehaviour
 
             nextWalkingEffect = Time.time + walkingEffectCouldown;           
           
-        }
-
-       
-
+        }       
     }
+
+    void OnCollisionEnter3D(Collision collision)
+    {
+        if (collision.rigidbody.tag == "Enemy")
+        {
+            //Health.
+        }
+    }
+
 
     void CreateDust()
     {
