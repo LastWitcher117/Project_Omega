@@ -21,8 +21,9 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public GameObject dust;
     public bool isWalkingEffect = true;
-   
 
+    //public Health HealthScript;
+   
 
     void Start()
     {
@@ -54,15 +55,23 @@ public class ThirdPersonMovement : MonoBehaviour
          
         }       
     }
-
-    void OnCollisionEnter3D(Collision collision)
+    //NICHT ANFASSEN BIS HUNDERT!
+    /*void OnCollisionEnter(Collision other)
     {
-        if (collision.rigidbody.tag == "Enemy")
+        if (other.rigidbody.tag == "Enemy")
         {
-            //Health.
+            HealthScript.GetComponent<Health>().TakeDamage();
         }
-    }
+    }*/
 
+    /*void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            HealthScript.GetComponent<Health>().TakeDamage();
+        }
+    }*/
+    // HUNDERT HIER, NICHT ANFASSEN!
 
     void CreateDust()
     {

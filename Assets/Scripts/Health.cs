@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -14,6 +15,20 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+
+        /*if (health < 1)
+        {
+            Destroy(hearts[0].gameObject);
+        }
+        else if (health < 2)
+        {
+            Destroy(hearts[1].gameObject);
+        }
+        else if (health < 3)
+        {
+            Destroy(hearts[2].gameObject);
+        }*/
+
 
         if (health > numOfHearts)
         {
@@ -41,6 +56,5 @@ public class Health : MonoBehaviour
             }
         }                                                          
     }
-
 }
 

@@ -5,12 +5,15 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    float SupressTime;
+    public float StunTime;
 
     public float lookRadius = 10f;
 
     Transform target;
     NavMeshAgent agent;
-    
+
+    public bool SupressMovement;
     
     
     // Start is called before the first frame update
@@ -25,7 +28,17 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= lookRadius)
+        if(SupressMovement)
+        {
+            SupressTime += Time.deltaTime;
+            if(SupressTime >= StunTime)
+            {
+                SupressTime = 0f;
+                SupressMovement = false;
+            }
+        }
+
+        if (distance <= lookRadius && !SupressMovement)
         {
             agent.SetDestination(target.position);
 
@@ -35,7 +48,13 @@ public class EnemyController : MonoBehaviour
                 FaceTarget();
             }
         }
+
+        if (distance <= 1.0f)
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
     }
+
 
     void FaceTarget()
     {
@@ -43,6 +62,7 @@ public class EnemyController : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
+
 
     void OnDrawGizmosSelected()
     {

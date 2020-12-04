@@ -27,7 +27,7 @@ public class DashMovement : MonoBehaviour
 
         if (Time.time > nextDashTime)
         {
-            if (Input.GetMouseButtonDown(0)) //Input Leftclick höhö
+            if (Input.GetKey(KeyCode.LeftShift)) //Input Leftclick höhö
             {
                 if (Time.timeScale > 0f)
                 {
