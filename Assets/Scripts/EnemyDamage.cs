@@ -18,12 +18,12 @@ public class EnemyDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" /*&& Cooldown == false*/)
+        if (other.tag == "Player" && Cooldown == false) //&& Cooldown == false
         {
             Health HealthComponent = other.GetComponent<Health>();
 
             HealthComponent.health--;
-            //Cooldown = true;
+            Cooldown = true;
             FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
 
             if (HealthComponent.health == 0)
@@ -36,7 +36,7 @@ public class EnemyDamage : MonoBehaviour
 
     void Update()
     {
-        /*if (Cooldown == true)
+        if (Cooldown == true)
         {
             ElapsedTime -= Time.deltaTime;
             if (ElapsedTime <= 0f)
@@ -44,7 +44,7 @@ public class EnemyDamage : MonoBehaviour
                 Cooldown = false;
                 ElapsedTime = CooldownTime;
             }
-        }*/
+        }
     }
 }
 

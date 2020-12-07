@@ -5,8 +5,16 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     GameObject Enemy;
-    public float cooldownTime = 2;
-    public float nextDashTime = 0f;
+
+    /// Cooldown
+    bool Cooldown; //Cooldown for attack
+    float ElapsedTime;
+    public float CooldownTime;
+
+    void Start()
+    {
+        ElapsedTime = CooldownTime;
+    }
 
     public void Attack()
     {
@@ -16,10 +24,23 @@ public class PlayerAttack : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && Cooldown == false)
         {
+            Cooldown = true;
+            FindObjectOfType<AudioManager>().Play("PlayerAttack");
             //TODO: COOLDOWN FOR ATTACK
             Attack();
+        }
+
+        if (Cooldown == true)
+        {
+            ElapsedTime -= Time.deltaTime;
+
+            if (ElapsedTime <= 0f)
+            {
+                Cooldown = false;
+                ElapsedTime = CooldownTime;
+            }
         }
     }
 
@@ -36,6 +57,5 @@ public class PlayerAttack : MonoBehaviour
     {
         Enemy = null;
     }
-
 }
 
