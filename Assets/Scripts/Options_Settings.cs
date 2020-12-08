@@ -9,6 +9,8 @@ using System.Xml.Linq;
 
 public class Options_Settings : MonoBehaviour
 {
+    public AudioMixer MainMixer;
+
     Resolution[] resolutions;
 
     public TMP_Dropdown resolutionDropdown;
@@ -43,6 +45,11 @@ public class Options_Settings : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetVolume(float volume)
+    {
+        MainMixer.SetFloat("Volume", volume);
     }
 
     public void SetFullscreen(bool isFullscreen)

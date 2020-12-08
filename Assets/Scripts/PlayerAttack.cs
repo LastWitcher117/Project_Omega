@@ -6,6 +6,8 @@ public class PlayerAttack : MonoBehaviour
 {
     GameObject Enemy;
 
+    public Canvas AttackNow;
+
     /// Cooldown
     bool Cooldown; //Cooldown for attack
     float ElapsedTime;
@@ -28,8 +30,8 @@ public class PlayerAttack : MonoBehaviour
         {
             Cooldown = true;
             FindObjectOfType<AudioManager>().Play("PlayerAttack");
-            //TODO: COOLDOWN FOR ATTACK
             Attack();
+            AttackNow.enabled = false;
         }
 
         if (Cooldown == true)
@@ -49,6 +51,7 @@ public class PlayerAttack : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Enemy = other.gameObject;
+            AttackNow.enabled = true;
             Debug.Log("ENEMY IN RANGE" + Enemy.name);
         }
     }
