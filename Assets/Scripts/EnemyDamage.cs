@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class EnemyDamage : MonoBehaviour
     bool Cooldown; //Cooldown for attack
     float ElapsedTime;
     public float CooldownTime;
+    public GameObject Dmg_Flashscreen;
 
     void Start()
     {
@@ -22,16 +24,48 @@ public class EnemyDamage : MonoBehaviour
         {
             Health HealthComponent = other.GetComponent<Health>();
 
+            FindObjectOfType<AudioManager>().Play("EnemyAttack");
+
             HealthComponent.health--;
-            Cooldown = true;
+            Dmg_Flashscreen.SetActive(true); //Activating red Screen
+
+
+    Cooldown = true;
             FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
+
+            StartCoroutine(Waiter());
 
             if (HealthComponent.health == 0)
             {
                 You_Lose_Screen.enabled = true;
-                SceneManager.LoadScene(1);
+
+                FindObjectOfType<AudioManager>().Play("LoseSound");
+                StartCoroutine(LoseScreen());
+
             }
         }
+    }
+
+
+    IEnumerator Waiter() //Time Active of red DMG Screen
+    {
+        yield return new WaitForSeconds(0.3f);
+        Dmg_Flashscreen.SetActive(false);
+    }
+
+    IEnumerator LoseScreen() //Time Active of red DMG Screen
+    {
+  
+        Time.timeScale = 0f;
+        float pauseEndTime = Time.realtimeSinceStartup + 3.2f;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return 0;
+        }
+        Time.timeScale = 1f;
+       
+        SceneManager.LoadScene(1);
+
     }
 
     void Update()

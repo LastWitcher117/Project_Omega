@@ -12,6 +12,7 @@ public class Switch_Scene : MonoBehaviour
     IEnumerator OnTriggerEnter(Collider other)
     {
         You_Win_Screen.enabled = true;
+        FindObjectOfType<AudioManager>().Play("WinSound");
         Time.timeScale = 0f;
         float pauseEndTime = Time.realtimeSinceStartup + 2.5f;
         while (Time.realtimeSinceStartup < pauseEndTime)
