@@ -14,8 +14,10 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
 
     public bool SupressMovement;
-    
-    
+
+    public ParticleSystem Stun;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class EnemyController : MonoBehaviour
 
         if(SupressMovement)
         {
+            Stun.Play();
+
             SupressTime += Time.deltaTime;
             if(SupressTime >= StunTime)
             {

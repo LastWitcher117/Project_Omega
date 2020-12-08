@@ -37,6 +37,7 @@ public class GameManagerScript : MonoBehaviour
             transform.rotation *= Quaternion.AngleAxis(angle, Vector3.right);    //Für richitge Positionierung der VFX von YAY 10
 
             tenScore = true;
+            FindObjectOfType<AudioManager>().Play("10ScorePoints");
             Debug.Log("10 Punkte YAY");
 
         }

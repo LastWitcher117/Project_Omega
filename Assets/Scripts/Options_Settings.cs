@@ -10,6 +10,7 @@ using System.Xml.Linq;
 public class Options_Settings : MonoBehaviour
 {
     public AudioMixer MainMixer;
+    public AudioSource ButtonClick;
 
     Resolution[] resolutions;
 
@@ -49,7 +50,12 @@ public class Options_Settings : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        MainMixer.SetFloat("Volume", volume);
+     
+    }
+
+    public void ButtonSound()
+    {
+        ButtonClick.Play();
     }
 
     public void SetFullscreen(bool isFullscreen)

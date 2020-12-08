@@ -8,23 +8,33 @@ public class Pause_Menu : MonoBehaviour
 {
     public bool GameIsPaused = false;
     public GameObject PauseMenuUI;
+    public bool isPause = false;
 
-    public AudioMixer MainMixer;
+    public AudioSource ButtonClick;
+
+
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && isPause == false)
         {
             Cursor.lockState = CursorLockMode.None;
             if (GameIsPaused)
             {
                 Resume();
+                
             }
             else
             {
                 Pause();
+                isPause = true;
             }
         }
+    }
+
+    public void ButtonSound()
+    {
+        ButtonClick.Play();
     }
 
     public void Resume()
@@ -34,6 +44,7 @@ public class Pause_Menu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         //AudioListener.pause = false;
         GameIsPaused = false;
+        isPause = false;
         FindObjectOfType<AudioManager>().Play("Theme");
     }
 
@@ -63,6 +74,6 @@ public class Pause_Menu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        MainMixer.SetFloat("Volume", volume);
+        
     }
 }

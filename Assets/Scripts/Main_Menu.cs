@@ -10,11 +10,14 @@ public class Main_Menu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         FindObjectOfType<AudioManager>().Stop("Theme");
         FindObjectOfType<AudioManager>().Play("Theme");
+
+        FindObjectOfType<AudioManager>().Play("ButtonSounds");
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit");
+        FindObjectOfType<AudioManager>().Play("ButtonSounds");
         Application.Quit();
     }
 }

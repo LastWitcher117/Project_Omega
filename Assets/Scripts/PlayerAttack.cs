@@ -18,18 +18,12 @@ public class PlayerAttack : MonoBehaviour
         ElapsedTime = CooldownTime;
     }
 
-    public void Attack()
-    {
-        Enemy.GetComponent<EnemyController>().SupressMovement = true;
-        Debug.Log("ATTACKING " + Enemy.name);
-    }
-
     public void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0) && Cooldown == false)
         {
             Cooldown = true;
-            FindObjectOfType<AudioManager>().Play("PlayerAttack");
+            
             Attack();
             AttackNow.enabled = false;
         }
@@ -52,9 +46,25 @@ public class PlayerAttack : MonoBehaviour
         {
             Enemy = other.gameObject;
             AttackNow.enabled = true;
-            Debug.Log("ENEMY IN RANGE" + Enemy.name);
+            Debug.Log("ENEMY IN RANGE " + Enemy.name);       
+            StartCoroutine(Waiter());
         }
     }
+
+    public void Attack()
+    {
+        Enemy.GetComponent<EnemyController>().SupressMovement = true;
+        Debug.Log("ATTACKING " + Enemy.name);
+        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+    }
+
+
+    IEnumerator Waiter() //Time Active of Attack Now Screen
+    {
+        yield return new WaitForSeconds(1f);
+        AttackNow.enabled = false;
+    }
+
 
     void OnTriggerExit(Collider other)
     {
