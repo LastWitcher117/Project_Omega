@@ -21,6 +21,7 @@ public class GameManagerScript : MonoBehaviour
 
     public ThirdPersonMovement TPM;
 
+
     // Start is called before the first frame update
     void Start()
     {
