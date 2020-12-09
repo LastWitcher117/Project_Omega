@@ -13,6 +13,7 @@ public class Switch_Scene : MonoBehaviour
     public GameObject ScorePoints;
     public GameManagerScript gm;
 
+
     public void OnTriggerEnter(Collider other)
     {
         You_Win_Screen.enabled = true;
@@ -34,7 +35,7 @@ public class Switch_Scene : MonoBehaviour
 
     public void Update()
     {
-        ScorePoints.GetComponent<Text>().text = gm.snackpoints.ToString();
-
+         ScorePoints.GetComponent<Text>().text = gm.snackpoints.ToString();
+       
     }
 }
