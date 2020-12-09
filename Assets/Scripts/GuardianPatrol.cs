@@ -127,6 +127,8 @@ public class GuardianPatrol : MonoBehaviour
                 if (SupressTime >= StunTime)
                 {
                     SupressTime = 0f;
+                    Stun.Clear();
+                    Stun.Stop();
                     SupressMovement = false;
                 }
             }
