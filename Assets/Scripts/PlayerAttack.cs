@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    GameObject Enemy;
+    public GameObject Enemy;
 
     public Canvas AttackNow;
 
@@ -53,7 +53,16 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        Enemy.GetComponent<EnemyController>().SupressMovement = true;
+        if (Enemy.GetComponent<EnemyController>() == null)
+        {
+            Enemy.GetComponent<GuardianPatrol>().SupressMovement = true;
+        }
+        else
+        {
+            Enemy.GetComponent<EnemyController>().SupressMovement = true;
+        }
+       
+        
         Debug.Log("ATTACKING " + Enemy.name);
         FindObjectOfType<AudioManager>().Play("PlayerAttack");
     }
