@@ -27,7 +27,7 @@ public class Switch_Scene : MonoBehaviour
         }
         Time.timeScale = 1f;*/
 
-        FindObjectOfType<AudioManager>().Play("Theme");
+        FindObjectOfType<AudioManager>().Stop("Theme");
         //SceneManager.LoadScene(0);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;

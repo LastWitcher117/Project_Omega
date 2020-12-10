@@ -39,6 +39,7 @@ public class EnemyDamage : MonoBehaviour
             {
                 You_Lose_Screen.enabled = true;
 
+                FindObjectOfType<AudioManager>().Stop("Theme");
                 FindObjectOfType<AudioManager>().Play("LoseSound");
                 StartCoroutine(LoseScreen());
 
@@ -65,7 +66,7 @@ public class EnemyDamage : MonoBehaviour
         Time.timeScale = 1f;
        
         SceneManager.LoadScene(1);
-
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 
     void Update()

@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
 
     public Canvas AttackNow;
 
+    public ParticleSystem AttackParticleSystem;
+
     /// Cooldown
     bool Cooldown; //Cooldown for attack
     float ElapsedTime;
@@ -46,6 +48,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Enemy = other.gameObject;
             AttackNow.enabled = true;
+
             Debug.Log("ENEMY IN RANGE " + Enemy.name);       
             StartCoroutine(Waiter());
         }
@@ -53,6 +56,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
+        AttackParticleSystem.Play();
+
         if (Enemy.GetComponent<EnemyController>() == null)
         {
             Enemy.GetComponent<GuardianPatrol>().SupressMovement = true;

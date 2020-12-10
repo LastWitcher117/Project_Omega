@@ -22,6 +22,10 @@ public class GuardianPatrol : MonoBehaviour
     [SerializeField]
     List<Waypoints> _patrolPoints;
 
+    //Particle Systems
+    public ParticleSystem ExclamationMark;
+    public ParticleSystem QuestionMark;
+
     //Private variables 
     NavMeshAgent _navMeshAgent;
     int _currentPatrolIndex;
@@ -31,7 +35,7 @@ public class GuardianPatrol : MonoBehaviour
     float _waitTimer;
 
     //Public variables
-    public bool isSeeingPlayer = false;
+    public float isSeeingPlayer = 0f;
 
     //Enemy Controller variables
     float SupressTime;
@@ -96,7 +100,13 @@ public class GuardianPatrol : MonoBehaviour
                 }
                 else
                 {
-                    ChangePatrolPoint();
+                    ExclamationMark.Stop();
+                    ExclamationMark.Clear();
+                    QuestionMark.Play();
+
+                    isSeeingPlayer = 0f;
+
+                    ChangePatrolPoint();                 
                     SetDestination();
                 }
             }
@@ -117,8 +127,18 @@ public class GuardianPatrol : MonoBehaviour
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
         else
         {
-            
+            ExclamationMark.Play();
+            QuestionMark.Stop();
+            QuestionMark.Clear();
 
+            isSeeingPlayer++; ;
+
+            if (isSeeingPlayer == 1f)
+            {
+                
+                FindObjectOfType<AudioManager>().Play("GuardianNotice");
+                
+            }
             if (SupressMovement)
             {
                 Stun.Play();
@@ -135,11 +155,18 @@ public class GuardianPatrol : MonoBehaviour
 
             if (distance <= lookRadius && !SupressMovement)
             {
+
+                
+                
+
                 agent.SetDestination(target.position);
+
+                
 
                 if (distance <= agent.stoppingDistance)
                 {
                     // Attack the target
+                    
                     FaceTarget();
                 }
             }
@@ -169,7 +196,10 @@ void OnDrawGizmosSelected()
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 
-
+    IEnumerator Waiter()
+    {
+        yield return new WaitForSeconds(10000000f);
+    }
 
 
     private void SetDestination()

@@ -31,7 +31,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (snackpoints == 10 && tenScore == false)
+        if (snackpoints == 100 && tenScore == false)
         {
 
             float angle = -90f;
