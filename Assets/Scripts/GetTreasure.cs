@@ -11,7 +11,7 @@ public class GetTreasure : MonoBehaviour
         if (other.tag == "Treasure")
         {
             gms.snackpoints = gms.snackpoints + 1000;
-            FindObjectOfType<AudioManager>().Play("SnackSound");
+            FindObjectOfType<AudioManager>().Play("Treasure");
             Destroy(other.gameObject);
         }
     }
