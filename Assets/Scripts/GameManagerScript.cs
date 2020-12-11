@@ -19,6 +19,8 @@ public class GameManagerScript : MonoBehaviour
     public float SpeedStrengh = 0.5f;
     public bool MSUP = false;
 
+    public GameObject MSUP_Screen;
+
     public ThirdPersonMovement TPM;
 
 
@@ -59,6 +61,8 @@ public class GameManagerScript : MonoBehaviour
 
         if (MSUP == true)
         {
+            MSUP_Screen.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("MSUP");
             TPM.speed = MS + SpeedStrengh;
 
             StartCoroutine(Waiter());
@@ -72,8 +76,8 @@ public class GameManagerScript : MonoBehaviour
 
         MSUP = false;
         yield return new WaitForSeconds(SpeedDauer);
+        MSUP_Screen.SetActive(false);
         TPM.speed = MS - SpeedStrengh;
-
     }
 
 }
