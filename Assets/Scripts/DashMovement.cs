@@ -10,9 +10,16 @@ public class DashMovement : MonoBehaviour
     public float dashTime;
     public float cooldownTime = 2;
     public float nextDashTime = 0f;
+    bool isDash = false;
 
     public CharacterController controller;
-    
+
+
+    public bool GetIsDash()
+    {
+        return this.isDash;
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +38,22 @@ public class DashMovement : MonoBehaviour
             {
                 if (Time.timeScale > 0f)
                 {
+                     
                     StartCoroutine(Dash());
-                    FindObjectOfType<AudioManager>().Play("Player Dash");
+                    //FindObjectOfType<AudioManager>().Play("Player Dash");
+                    //FMOD
+                    isDash = true;
                     nextDashTime = Time.time + cooldownTime;
                 }
+               
+
             }
         }
+
+         if(Time.time < nextDashTime)
+         {
+             isDash = false;
+         }
     }
     IEnumerator Dash()
     {
@@ -44,11 +61,12 @@ public class DashMovement : MonoBehaviour
             while (Time.time < startTime + dashTime) //Dash movement 
             {
                 moveScript.controller.Move(moveScript.moveDir * dashSpeed * Time.deltaTime);
-
+            isDash = true;
+            yield return null;
             
-
-                yield return null;
-            
-        }       
+            }
+       
     }
+
+    
 }

@@ -10,6 +10,9 @@ public class PlayerAttack : MonoBehaviour
 
     public ParticleSystem AttackParticleSystem;
 
+
+    
+
     /// Cooldown
     bool Cooldown; //Cooldown for attack
     float ElapsedTime;
@@ -18,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         ElapsedTime = CooldownTime;
+        //playerAttackSound = FMODUnity.RuntimeManager.CreateInstance(eventPath);  // FMOD
     }
 
     public void Update()
@@ -57,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         AttackParticleSystem.Play();
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player/Attack/PlayeerAttack_Dagger", gameObject); // FMOD 
 
         if (Enemy.GetComponent<EnemyController>() == null)
         {
@@ -66,7 +71,8 @@ public class PlayerAttack : MonoBehaviour
         {
             Enemy.GetComponent<EnemyController>().SupressMovement = true;
         }
-       
+
+        
         
         Debug.Log("ATTACKING " + Enemy.name);
         FindObjectOfType<AudioManager>().Play("PlayerAttack");
@@ -84,5 +90,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Enemy = null;
     }
+
+    
 }
 

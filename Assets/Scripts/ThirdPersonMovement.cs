@@ -22,6 +22,20 @@ public class ThirdPersonMovement : MonoBehaviour
     public GameObject dust;
     public bool isWalkingEffect = true;
 
+
+    //Fmod
+
+    [FMODUnity.EventRef]
+    public string eventPath;
+    FMOD.Studio.EventInstance footStepsSounds;
+    DashMovement isDashScript;
+    float h;
+    float v;
+    bool isDashBool;
+    
+    
+
+
     //public Health HealthScript;
    
 
@@ -30,6 +44,14 @@ public class ThirdPersonMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         Cursor.lockState = CursorLockMode.Locked;
+
+        footStepsSounds = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+        footStepsSounds.start();
+        isDashScript = GetComponent<DashMovement>();
+        
+
+        
+        
     }
 
     
@@ -37,6 +59,15 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        bool dash = Input.GetKey(KeyCode.LeftShift);
+        
+        //FMOD
+        h = horizontal;
+        v = vertical;
+        isDashBool = isDashScript.GetIsDash();
+        
+        
+
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
     
 
@@ -53,7 +84,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
             nextWalkingEffect = Time.time + walkingEffectCouldown;
          
-        }       
+        }
+
+        PlayerFootSteps();
+
+
+
     }
     //NICHT ANFASSEN BIS HUNDERT!
     /*void OnCollisionEnter(Collision other)
@@ -79,4 +115,32 @@ public class ThirdPersonMovement : MonoBehaviour
         Debug.Log("u mad gay");
     }
 
-}
+     void PlayerFootSteps()
+    {
+        if (isDashBool == true)
+        {
+            footStepsSounds.setParameterByName("Waiting-Moving-Dash", 2);
+        }
+        else if (v < 0 || h < 0 && isDashBool == false)
+        {
+            footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
+        }
+    
+        else if (v > 0 || h > 0 && isDashBool == false)
+        {
+            footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
+        }
+
+        else if (v == 0 || h == 0 && isDashBool == false)
+        {
+            footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
+        }
+        
+    }
+
+
+
+    }
+
+    
+
