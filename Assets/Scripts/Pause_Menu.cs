@@ -16,6 +16,9 @@ public class Pause_Menu : MonoBehaviour
 
     void Update()
     {
+
+        ParmeterCheck();
+
         if (Input.GetKeyDown(KeyCode.Escape) && isPause == false)
         {
             Cursor.lockState = CursorLockMode.None;
@@ -23,13 +26,19 @@ public class Pause_Menu : MonoBehaviour
             {
                 Resume();
                 
+
             }
             else
             {
                 Pause();
                 isPause = true;
+                //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
             }
         }
+
+        
+
+
     }
 
     public void ButtonSound()
@@ -76,5 +85,22 @@ public class Pause_Menu : MonoBehaviour
     public void SetVolume(float volume)
     {
         
+    }
+
+
+    public void UiButtonSoundForward()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
+    }
+
+    public void UiButtonSoundBackward()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Backward");
+    }
+
+    void ParmeterCheck()
+    {
+        if (GameIsPaused == true) FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
+        else FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
     }
 }
