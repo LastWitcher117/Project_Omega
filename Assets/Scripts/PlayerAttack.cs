@@ -75,7 +75,7 @@ public class PlayerAttack : MonoBehaviour
         
         
         Debug.Log("ATTACKING " + Enemy.name);
-        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        //FindObjectOfType<AudioManager>().Play("PlayerAttack");
     }
 
 

@@ -17,7 +17,11 @@ public class GetSnackpoints : MonoBehaviour
             numSnack++;
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("numSnacks", numSnack);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/SnakPoint Chromatic");
-            if (numSnack == 10) numSnack = 1 ;
+            if (numSnack == 10)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/Score");
+                numSnack = 0;
+            }
             
             
         }

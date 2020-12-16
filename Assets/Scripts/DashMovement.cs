@@ -40,6 +40,7 @@ public class DashMovement : MonoBehaviour
                 {
                      
                     StartCoroutine(Dash());
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Footsteps/DashOneShot");
                     //FindObjectOfType<AudioManager>().Play("Player Dash");
                     //FMOD
                     isDash = true;
