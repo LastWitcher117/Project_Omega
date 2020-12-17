@@ -23,11 +23,13 @@ public class GameManagerScript : MonoBehaviour
 
     public ThirdPersonMovement TPM;
 
+    public bool gameIsWon;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameIsWon = false;
     }
 
     // Update is called once per frame
