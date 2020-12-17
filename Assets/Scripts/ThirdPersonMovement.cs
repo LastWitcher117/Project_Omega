@@ -115,6 +115,8 @@ public class ThirdPersonMovement : MonoBehaviour
         Debug.Log("u mad gay");
     }
 
+
+    //FMOD
      void PlayerFootSteps()
     {
         if (isDashBool == true)

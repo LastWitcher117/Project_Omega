@@ -55,11 +55,22 @@ public class Options_Settings : MonoBehaviour
 
     public void ButtonSound()
     {
-        ButtonClick.Play();
+        //ButtonClick.Play();
+        //FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+     public void UiButtonSoundForward()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
+    }
+
+    public void UiButtonSoundBackward()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Backward");
     }
 }
