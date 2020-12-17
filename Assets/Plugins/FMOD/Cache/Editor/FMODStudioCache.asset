@@ -120,7 +120,7 @@ MonoBehaviour:
   lastModified: 637437544411458404
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7553721233323639394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7374397368307859181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +245,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-6022284911303763839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: GamePaused
+  m_EditorClassIdentifier: 
+  Name: GamePaused
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &-5809533418356860219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +277,7 @@ MonoBehaviour:
   Path: event:/Collectables/SnakPoint
   guid: e5a41972226371438bbb99f20cb3c2a5
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -282,7 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODAssets/FMOD-TempleTales/TempleTales/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637437544411528226
+  lastModified: 637437566082271525
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -306,6 +323,23 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &-4970057847635512938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SimpleFootStep/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &-4953944714877570540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -423,7 +457,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3398606681518858455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,16 +490,33 @@ MonoBehaviour:
   Path: event:/Player/Footsteps/Footsteps
   guid: ac3b96e20ef28c4eb455dab4ffaed3b5
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2735817097813698755}
-  - {fileID: -3466586544509608210}
+  - {fileID: -3218300881971412700}
+  - {fileID: -1487372612981819576}
   MinDistance: 0
   MaxDistance: 0
   Length: 100
+--- !u!114 &-3218300881971412700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Waiting-Moving-Dash
+  m_EditorClassIdentifier: 
+  Name: Waiting-Moving-Dash
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-3102882269403676433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +567,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2626800728297197805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,6 +757,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-1487372612981819576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-1169261880537374633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -5693911386524230582}
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   EditorEvents:
   - {fileID: 8931974110927498956}
   - {fileID: -3381553554835367425}
@@ -783,13 +851,13 @@ MonoBehaviour:
   - {fileID: 5125673592859538945}
   - {fileID: 478017937623086611}
   EditorParameters:
-  - {fileID: 1720227127561144641}
-  - {fileID: 8169528396561169749}
+  - {fileID: -6022284911303763839}
+  - {fileID: 4006219677844774418}
   MasterBanks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   StringsBanks:
   - {fileID: -5693911386524230582}
-  stringsBankWriteTime: 637437544411528226
+  stringsBankWriteTime: 637437566082271525
   cacheVersion: 3
 --- !u!114 &357509428750415387
 MonoBehaviour:
@@ -823,7 +891,7 @@ MonoBehaviour:
   Path: event:/UI/UI_Button_Forward
   guid: c9e5f4b3e1428240b6f62b4a0de8e066
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -914,7 +982,7 @@ MonoBehaviour:
   Path: event:/Player/Footsteps/DashOneShot
   guid: f166055385c91d46b63111d1ed49e252
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -922,6 +990,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2433
+--- !u!114 &1178676599337236295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SimpleFootStep/Waiting-Moving-Dash
+  m_EditorClassIdentifier: 
+  Name: Waiting-Moving-Dash
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &1213807315104363240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,7 +1040,7 @@ MonoBehaviour:
   Path: event:/Collectables/SnakPoint Chromatic
   guid: df3322bae19ce74c8e04fe7b9d6a2b6b
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -979,7 +1064,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &2064371479882477111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +1153,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &4006219677844774418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: numSnacks
+  m_EditorClassIdentifier: 
+  Name: numSnacks
+  Min: 0
+  Max: 12
+  Default: 0
+  Exists: 1
 --- !u!114 &4787487816035585105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1101,7 +1203,7 @@ MonoBehaviour:
   Path: event:/Collectables/Score
   guid: d8773921d5e80b4d9c9cd8bb89a7e844
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1141,7 +1243,7 @@ MonoBehaviour:
   Path: event:/UI/UI_Button_Backward
   guid: 9d1e686158f5ce41bfdac35ec175f0d7
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1217,6 +1319,24 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &7629583138147004797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/FMOD-TempleTales/TempleTales/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637437566082191739
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7706246019142229882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,7 +1387,7 @@ MonoBehaviour:
   Min: 0
   Max: 12
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8416434987234291974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,7 +1403,7 @@ MonoBehaviour:
   Path: event:/Player/Attack/PlayeerAttack_Dagger
   guid: fb646daff05ca243bda1a42dba296146
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1341,13 +1461,13 @@ MonoBehaviour:
   Path: event:/Player/Footsteps/SimpleFootStep
   guid: 880a378723097541860c2d2c2e4b24d1
   Banks:
-  - {fileID: -7643089037142144626}
+  - {fileID: 7629583138147004797}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7553721233323639394}
-  - {fileID: -4970057847635512938}
+  - {fileID: 1178676599337236295}
+  - {fileID: -4953944714877570540}
   MinDistance: 0
   MaxDistance: 0
   Length: 1950

@@ -61,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         AttackParticleSystem.Play();
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player/Attack/PlayeerAttack_Dagger", gameObject); // FMOD 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Attack/PlayeerAttack_Dagger"); // FMOD
 
         if (Enemy.GetComponent<EnemyController>() == null)
         {
@@ -76,6 +76,7 @@ public class PlayerAttack : MonoBehaviour
         
         Debug.Log("ATTACKING " + Enemy.name);
         //FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        
     }
 
 

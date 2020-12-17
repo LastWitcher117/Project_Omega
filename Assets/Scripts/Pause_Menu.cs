@@ -17,10 +17,11 @@ public class Pause_Menu : MonoBehaviour
     void Update()
     {
 
-        ParmeterCheck();
+       // ParmeterCheck();
 
         if (Input.GetKeyDown(KeyCode.Escape) && isPause == false)
         {
+            
             Cursor.lockState = CursorLockMode.None;
             if (GameIsPaused)
             {
@@ -32,7 +33,7 @@ public class Pause_Menu : MonoBehaviour
             {
                 Pause();
                 isPause = true;
-                //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
+                
             }
         }
 
@@ -55,6 +56,8 @@ public class Pause_Menu : MonoBehaviour
         GameIsPaused = false;
         isPause = false;
         FindObjectOfType<AudioManager>().Play("Theme");
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
+
     }
 
     void Pause()
@@ -64,6 +67,7 @@ public class Pause_Menu : MonoBehaviour
         //AudioListener.pause = true;
         GameIsPaused = true;
         FindObjectOfType<AudioManager>().Pause("Theme");
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
     }
 
     public void LoadMenu()
@@ -71,6 +75,8 @@ public class Pause_Menu : MonoBehaviour
         Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().Stop("WinSound");
         SceneManager.LoadScene(0);
+
+        StartCoroutine(GamePauseParameterFMod());
     }
 
     void Options()
@@ -98,9 +104,11 @@ public class Pause_Menu : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Backward");
     }
 
-    void ParmeterCheck()
+    IEnumerator GamePauseParameterFMod() 
     {
-        if (GameIsPaused == true) FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
-        else FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
+        yield return new WaitForSeconds(0.5f);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);  // FMOD
     }
+
+   
 }
