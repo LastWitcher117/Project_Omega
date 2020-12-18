@@ -124,6 +124,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{ccf6e5a2-c2c5-4a62-8f10-9d33c213cc37}">
+		<property name="isCutoff">
+			<value>true</value>
+		</property>
 		<property name="start">
 			<value>1</value>
 		</property>
@@ -236,6 +239,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{66f04bcd-24b2-4892-81e0-23230421e228}">
+		<property name="volume">
+			<value>8.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -266,11 +272,20 @@
 	<object class="MixerBusPanner" id="{cb6e11d0-982b-4b5f-b460-593d59c26ade}" />
 	<object class="MixerBusFader" id="{6fe36c1c-8475-4eb9-92f8-5d48862ad6a0}" />
 	<object class="SpatialiserEffect" id="{7e027be6-4c21-41b4-b27a-d519d3892219}">
-		<property name="bypass">
-			<value>true</value>
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>1.39999998</value>
+			<value>0.49999997</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="userPanDirection">
+			<value>-132.284973</value>
 		</property>
 	</object>
 	<object class="PitchShifterEffect" id="{aa953f37-0527-4acf-8deb-a2a22ad86868}">

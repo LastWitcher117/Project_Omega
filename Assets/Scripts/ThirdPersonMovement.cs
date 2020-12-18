@@ -116,7 +116,7 @@ public class ThirdPersonMovement : MonoBehaviour
     }
 
 
-    //FMOD
+    //FMOD  
      void PlayerFootSteps()
     {
         if (isDashBool == true)

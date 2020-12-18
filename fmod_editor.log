@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001E3BFA07C38 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000028AC05E9D98 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,122 +18,116 @@
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 199360
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 57856
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 226784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63648
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000063E5FEFBC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000092407FF03C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA26ECC2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA26ECC2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA26ECC3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA26ECC460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E44426D4A8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA2446C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA2446C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA2446C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA2446C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000028ABDD815F8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_04', format=2, channels=2, frequency=48000, lengthbytes=5856, lengthpcm=17449, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.149567.
-[LOG] SoundI::release                          :  (000001E44437A788)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_04 (000001E44424D8D8)
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_03', format=2, channels=2, frequency=48000, lengthbytes=5696, lengthpcm=20257, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.289856.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 226784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63648
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000092407FF03C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA2446C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA2446C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA2446C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA2446C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000028ABDD815F8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_01', format=2, channels=2, frequency=48000, lengthbytes=4960, lengthpcm=26364, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.238129.
+[LOG] SoundI::release                          :  (0000028B5475B2B8)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_03 (0000028AC5FC5AC8)
+[LOG] SoundI::release                          :  (0000028B5475B428)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_01 (0000028AC5FC4408)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 199360
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 57856
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 226784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63648
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000063E5FEFBC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000092407FF03C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA26ECC2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA26ECC2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA26ECC3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA26ECC460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E44426D4A8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA2446C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA2446C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA2446C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA2446C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000028B4A7F3AD8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_02', format=2, channels=2, frequency=48000, lengthbytes=4704, lengthpcm=18158, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.516205.
-[LOG] SoundI::release                          :  (000001E44437A788)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_02 (000001E44424F618)
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_03', format=2, channels=2, frequency=48000, lengthbytes=5696, lengthpcm=20257, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.289856.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 226784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63648
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000092407FF03C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA2446C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA2446C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA2446C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA2446C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000028B4A7F3AD8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_01', format=2, channels=2, frequency=48000, lengthbytes=4960, lengthpcm=26364, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.238129.
+[LOG] SoundI::release                          :  (0000028B5475B2B8)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_03 (0000028AC5FC6CA8)
+[LOG] SoundI::release                          :  (0000028B5475B428)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_01 (0000028AC5FC4C28)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 199360
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 57856
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 226784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63648
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000063E5FEFBC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000092407FF03C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA26ECC2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA26ECC2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA26ECC3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA26ECC460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E44426D298
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA2446C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA2446C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA2446C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA2446C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000028ABDD815F8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_04', format=2, channels=2, frequency=48000, lengthbytes=5856, lengthpcm=17449, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.149567.
-[LOG] SoundI::release                          :  (000001E44437A788)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_04 (000001E44424E918)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_03', format=2, channels=2, frequency=48000, lengthbytes=5696, lengthpcm=20257, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.289856.
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 199360
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 57856
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 226784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 63648
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000063E5FEFBC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000092407FF03C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA26ECC2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA26ECC2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA26ECC3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA26ECC460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E44426DAD8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA2446C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA2446C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA2446C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA2446C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000028ABDD815F8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_02', format=2, channels=2, frequency=48000, lengthbytes=4704, lengthpcm=18158, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.516205.
-[LOG] SoundI::release                          :  (000001E44437A788)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_02 (000001E44424B858)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 199360
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 57856
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000063E5FEFBC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA26ECC2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA26ECC2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA26ECC3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA26ECC460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E444273388
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_04', format=2, channels=2, frequency=48000, lengthbytes=5856, lengthpcm=17449, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.149567.
-[LOG] SoundI::release                          :  (000001E4514B9158)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_04 (000001E44424D8D8)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 199360
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 57856
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000063E5FEFBC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA26ECC2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA26ECC2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA26ECC3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA26ECC460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001E44426D4A8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_02', format=2, channels=2, frequency=48000, lengthbytes=4704, lengthpcm=18158, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.516205.
-[LOG] SoundI::release                          :  (000001E4514B8FE8)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_02 (000001E44424B9F8)
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_01', format=2, channels=2, frequency=48000, lengthbytes=4960, lengthpcm=26364, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.238129.
+[LOG] SoundI::release                          :  (0000028B5475B2B8)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_03 (0000028AC5FC6CA8)
+[LOG] SoundI::release                          :  (0000028B5475B598)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_01 (0000028AC5FC6E48)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 

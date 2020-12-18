@@ -5,7 +5,7 @@
 			<value>Score</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0833ea42-efec-459f-8df2-d33d45e4b1ad}</destination>
@@ -92,6 +92,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{aaafc12f-0fa7-4083-9a55-1c303767f309}">
+		<property name="volume">
+			<value>-4</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{4befd2c5-b78f-4f95-8209-7b1984528d90}</destination>
 		</relationship>
@@ -183,6 +186,7 @@
 	<object class="MixerBusEffectChain" id="{4befd2c5-b78f-4f95-8209-7b1984528d90}">
 		<relationship name="effects">
 			<destination>{1c333889-2f16-4884-b872-09b27e935556}</destination>
+			<destination>{02163d49-cdb6-440f-8278-c516dccc63e8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d23b136b-0bcd-4eb1-bf5d-d1d274a99117}" />
@@ -206,6 +210,32 @@
 	</object>
 	<object class="MixerBusPanner" id="{2bde520a-a37b-4948-942e-be068aa9a7e4}" />
 	<object class="MixerBusFader" id="{1c333889-2f16-4884-b872-09b27e935556}" />
+	<object class="SpatialiserEffect" id="{02163d49-cdb6-440f-8278-c516dccc63e8}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+		<property name="minimumDistance">
+			<value>0</value>
+		</property>
+		<property name="maximumDistance">
+			<value>0.099999994</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>0.699999928</value>
+		</property>
+		<property name="panBlend">
+			<value>0</value>
+		</property>
+		<property name="userPanDirection">
+			<value>63.434948</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{cdb30e56-235f-463a-83fa-92e5f37bf55d}" />
 	<object class="MixerBusFader" id="{0a938c40-c71c-462e-a83e-add4a0ff94a4}" />
 	<object class="MixerBusFader" id="{63f821e7-8c98-40a1-a10e-aa6e53baa661}" />

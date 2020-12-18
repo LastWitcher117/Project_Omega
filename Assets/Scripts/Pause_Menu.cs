@@ -104,6 +104,11 @@ public class Pause_Menu : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Backward");
     }
 
+    public void UiButtonHovering()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Hovering");
+    }
+
     IEnumerator GamePauseParameterFMod() 
     {
         yield return new WaitForSeconds(0.5f);
