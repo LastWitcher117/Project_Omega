@@ -10,6 +10,7 @@ public class Score_System_Script : MonoBehaviour
     public int highscore;
     string highscoreKey;
     string FirstHighscoreKey;
+    public GameObject newHighscoreSprite;
     
 
     public GameObject highscorePoints;
@@ -49,7 +50,7 @@ public class Score_System_Script : MonoBehaviour
             PlayerPrefs.SetInt(highscoreKey, score);
            // PlayerPrefs.SetInt(FirstHighscoreKey, score);
             PlayerPrefs.Save();
-            
+            newHighscoreSprite.SetActive(true);
         }
     }
 }
