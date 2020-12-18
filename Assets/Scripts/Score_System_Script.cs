@@ -9,8 +9,8 @@ public class Score_System_Script : MonoBehaviour
     public int score;
     public int highscore;
     string highscoreKey;
-    string FirstHighscore;
-    public string playerName = "Hugo";
+    string FirstHighscoreKey;
+    
 
     public GameObject highscorePoints;
 
@@ -47,8 +47,9 @@ public class Score_System_Script : MonoBehaviour
         if(score > highscore)
         {
             PlayerPrefs.SetInt(highscoreKey, score);
-            PlayerPrefs.SetString(FirstHighscore, playerName + ": " + score + " Points, ");
-            Debug.Log(PlayerPrefs.GetString(FirstHighscore));
+           // PlayerPrefs.SetInt(FirstHighscoreKey, score);
+            PlayerPrefs.Save();
+            
         }
     }
 }
