@@ -22,9 +22,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public GameObject dust;
     public bool isWalkingEffect = true;
 
-
     //Fmod
-
     [FMODUnity.EventRef]
     public string eventPath;
     FMOD.Studio.EventInstance footStepsSounds;
@@ -33,12 +31,8 @@ public class ThirdPersonMovement : MonoBehaviour
     float v;
     bool isDashBool;
     
-    
-
-
     //public Health HealthScript;
    
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -48,10 +42,6 @@ public class ThirdPersonMovement : MonoBehaviour
         footStepsSounds = FMODUnity.RuntimeManager.CreateInstance(eventPath);
         footStepsSounds.start();
         isDashScript = GetComponent<DashMovement>();
-        
-
-        
-        
     }
 
     
@@ -65,8 +55,6 @@ public class ThirdPersonMovement : MonoBehaviour
         h = horizontal;
         v = vertical;
         isDashBool = isDashScript.GetIsDash();
-        
-        
 
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
     
@@ -87,8 +75,6 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
         PlayerFootSteps();
-
-
 
     }
     //NICHT ANFASSEN BIS HUNDERT!
@@ -115,7 +101,6 @@ public class ThirdPersonMovement : MonoBehaviour
         Debug.Log("u mad gay");
     }
 
-
     //FMOD  
      void PlayerFootSteps()
     {
@@ -137,10 +122,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
         }
-        
     }
-
-
 
     }
 

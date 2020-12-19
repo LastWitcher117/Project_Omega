@@ -16,6 +16,10 @@ public class Options_Settings : MonoBehaviour
 
     public TMP_Dropdown resolutionDropdown;
 
+    //FMOD
+    FMOD.Studio.EventInstance fVolumeSlider;
+    private FMOD.Studio.PLAYBACK_STATE fVState;
+    public GameObject volumeSlider;
 
     void Start()
     {
@@ -40,6 +44,8 @@ public class Options_Settings : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        fVolumeSlider = FMODUnity.RuntimeManager.CreateInstance("event:/UI/VolumeSlider");
     }
 
     public void SetResolution(int resolutionIndex)
@@ -50,13 +56,12 @@ public class Options_Settings : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-     
+        FVolumeSlider(volume);
     }
 
     public void ButtonSound()
     {
         //ButtonClick.Play();
-        //FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -72,5 +77,15 @@ public class Options_Settings : MonoBehaviour
     public void UiButtonSoundBackward()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Backward");
+    }
+
+    void FVolumeSlider(float sliderValue)
+    {
+        fVolumeSlider.getPlaybackState(out fVState);
+        if (fVState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            fVolumeSlider.start();
+            fVolumeSlider.setParameterByName("VolumeSlider", sliderValue);
+        }
     }
 }

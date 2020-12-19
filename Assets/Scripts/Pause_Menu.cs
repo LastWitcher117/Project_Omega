@@ -12,34 +12,36 @@ public class Pause_Menu : MonoBehaviour
 
     public AudioSource ButtonClick;
 
+    //FMOD
+    FMOD.Studio.EventInstance fVolumeSlider;
+    FMOD.Studio.EventInstance hovering;
+    private FMOD.Studio.PLAYBACK_STATE fVState;
+    private FMOD.Studio.PLAYBACK_STATE hState;
+    public GameObject volumeSlider;
+    
 
+
+    private void Start()
+    {
+        fVolumeSlider = FMODUnity.RuntimeManager.CreateInstance("event:/UI/VolumeSlider");
+        hovering = FMODUnity.RuntimeManager.CreateInstance("event:/UI/Hovering");
+    }
 
     void Update()
     {
-
-       // ParmeterCheck();
-
         if (Input.GetKeyDown(KeyCode.Escape) && isPause == false)
         {
-            
             Cursor.lockState = CursorLockMode.None;
             if (GameIsPaused)
             {
                 Resume();
-                
-
             }
             else
             {
                 Pause();
                 isPause = true;
-                
             }
         }
-
-        
-
-
     }
 
     public void ButtonSound()
@@ -91,6 +93,7 @@ public class Pause_Menu : MonoBehaviour
     public void SetVolume(float volume)
     {
         
+        FVolumeSlider(volume);
     }
 
     // FMOD
@@ -106,7 +109,21 @@ public class Pause_Menu : MonoBehaviour
 
     public void UiButtonHovering()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Hovering");
+        hovering.getPlaybackState(out hState);
+        if (hState!= FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            hovering.start();
+        }
+    }
+
+    void FVolumeSlider(float sliderValue)
+    {
+        fVolumeSlider.getPlaybackState(out fVState);
+        if (fVState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            fVolumeSlider.start();
+            fVolumeSlider.setParameterByName("VolumeSlider", sliderValue);
+        }
     }
 
     IEnumerator GamePauseParameterFMod() 
@@ -114,6 +131,4 @@ public class Pause_Menu : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);  // FMOD
     }
-
-   
 }
