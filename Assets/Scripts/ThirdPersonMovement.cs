@@ -27,9 +27,13 @@ public class ThirdPersonMovement : MonoBehaviour
     public string eventPath;
     FMOD.Studio.EventInstance footStepsSounds;
     DashMovement isDashScript;
+    
     float h;
     float v;
     bool isDashBool;
+    
+
+    
     
     //public Health HealthScript;
    
@@ -55,7 +59,7 @@ public class ThirdPersonMovement : MonoBehaviour
         h = horizontal;
         v = vertical;
         isDashBool = isDashScript.GetIsDash();
-
+        
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
     
 
@@ -121,6 +125,16 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (v == 0 || h == 0 && isDashBool == false)
         {
             footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
+        }
+    }
+
+    public void PlayerFootStepsVolume(float enemyDistance)
+    {
+        float xxx;
+        if (enemyDistance <= 20)
+        {
+            xxx = enemyDistance;
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyDistanceVolumeController", xxx);
         }
     }
 
