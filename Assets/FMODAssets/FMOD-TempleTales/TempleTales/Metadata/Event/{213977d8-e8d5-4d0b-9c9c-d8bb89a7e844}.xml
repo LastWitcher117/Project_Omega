@@ -97,6 +97,9 @@
 		<property name="length">
 			<value>0.86084375000000002</value>
 		</property>
+		<property name="volume">
+			<value>-80</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{97131a56-a6ba-4b1b-ab65-bb82ff00dde3}</destination>
 		</relationship>
@@ -117,7 +120,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d1604761-006e-4a0a-8974-821779b0f901}">
 		<property name="volume">
-			<value>6.5</value>
+			<value>-80</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -148,6 +151,9 @@
 	<object class="MixerBusPanner" id="{c782fee1-7c5d-424d-9687-3ee01220c22b}" />
 	<object class="MixerBusFader" id="{1c333889-2f16-4884-b872-09b27e935556}" />
 	<object class="SpatialiserEffect" id="{02163d49-cdb6-440f-8278-c516dccc63e8}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<property name="minimumDistance">
 			<value>1600</value>
 		</property>

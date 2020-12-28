@@ -62,7 +62,7 @@
 			<destination>{83eb955d-2c96-436c-8d4f-18eeda7a8af1}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{2456b304-6f4a-4a7b-a778-fb84a2665418}</destination>
+			<destination>{336acc64-8d7c-4b5e-aa80-73ceae6132be}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{fdcdf86f-603e-4ac3-854e-d25a9d736f26}" />
@@ -334,14 +334,29 @@
 	</object>
 	<object class="MixerBusFader" id="{ed57e4dd-afc6-466c-9e10-243be6b59168}" />
 	<object class="SpatialiserEffect" id="{5de3d8da-c78d-4a1a-9923-96a253c0f645}">
-		<property name="distanceRolloffType">
-			<value>4</value>
+		<property name="bypass">
+			<value>true</value>
 		</property>
-		<property name="maximumDistance">
+		<property name="distanceRolloffType">
 			<value>1</value>
 		</property>
-		<property name="panBlend">
-			<value>0.25</value>
+		<property name="minimumDistance">
+			<value>300</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10000</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>10000</value>
+		</property>
+		<property name="minimumExtent">
+			<value>334</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>0</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{43c80dc0-ada5-4c63-b941-dae2184b3fcc}" />

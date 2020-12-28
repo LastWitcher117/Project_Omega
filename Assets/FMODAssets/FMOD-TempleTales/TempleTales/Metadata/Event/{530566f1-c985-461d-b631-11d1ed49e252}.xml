@@ -5,7 +5,7 @@
 			<value>DashOneShot</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{d094eb70-2187-4788-bafe-e3dba6538222}</destination>
@@ -56,7 +56,7 @@
 			<destination>{a503ad19-0521-4d84-a842-b358fb63894c}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{2456b304-6f4a-4a7b-a778-fb84a2665418}</destination>
+			<destination>{336acc64-8d7c-4b5e-aa80-73ceae6132be}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{dc0254fd-b435-4742-8fa8-475ac2bd11ad}" />
@@ -112,6 +112,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{4d59f101-9d06-4859-bcd2-10a74064356e}">
+		<property name="volume">
+			<value>1</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -165,6 +168,7 @@
 	<object class="MixerBusEffectChain" id="{d82bd544-3713-48b8-b415-9132cca1a391}">
 		<relationship name="effects">
 			<destination>{7e78e448-365f-4122-ad9f-4f042526b391}</destination>
+			<destination>{009f2806-c22f-474f-9e56-56ae5feb868a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c5b37769-6b38-4f18-8ef8-90939f019a91}" />
@@ -204,5 +208,31 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{7e78e448-365f-4122-ad9f-4f042526b391}" />
+	<object class="SpatialiserEffect" id="{009f2806-c22f-474f-9e56-56ae5feb868a}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
+		<property name="distanceRolloffType">
+			<value>1</value>
+		</property>
+		<property name="minimumDistance">
+			<value>20</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10000</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>10000</value>
+		</property>
+		<property name="minimumExtent">
+			<value>334</value>
+		</property>
+		<property name="userStereoSeparation">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9ab98cd7-6dce-4985-912e-856c0957c6b4}" />
 </objects>
