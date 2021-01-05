@@ -63,7 +63,8 @@ public class GameManagerScript : MonoBehaviour
         if (MSUP == true)
         {
             MSUP_Screen.SetActive(true);
-            FindObjectOfType<AudioManager>().Play("MSUP");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/MSUP");
+            //FindObjectOfType<AudioManager>().Play("MSUP");
             TPM.speed = MS + SpeedStrengh;
 
             StartCoroutine(Waiter());
