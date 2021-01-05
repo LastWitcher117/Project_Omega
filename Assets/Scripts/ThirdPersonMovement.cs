@@ -22,6 +22,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public GameObject dust;
     public bool isWalkingEffect = true;
 
+    public AnimationController re;
+
     //public Health HealthScript;
    
 
@@ -52,8 +54,15 @@ public class ThirdPersonMovement : MonoBehaviour
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
             nextWalkingEffect = Time.time + walkingEffectCouldown;
-         
-        }       
+
+            re.isWalking = true;
+            
+        }
+        else
+        {
+            re.isWalking = false;
+            
+        }
     }
     //NICHT ANFASSEN BIS HUNDERT!
     /*void OnCollisionEnter(Collision other)
