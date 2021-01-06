@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>Collectables</value>
 		</property>
+		<property name="maxInstances">
+			<value>2</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{60eef4fc-c7bf-45a0-916f-c96372123293}</destination>
 		</relationship>
@@ -23,13 +26,16 @@
 	<object class="MixerBusPanner" id="{8066ca2c-7d82-48c8-9114-4bca8a882e09}" />
 	<object class="CompressorEffect" id="{7663eab2-a99d-4aab-a0e9-77e6b828cf75}">
 		<property name="threshold">
-			<value>-20.5</value>
+			<value>-10.5</value>
 		</property>
 		<property name="ratio">
-			<value>3.19999981</value>
+			<value>2.49999976</value>
 		</property>
 		<property name="attackTime">
-			<value>0.100000001</value>
+			<value>0.249999985</value>
+		</property>
+		<property name="releaseTime">
+			<value>90</value>
 		</property>
 		<relationship name="sidechains">
 			<destination>{748b3195-f681-492e-aaa1-ef325207afb4}</destination>
