@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &3074632395693926761
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2768060166883918026}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16e3ac298613322459b9ff3e814bd8ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3074632394932346990
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcb759462a3382449ffed6f7cba0812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graphicsObject: {fileID: 0}
   controller: {fileID: 3074632394932346976}
   cam: {fileID: 0}
   speed: 10
@@ -82,6 +102,8 @@ MonoBehaviour:
   moveDir: {x: 0, y: 0, z: 0}
   dust: {fileID: 0}
   isWalkingEffect: 0
+  yaw: 0
+  pitch: 0
   re: {fileID: 0}
 --- !u!114 &3074632394932346978
 MonoBehaviour:
@@ -191,25 +213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gms: {fileID: 0}
---- !u!95 &3074632395693926761
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2768060166883918026}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 16e3ac298613322459b9ff3e814bd8ff, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3074632395901855976
 GameObject:
   m_ObjectHideFlags: 0
