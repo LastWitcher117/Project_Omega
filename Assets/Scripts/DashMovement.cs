@@ -12,7 +12,8 @@ public class DashMovement : MonoBehaviour
     public float nextDashTime = 0f;
 
     public CharacterController controller;
-    
+
+    public AnimationController re;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +30,20 @@ public class DashMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift)) //Input Leftclick höhö
             {
+                re.isDashing = true;
+
+                StartCoroutine(DashAnimationWaiter());
+
                 if (Time.timeScale > 0f)
                 {
                     StartCoroutine(Dash());
                     FindObjectOfType<AudioManager>().Play("Player Dash");
+              
                     nextDashTime = Time.time + cooldownTime;
+                    
                 }
             }
+       
         }
     }
     IEnumerator Dash()
@@ -45,10 +53,15 @@ public class DashMovement : MonoBehaviour
             {
                 moveScript.controller.Move(moveScript.moveDir * dashSpeed * Time.deltaTime);
 
-            
+ 
 
-                yield return null;
+            yield return null;
             
-        }       
+            }       
+    }
+    IEnumerator DashAnimationWaiter()
+    {
+        yield return new WaitForSeconds(0.75f);
+        re.isDashing = false;
     }
 }

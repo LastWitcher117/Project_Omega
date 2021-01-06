@@ -22,15 +22,16 @@ public class ThirdPersonMovement : PortalTraveller
     public GameObject dust;
     public bool isWalkingEffect = true;
 
-    //public Health HealthScript;
-
-    // I DONT KNOW
     public float yaw;
     public float pitch;
     float smoothYaw;
     float smoothPitch;
     Vector3 velocity;
-    // I DONT KNOW
+
+    public AnimationController re;
+
+    //public Health HealthScript;
+   
 
     void Start()
     {
@@ -59,8 +60,15 @@ public class ThirdPersonMovement : PortalTraveller
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
             nextWalkingEffect = Time.time + walkingEffectCouldown;
-         
-        }       
+
+            re.isWalking = true;
+            
+        }
+        else
+        {
+            re.isWalking = false;
+            
+        }
     }
     //NICHT ANFASSEN BIS HUNDERT!
     /*void OnCollisionEnter(Collision other)
@@ -85,7 +93,6 @@ public class ThirdPersonMovement : PortalTraveller
         Instantiate(dust, transform.forward, transform.rotation);
         Debug.Log("u mad gay");
     }
-
     public override void Teleport(Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot)
     {
         transform.position = pos;
