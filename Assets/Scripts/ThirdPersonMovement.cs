@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThirdPersonMovement : MonoBehaviour
+public class ThirdPersonMovement : PortalTraveller
 {
     public CharacterController controller;
 
@@ -21,6 +21,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public GameObject dust;
     public bool isWalkingEffect = true;
+
+    public float yaw;
+    public float pitch;
+    float smoothYaw;
+    float smoothPitch;
+    Vector3 velocity;
 
     public AnimationController re;
 
@@ -87,5 +93,15 @@ public class ThirdPersonMovement : MonoBehaviour
         Instantiate(dust, transform.forward, transform.rotation);
         Debug.Log("u mad gay");
     }
-
+    public override void Teleport(Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot)
+    {
+        transform.position = pos;
+        Vector3 eulerRot = rot.eulerAngles;
+        float delta = Mathf.DeltaAngle(smoothYaw, eulerRot.y);
+        yaw += delta;
+        smoothYaw += delta;
+        transform.eulerAngles = Vector3.up * smoothYaw;
+        velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
+        Physics.SyncTransforms();
+    }
 }
