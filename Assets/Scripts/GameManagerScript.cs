@@ -25,7 +25,6 @@ public class GameManagerScript : MonoBehaviour
 
     public bool gameIsWon;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +34,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (snackpoints == 100 && tenScore == false)
         {
 
