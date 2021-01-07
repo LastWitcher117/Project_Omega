@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1287374383053877042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3766869581605594601}
+  m_Layer: 0
+  m_Name: AttackPlaceholderForPlayerAttackScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3766869581605594601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287374383053877042}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 2.25, z: 0}
+  m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
+  m_Children: []
+  m_Father: {fileID: 3074632394932346977}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3074632395693926761
 Animator:
   serializedVersion: 3
@@ -11,7 +41,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 16e3ac298613322459b9ff3e814bd8ff, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -37,6 +67,7 @@ GameObject:
   - component: {fileID: 3074632394932346982}
   - component: {fileID: 3074632394932347289}
   - component: {fileID: 3074632394932347288}
+  - component: {fileID: 2137802401}
   m_Layer: 9
   m_Name: Player 2
   m_TagString: Player
@@ -59,6 +90,7 @@ Transform:
   - {fileID: 3252144987981617776}
   - {fileID: 3074632395901855979}
   - {fileID: 7062176816601400274}
+  - {fileID: 3766869581605594601}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -213,6 +245,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gms: {fileID: 0}
+--- !u!95 &2137802401
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074632394932346990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3074632395901855976
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,9 +308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5893ae6eb2c698d4cb8b495236e6101d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 0}
+  Enemy: {fileID: 1287374383053877042}
   AttackNow: {fileID: 0}
   AttackParticleSystem: {fileID: 2974068627040280857}
+  re: {fileID: 0}
   CooldownTime: 1
 --- !u!135 &3074632395901855978
 SphereCollider:
