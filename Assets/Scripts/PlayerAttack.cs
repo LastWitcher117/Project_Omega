@@ -67,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Attack/PlayeerAttack_Dagger"); // FMOD
 
 
-        if (Enemy.GetComponent<EnemyController>()) 
+        if (Enemy.GetComponent<EnemyController>() != null) 
         {
             Enemy.GetComponent<EnemyController>().SupressMovement = true;
         }

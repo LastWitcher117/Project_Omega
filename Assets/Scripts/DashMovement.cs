@@ -79,7 +79,7 @@ public class DashMovement : MonoBehaviour
     IEnumerator DashAnimationWaiter()
     {
         yield return new WaitForSeconds(0.75f);
-        re.isDashing = true;
+        re.isDashing = false;
     }
 
                 

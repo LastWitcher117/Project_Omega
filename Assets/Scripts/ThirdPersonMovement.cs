@@ -22,6 +22,8 @@ public class ThirdPersonMovement : PortalTraveller
     public GameObject dust;
     public bool isWalkingEffect = true;
 
+    public AnimationController re;
+
     //Fmod
     [FMODUnity.EventRef]
     public string eventPath;
@@ -75,7 +77,13 @@ public class ThirdPersonMovement : PortalTraveller
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
             nextWalkingEffect = Time.time + walkingEffectCouldown;
-         
+
+            re.isWalking = true;
+
+        }
+        else
+        {
+            re.isWalking = false;
         }
 
         PlayerFootSteps();
