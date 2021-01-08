@@ -6089,6 +6089,7 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 1354863850}
   isPause: 0
   ButtonClick: {fileID: 116355072}
+  volumeSlider: {fileID: 0}
 --- !u!114 &116355068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73181,7 +73182,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536574885}
-  m_LocalRotation: {x: 0.1552536, y: 0.0000000084988745, z: -0.0000000013356763, w: 0.9878747}
+  m_LocalRotation: {x: 0.1552536, y: -0.0000000084988745, z: 0.0000000013356763, w: 0.9878747}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -82818,6 +82819,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2028384393}
     m_Modifications:
+    - target: {fileID: 6131134651971479927, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723899051691617808, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7723899051691617810, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
       propertyPath: m_RootOrder
       value: 296
@@ -82860,6 +82869,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7723899051691617810, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723899051691617812, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7723899051691617814, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
@@ -82930,7 +82943,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGuardian (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6131134651971479927, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
 --- !u!1001 &1796040012
 PrefabInstance:
@@ -96797,7 +96811,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGuardian (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6131134651971479927, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
 --- !u!1001 &2044830613
 PrefabInstance:
@@ -101871,5 +101886,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGuardian
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6131134651971479927, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4e90337c56ab1e94ca945323ff57aa29, type: 3}

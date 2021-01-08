@@ -22,22 +22,30 @@ public class ThirdPersonMovement : PortalTraveller
     public GameObject dust;
     public bool isWalkingEffect = true;
 
-    public float yaw;
-    public float pitch;
-    float smoothYaw;
-    float smoothPitch;
-    Vector3 velocity;
+    //Fmod
+    [FMODUnity.EventRef]
+    public string eventPath;
+    FMOD.Studio.EventInstance footStepsSounds;
+    DashMovement isDashScript;
+    
+    float h;
+    float v;
+    bool isDashBool;
+    
 
-    public AnimationController re;
-
+    
+    
     //public Health HealthScript;
    
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
 
         Cursor.lockState = CursorLockMode.Locked;
+
+        footStepsSounds = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+        footStepsSounds.start();
+        isDashScript = GetComponent<DashMovement>();
     }
 
     
@@ -45,6 +53,13 @@ public class ThirdPersonMovement : PortalTraveller
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        bool dash = Input.GetKey(KeyCode.LeftShift);
+        
+        //FMOD
+        h = horizontal;
+        v = vertical;
+        isDashBool = dash;
+        
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
     
 
@@ -60,15 +75,11 @@ public class ThirdPersonMovement : PortalTraveller
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
             nextWalkingEffect = Time.time + walkingEffectCouldown;
+         
+        }
 
-            re.isWalking = true;
-            
-        }
-        else
-        {
-            re.isWalking = false;
-            
-        }
+        PlayerFootSteps();
+
     }
     //NICHT ANFASSEN BIS HUNDERT!
     /*void OnCollisionEnter(Collision other)
@@ -93,15 +104,41 @@ public class ThirdPersonMovement : PortalTraveller
         Instantiate(dust, transform.forward, transform.rotation);
         Debug.Log("u mad gay");
     }
-    public override void Teleport(Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot)
+
+    //FMOD  
+     void PlayerFootSteps()
     {
-        transform.position = pos;
-        Vector3 eulerRot = rot.eulerAngles;
-        float delta = Mathf.DeltaAngle(smoothYaw, eulerRot.y);
-        yaw += delta;
-        smoothYaw += delta;
-        transform.eulerAngles = Vector3.up * smoothYaw;
-        velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
-        Physics.SyncTransforms();
+        if (isDashBool == true)
+        {
+            footStepsSounds.setParameterByName("Waiting-Moving-Dash", 2);
+        }
+        else if (v < 0 || h < 0 && isDashBool == false)
+        {
+            footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
+        }
+    
+        else if (v > 0 || h > 0 && isDashBool == false)
+        {
+            footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
+        }
+
+        else if (v == 0 || h == 0 && isDashBool == false)
+        {
+            footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
+        }
     }
-}
+
+    public void PlayerFootStepsVolume(float enemyDistance)
+    {
+        float xxx;
+        if (enemyDistance <= 20)
+        {
+            xxx = enemyDistance;
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyDistanceVolumeController", xxx);
+        }
+    }
+
+    }
+
+    
+

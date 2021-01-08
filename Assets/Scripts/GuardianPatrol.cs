@@ -52,6 +52,15 @@ public class GuardianPatrol : MonoBehaviour
 
     public float distance;
 
+
+    //---Fmod
+    public float LookRadiusDistance()
+    {
+        float distance = Vector3.Distance(target.position, transform.position);
+        return distance;
+    }
+
+
     private void Start()
     {
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/

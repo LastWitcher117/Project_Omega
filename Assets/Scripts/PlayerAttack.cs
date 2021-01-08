@@ -20,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         ElapsedTime = CooldownTime;
+        //playerAttackSound = FMODUnity.RuntimeManager.CreateInstance(eventPath);  // FMOD
     }
 
     public void Update()
@@ -63,6 +64,7 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         AttackParticleSystem.Play();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Attack/PlayeerAttack_Dagger"); // FMOD
 
 
         if (Enemy.GetComponent<EnemyController>()) 
@@ -85,7 +87,8 @@ public class PlayerAttack : MonoBehaviour
 
 
         Debug.Log("ATTACKING " + Enemy.name);
-        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        //FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        
     }
 
 

@@ -12,10 +12,8 @@ public class GetTreasure : MonoBehaviour
     {
         if (other.tag == "Treasure")
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/Treasure");
             gms.snackpoints = gms.snackpoints + 1000;
-            FindObjectOfType<AudioManager>().Play("Treasure");
-
-
             EW.Lights.SetActive(true);
             Destroy(other.gameObject);
 
