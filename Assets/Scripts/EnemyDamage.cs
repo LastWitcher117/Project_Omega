@@ -12,9 +12,14 @@ public class EnemyDamage : MonoBehaviour
     public float CooldownTime;
     public GameObject Dmg_Flashscreen;
 
+    public AnimationController re;
+
+    public ThirdPersonMovement ay;
+
     void Start()
     {
         ElapsedTime = CooldownTime;
+        
     }
 
 
@@ -37,7 +42,7 @@ public class EnemyDamage : MonoBehaviour
 
             if (HealthComponent.health == 0)
             {
-                You_Lose_Screen.enabled = true;
+                You_Lose_Screen.enabled = true;           
 
                 FindObjectOfType<AudioManager>().Stop("Theme");
                 FindObjectOfType<AudioManager>().Play("LoseSound");
@@ -56,7 +61,8 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator LoseScreen() //Time Active of red DMG Screen
     {
-  
+        ay.enabled = false;
+        yield return new WaitForSeconds(3f);
         Time.timeScale = 0f;
         float pauseEndTime = Time.realtimeSinceStartup + 3.2f;
         while (Time.realtimeSinceStartup < pauseEndTime)

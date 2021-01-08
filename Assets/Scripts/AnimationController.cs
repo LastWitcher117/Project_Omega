@@ -15,6 +15,9 @@ public class AnimationController : MonoBehaviour
     public bool isWalking;
     public bool isDashing;
     public bool isAttacking;
+    public bool isDying;
+
+    public Health ay;
 
     void Start()
     {
@@ -24,6 +27,16 @@ public class AnimationController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            isDying = true;
+        }
+
+       if ( ay.health == 0 )
+        {
+            isDying = true;
+        }
+
 /*/----------------------------------------------------------------------/*/
         if (isWalking == true)
         {
@@ -51,6 +64,15 @@ public class AnimationController : MonoBehaviour
         {
             P_Animator.SetBool("Attacking", false);
         }
-/*/----------------------------------------------------------------------/*/
+        /*/----------------------------------------------------------------------/*/
+        if (isDying == true)
+        {
+            P_Animator.SetBool("Dying", true);
         }
+        else
+        {
+            P_Animator.SetBool("Dying", false);
+        }
+        /*/----------------------------------------------------------------------/*/
     }
+}
