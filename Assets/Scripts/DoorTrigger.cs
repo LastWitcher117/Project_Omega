@@ -8,6 +8,8 @@ public class DoorTrigger : MonoBehaviour
     public GameObject Door;
     public GameObject KeyIcon;
     public bool hasKey;
+    bool doorOpen;
+ 
 
     // Update is called once per frame
 
@@ -15,7 +17,7 @@ public class DoorTrigger : MonoBehaviour
     {
 
         hasKey = FindObjectOfType<GameManagerScript>().hasKey;
-
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,8 +26,19 @@ public class DoorTrigger : MonoBehaviour
 
         if(hasKey == true)
         {
+            //doorOpen == false ? FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door"): Fake() ;
+
+            if (doorOpen == false)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door");
+            }
+
             Door.SetActive(false);
             KeyIcon.SetActive(false);
+            doorOpen = true;
         }
     }
+
+
+  
 }

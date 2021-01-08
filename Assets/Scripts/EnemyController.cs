@@ -17,6 +17,12 @@ public class EnemyController : MonoBehaviour
 
     public ParticleSystem Stun;
 
+    //---Fmod
+    public float LookRadiusDistance()
+    {
+        float distance = Vector3.Distance(target.position, transform.position);
+        return distance;
+    }
 
     // Start is called before the first frame update
     void Start()

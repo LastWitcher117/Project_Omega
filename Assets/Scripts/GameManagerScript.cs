@@ -42,7 +42,8 @@ public class GameManagerScript : MonoBehaviour
             transform.rotation *= Quaternion.AngleAxis(angle, Vector3.right);    //Für richitge Positionierung der VFX von YAY 10
 
             tenScore = true;
-            FindObjectOfType<AudioManager>().Play("10ScorePoints");
+            //FindObjectOfType<AudioManager>().Play("10ScorePoints");
+            
             Debug.Log("10 Punkte YAY");
 
         }
@@ -64,7 +65,8 @@ public class GameManagerScript : MonoBehaviour
         if (MSUP == true)
         {
             MSUP_Screen.SetActive(true);
-            FindObjectOfType<AudioManager>().Play("MSUP");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/MSUP");
+            //FindObjectOfType<AudioManager>().Play("MSUP");
             TPM.speed = MS + SpeedStrengh;
 
             StartCoroutine(Waiter());
