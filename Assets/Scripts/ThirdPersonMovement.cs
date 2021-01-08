@@ -60,8 +60,8 @@ public class ThirdPersonMovement : PortalTraveller
         //FMOD
         h = horizontal;
         v = vertical;
-        isDashBool = dash;
-        
+        isDashBool = dash;  
+
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
     
 
@@ -123,18 +123,20 @@ public class ThirdPersonMovement : PortalTraveller
         else if (v < 0 || h < 0 && isDashBool == false)
         {
             footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
+            Debug.Log("CHECKING IF WALKING 1");
         }
     
         else if (v > 0 || h > 0 && isDashBool == false)
         {
             footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
+            Debug.Log("CHECKING IF WALKING 2");
         }
 
         else if (v == 0 || h == 0 && isDashBool == false)
         {
             footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
         }
-    }
+    } 
 
     public void PlayerFootStepsVolume(float enemyDistance)
     {
@@ -146,7 +148,18 @@ public class ThirdPersonMovement : PortalTraveller
         }
     }
 
+    /*public void PlayrFSRight()
+    {
+        footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
     }
+
+    public void PlayrFSLeft()
+    {
+        footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
+    }*/
+
+
+}
 
     
 

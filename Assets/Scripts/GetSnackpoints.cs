@@ -26,7 +26,7 @@ public class GetSnackpoints : MonoBehaviour
 
             if (numSnack == 10)
             {
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/Score");
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/Score");
                 numSnack = 0;
             }
             
