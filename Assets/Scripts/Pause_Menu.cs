@@ -12,7 +12,20 @@ public class Pause_Menu : MonoBehaviour
 
     public AudioSource ButtonClick;
 
+    //FMOD
+    FMOD.Studio.EventInstance fVolumeSlider;
+    FMOD.Studio.EventInstance hovering;
+    private FMOD.Studio.PLAYBACK_STATE fVState;
+    private FMOD.Studio.PLAYBACK_STATE hState;
+    public GameObject volumeSlider;
+    
 
+
+    private void Start()
+    {
+        fVolumeSlider = FMODUnity.RuntimeManager.CreateInstance("event:/UI/VolumeSlider");
+        hovering = FMODUnity.RuntimeManager.CreateInstance("event:/UI/Hovering");
+    }
 
     void Update()
     {
@@ -22,7 +35,6 @@ public class Pause_Menu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
-                
             }
             else
             {
@@ -46,6 +58,8 @@ public class Pause_Menu : MonoBehaviour
         GameIsPaused = false;
         isPause = false;
         FindObjectOfType<AudioManager>().Play("Theme");
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
+
     }
 
     void Pause()
@@ -55,6 +69,7 @@ public class Pause_Menu : MonoBehaviour
         //AudioListener.pause = true;
         GameIsPaused = true;
         FindObjectOfType<AudioManager>().Pause("Theme");
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
     }
 
     public void LoadMenu()
@@ -62,6 +77,8 @@ public class Pause_Menu : MonoBehaviour
         Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().Stop("WinSound");
         SceneManager.LoadScene(0);
+
+        StartCoroutine(GamePauseParameterFMod());
     }
 
     void Options()
@@ -76,5 +93,42 @@ public class Pause_Menu : MonoBehaviour
     public void SetVolume(float volume)
     {
         
+        FVolumeSlider(volume);
+    }
+
+    // FMOD
+    public void UiButtonSoundForward()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
+    }
+
+    public void UiButtonSoundBackward()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Backward");
+    }
+
+    public void UiButtonHovering()
+    {
+        hovering.getPlaybackState(out hState);
+        if (hState!= FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            hovering.start();
+        }
+    }
+
+    void FVolumeSlider(float sliderValue)
+    {
+        fVolumeSlider.getPlaybackState(out fVState);
+        if (fVState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            fVolumeSlider.start();
+            fVolumeSlider.setParameterByName("VolumeSlider", sliderValue);
+        }
+    }
+
+    IEnumerator GamePauseParameterFMod() 
+    {
+        yield return new WaitForSeconds(0.5f);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);  // FMOD
     }
 }

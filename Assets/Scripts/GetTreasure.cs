@@ -6,13 +6,17 @@ public class GetTreasure : MonoBehaviour
 {
     public GameManagerScript gms;
 
+    public ExitWay EW;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Treasure")
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/Treasure");
             gms.snackpoints = gms.snackpoints + 1000;
-            FindObjectOfType<AudioManager>().Play("Treasure");
+            EW.Lights.SetActive(true);
             Destroy(other.gameObject);
+
         }
     }
 }

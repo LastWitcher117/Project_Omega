@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
 
     public ParticleSystem AttackParticleSystem;
 
+    public AnimationController re;
+
     /// Cooldown
     bool Cooldown; //Cooldown for attack
     float ElapsedTime;
@@ -18,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         ElapsedTime = CooldownTime;
+        //playerAttackSound = FMODUnity.RuntimeManager.CreateInstance(eventPath);  // FMOD
     }
 
     public void Update()
@@ -25,9 +28,12 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && Cooldown == false)
         {
             Cooldown = true;
-            
+
+            re.isAttacking = true;
+
             Attack();
             AttackNow.enabled = false;
+            StartCoroutine(AttackAniamtion());
         }
 
         if (Cooldown == true)
@@ -40,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
                 ElapsedTime = CooldownTime;
             }
         }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -49,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
             Enemy = other.gameObject;
             AttackNow.enabled = true;
 
-            Debug.Log("ENEMY IN RANGE " + Enemy.name);       
+            Debug.Log("ENEMY IN RANGE " + Enemy.name);
             StartCoroutine(Waiter());
         }
     }
@@ -57,19 +64,31 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         AttackParticleSystem.Play();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Attack/PlayeerAttack_Dagger"); // FMOD
 
-        if (Enemy.GetComponent<EnemyController>() == null)
+
+        if (Enemy.GetComponent<EnemyController>() != null) 
+        {
+            Enemy.GetComponent<EnemyController>().SupressMovement = true;
+        }
+        else
+        {
+            Debug.Log("no enemy in range");
+        }
+
+        if(Enemy.GetComponent<GuardianPatrol>() != null)
         {
             Enemy.GetComponent<GuardianPatrol>().SupressMovement = true;
         }
         else
         {
-            Enemy.GetComponent<EnemyController>().SupressMovement = true;
+            Debug.Log("no enemy in range2222222");
         }
-       
-        
+
+
         Debug.Log("ATTACKING " + Enemy.name);
-        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        //FindObjectOfType<AudioManager>().Play("PlayerAttack");
+        
     }
 
 
@@ -77,12 +96,19 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         AttackNow.enabled = false;
+
     }
 
+    IEnumerator AttackAniamtion()
+    {
+        yield return new WaitForSeconds(0.6f);
+        re.isAttacking = false;
+    }
 
     void OnTriggerExit(Collider other)
     {
         Enemy = null;
     }
+
 }
 
