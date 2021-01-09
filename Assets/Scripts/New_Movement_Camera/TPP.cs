@@ -7,7 +7,7 @@ public class TPP : MonoBehaviour
     public float turnSpeed = 4.0f;
 
     public GameObject target;
-    private float targetDistance;
+    public float targetDistance;
 
     public float minTurnAngle = -90.0f;
     public float maxTurnAngle = 0.0f;

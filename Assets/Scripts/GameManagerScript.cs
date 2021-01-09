@@ -53,7 +53,7 @@ public class GameManagerScript : MonoBehaviour
         if (SignalFromTrigger == true)
         {
             hasKey = true;
-            KeyIconImage = GameObject.Find("Canvas (Snackpoints)").GetComponent<Image>();
+            KeyIconImage = GameObject.Find("Canvas (Snackpoints&Key)").GetComponent<Image>();
 
             KeyIcon.SetActive(true);
 
