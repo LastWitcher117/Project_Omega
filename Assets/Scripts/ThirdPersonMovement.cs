@@ -33,12 +33,17 @@ public class ThirdPersonMovement : PortalTraveller
     float h;
     float v;
     bool isDashBool;
-    
 
-    
-    
+    // Teleport
+    public float yaw;
+    public float pitch;
+    float smoothYaw;
+    float smoothPitch;
+    Vector3 velocity;
+
+
     //public Health HealthScript;
-   
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -123,13 +128,11 @@ public class ThirdPersonMovement : PortalTraveller
         else if (v < 0 || h < 0 && isDashBool == false)
         {
             footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
-            Debug.Log("CHECKING IF WALKING 1");
         }
     
         else if (v > 0 || h > 0 && isDashBool == false)
         {
             footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
-            Debug.Log("CHECKING IF WALKING 2");
         }
 
         else if (v == 0 || h == 0 && isDashBool == false)
@@ -146,6 +149,18 @@ public class ThirdPersonMovement : PortalTraveller
             xxx = enemyDistance;
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyDistanceVolumeController", xxx);
         }
+    }
+
+    public override void Teleport(Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot)
+    {
+        transform.position = pos;
+        Vector3 eulerRot = rot.eulerAngles;
+        float delta = Mathf.DeltaAngle(smoothYaw, eulerRot.y);
+        yaw += delta;
+        smoothYaw += delta;
+        transform.eulerAngles = Vector3.up * smoothYaw;
+        velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
+        Physics.SyncTransforms();
     }
 
     /*public void PlayrFSRight()
