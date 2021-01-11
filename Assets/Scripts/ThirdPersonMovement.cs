@@ -91,7 +91,7 @@ public class ThirdPersonMovement : PortalTraveller
             re.isWalking = false;
         }
 
-        PlayerFootSteps();
+        //PlayerFootSteps();
 
     }
     //NICHT ANFASSEN BIS HUNDERT!
@@ -119,7 +119,7 @@ public class ThirdPersonMovement : PortalTraveller
     }
 
     //FMOD  
-     void PlayerFootSteps()
+     /*void PlayerFootSteps()
     {
         if (isDashBool == true)
         {
@@ -139,7 +139,7 @@ public class ThirdPersonMovement : PortalTraveller
         {
             footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
         }
-    } 
+    } */
 
     public void PlayerFootStepsVolume(float enemyDistance)
     {
@@ -163,14 +163,16 @@ public class ThirdPersonMovement : PortalTraveller
         Physics.SyncTransforms();
     }
 
-    /*public void PlayrFSRight()
+   /* public void PlayrFSRight()
     {
         footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Waiting-Moving-Dash", 1);
     }
 
     public void PlayrFSLeft()
     {
         footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
+       // FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Waiting-Moving-Dash", 0);
     }*/
 
 
