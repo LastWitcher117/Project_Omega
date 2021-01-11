@@ -20,6 +20,7 @@ public class Main_Menu : MonoBehaviour
         //FMOD
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Backward");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1); // new line
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
