@@ -94,6 +94,7 @@ public class Pause_Menu : MonoBehaviour
     {
         
         FVolumeSlider(volume);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MASTER VOLUME", volume);  // FMOD
     }
 
     // FMOD
@@ -124,6 +125,8 @@ public class Pause_Menu : MonoBehaviour
             fVolumeSlider.start();
             fVolumeSlider.setParameterByName("VolumeSlider", sliderValue);
         }
+
+
     }
 
     IEnumerator GamePauseParameterFMod() 
