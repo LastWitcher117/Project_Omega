@@ -16,10 +16,10 @@ public class EnemyDamage : MonoBehaviour
 
     public ThirdPersonMovement ay;
 
+
     void Start()
     {
         ElapsedTime = CooldownTime;
-        
     }
 
 
@@ -42,7 +42,7 @@ public class EnemyDamage : MonoBehaviour
 
             if (HealthComponent.health == 0)
             {
-                You_Lose_Screen.enabled = true;           
+                You_Lose_Screen.enabled = true;
 
                 FindObjectOfType<AudioManager>().Stop("Theme");
                 FindObjectOfType<AudioManager>().Play("LoseSound");
@@ -73,7 +73,6 @@ public class EnemyDamage : MonoBehaviour
         Time.timeScale = 1f;
        
         SceneManager.LoadScene(1);
-        FindObjectOfType<AudioManager>().Play("Theme");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
     }
 

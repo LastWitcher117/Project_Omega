@@ -27,10 +27,10 @@ public class AnimationController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1))
+        /*if (Input.GetKey(KeyCode.Mouse1))
         {
             isDying = true;
-        }
+        }*/
 
        if ( ay.health == 0 )
         {
