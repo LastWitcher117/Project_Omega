@@ -98,8 +98,7 @@ public class ThirdPersonMovement : PortalTraveller
 
     }
 
-
-void CreateDust()
+    void CreateDust()
     {
         Instantiate(dust, transform.forward, transform.rotation);
         Debug.Log("u mad gay");
@@ -166,6 +165,7 @@ void CreateDust()
             Time.timeScale = 1f;
         }
     }
+
     /*public void PlayrFSRight()
     {
         footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
