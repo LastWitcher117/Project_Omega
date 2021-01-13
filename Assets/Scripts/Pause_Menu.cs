@@ -18,8 +18,6 @@ public class Pause_Menu : MonoBehaviour
     private FMOD.Studio.PLAYBACK_STATE fVState;
     private FMOD.Studio.PLAYBACK_STATE hState;
     public GameObject volumeSlider;
-    
-
 
     private void Start()
     {
