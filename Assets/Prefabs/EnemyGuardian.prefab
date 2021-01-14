@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7723899051691617809}
   - component: {fileID: 7723899051691617808}
   - component: {fileID: 7723899051691617815}
+  - component: {fileID: 6341952890120637339}
+  - component: {fileID: 4783408607034564809}
   m_Layer: 0
   m_Name: EnemyGuardian
   m_TagString: Enemy
@@ -192,6 +194,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8568172, y: 0.2937181, z: 1.762783}
   m_Center: {x: -0.03342533, y: 0.14482534, z: -0.03058052}
+--- !u!114 &6341952890120637339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723899051691617817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Enemy/GhostSound 2
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &4783408607034564809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723899051691617817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9323f851d37cf0249aaadb5117233bd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerGobject: {fileID: 0}
 --- !u!1 &7723899052462259451
 GameObject:
   m_ObjectHideFlags: 0

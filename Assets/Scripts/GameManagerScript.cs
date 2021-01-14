@@ -25,10 +25,15 @@ public class GameManagerScript : MonoBehaviour
 
     public bool gameIsWon;
 
+    private int PointsNeededForHealth = 50;
+
+    public Health HealthComponent;
+
     // Start is called before the first frame update
     void Start()
     {
         gameIsWon = false;
+        Health HealthComponent = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -46,6 +51,24 @@ public class GameManagerScript : MonoBehaviour
             
             Debug.Log("10 Punkte YAY");
 
+        }
+
+       
+
+        if (PointsNeededForHealth == snackpoints)
+        {
+            PointsNeededForHealth = PointsNeededForHealth + 50;
+
+            Debug.Log(PointsNeededForHealth);
+
+            if(HealthComponent.health < 3)
+            {
+                HealthComponent.health = HealthComponent.health + 1;
+                Debug.Log(HealthComponent.health);
+            }
+            
+            
+            
         }
 
 

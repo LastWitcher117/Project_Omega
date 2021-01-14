@@ -57,7 +57,7 @@ public class Pause_Menu : MonoBehaviour
         isPause = false;
         FindObjectOfType<AudioManager>().Play("Theme");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
-
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1); // new line
     }
 
     void Pause()
@@ -68,6 +68,7 @@ public class Pause_Menu : MonoBehaviour
         GameIsPaused = true;
         FindObjectOfType<AudioManager>().Pause("Theme");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0); // new line
     }
 
     public void LoadMenu()
@@ -92,6 +93,7 @@ public class Pause_Menu : MonoBehaviour
     {
         
         FVolumeSlider(volume);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MASTER VOLUME", volume);  // FMOD
     }
 
     // FMOD
@@ -122,6 +124,8 @@ public class Pause_Menu : MonoBehaviour
             fVolumeSlider.start();
             fVolumeSlider.setParameterByName("VolumeSlider", sliderValue);
         }
+
+
     }
 
     IEnumerator GamePauseParameterFMod() 
