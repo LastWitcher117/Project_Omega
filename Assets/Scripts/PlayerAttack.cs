@@ -30,10 +30,11 @@ public class PlayerAttack : MonoBehaviour
             Cooldown = true;
 
             re.isAttacking = true;
+            StartCoroutine(AttackAniamtion());
 
             Attack();
             AttackNow.enabled = false;
-            StartCoroutine(AttackAniamtion());
+            
         }
 
         if (Cooldown == true)
