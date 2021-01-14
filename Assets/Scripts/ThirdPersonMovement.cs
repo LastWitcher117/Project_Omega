@@ -92,7 +92,7 @@ public class ThirdPersonMovement : PortalTraveller
             re.isWalking = false;
         }
 
-        PlayerFootSteps();
+        //PlayerFootSteps();
         EnableWinScreenKey();
 
 
