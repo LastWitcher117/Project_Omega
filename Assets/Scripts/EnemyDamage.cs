@@ -73,7 +73,6 @@ public class EnemyDamage : MonoBehaviour
         Time.timeScale = 1f;
        
         SceneManager.LoadScene(1);
-        FindObjectOfType<AudioManager>().Play("Theme");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
     }
 
