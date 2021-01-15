@@ -20,6 +20,7 @@ public class GameManagerScript : MonoBehaviour
     public bool MSUP = false;
 
     public GameObject MSUP_Screen;
+    public GameObject MSUP_Player;
 
     public ThirdPersonMovement TPM;
 
@@ -88,6 +89,9 @@ public class GameManagerScript : MonoBehaviour
         if (MSUP == true)
         {
             MSUP_Screen.SetActive(true);
+
+            MSUP_Player.SetActive(true);
+
             FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/MSUP");
             //FindObjectOfType<AudioManager>().Play("MSUP");
             TPM.speed = MS + SpeedStrengh;
@@ -104,6 +108,7 @@ public class GameManagerScript : MonoBehaviour
         MSUP = false;
         yield return new WaitForSeconds(SpeedDauer);
         MSUP_Screen.SetActive(false);
+        MSUP_Player.SetActive(false);
         TPM.speed = MS - SpeedStrengh;
     }
 
