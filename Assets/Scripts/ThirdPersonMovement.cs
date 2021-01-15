@@ -41,6 +41,7 @@ public class ThirdPersonMovement : PortalTraveller
     float smoothPitch;
     Vector3 velocity;
 
+    public Canvas YouWinScreenHere;
 
     //public Health HealthScript;
 
@@ -91,26 +92,10 @@ public class ThirdPersonMovement : PortalTraveller
             re.isWalking = false;
         }
 
-        //PlayerFootSteps();
+        EnableWinScreenKey();
+
 
     }
-    //NICHT ANFASSEN BIS HUNDERT!
-    /*void OnCollisionEnter(Collision other)
-    {
-        if (other.rigidbody.tag == "Enemy")
-        {
-            HealthScript.GetComponent<Health>().TakeDamage();
-        }
-    }*/
-
-    /*void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            HealthScript.GetComponent<Health>().TakeDamage();
-        }
-    }*/
-    // HUNDERT HIER, NICHT ANFASSEN!
 
     void CreateDust()
     {
@@ -163,7 +148,24 @@ public class ThirdPersonMovement : PortalTraveller
         Physics.SyncTransforms();
     }
 
-   /* public void PlayrFSRight()
+    public void EnableWinScreenKey()
+    {
+        if (Input.GetKey(KeyCode.F1))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            YouWinScreenHere.enabled = true;
+
+        }
+        if (Input.GetKey(KeyCode.F2))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            YouWinScreenHere.enabled = false;
+            Time.timeScale = 1f;
+        }
+    }
+
+    /*public void PlayrFSRight()
     {
         footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
         //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Waiting-Moving-Dash", 1);
