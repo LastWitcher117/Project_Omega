@@ -34,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
            // StartCoroutine(AttackDelay());
 
             re.isAttacking = true;
+            re.Attack = true;
             StartCoroutine(AttackAniamtion());
 
             AttackParticleSystem.Play();
@@ -49,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
             if (ElapsedTime <= 0f)
             {
                 Cooldown = false;
+                re.Attack = false;
                 ElapsedTime = CooldownTime;
             }
         }
