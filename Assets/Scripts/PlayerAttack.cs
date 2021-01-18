@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public GameObject Enemy;
+    public GameObject EnemyPlaceHolder;
 
     public Canvas AttackNow;
 
@@ -19,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
+        Enemy = EnemyPlaceHolder;
         ElapsedTime = CooldownTime;
         //playerAttackSound = FMODUnity.RuntimeManager.CreateInstance(eventPath);  // FMOD
     }
@@ -29,11 +31,14 @@ public class PlayerAttack : MonoBehaviour
         {
             Cooldown = true;
 
+           // StartCoroutine(AttackDelay());
+
             re.isAttacking = true;
             StartCoroutine(AttackAniamtion());
 
-            Attack();
-            AttackNow.enabled = false;
+            AttackParticleSystem.Play();
+
+            StartCoroutine(AttackDelay());        
             
         }
 
@@ -54,17 +59,24 @@ public class PlayerAttack : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+
             Enemy = other.gameObject;
+
             AttackNow.enabled = true;
 
-            Debug.Log("ENEMY IN RANGE " + Enemy.name);
+            Debug.Log("ENEMY IN RANGE ");
             StartCoroutine(Waiter());
+
+        }
+        else
+        {
+            Debug.Log(" No enemy in range ");
         }
     }
 
-    public void Attack()
+        public void Attack()
     {
-        AttackParticleSystem.Play();
+        
         FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Attack/PlayeerAttack_Dagger"); // FMOD
 
 
@@ -72,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Enemy.GetComponent<EnemyController>().SupressMovement = true;
         }
-        else
+        if (Enemy.GetComponent<EnemyController>() == null)
         {
             Debug.Log("no enemy in range");
         }
@@ -81,7 +93,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Enemy.GetComponent<GuardianPatrol>().SupressMovement = true;
         }
-        else
+        if (Enemy.GetComponent<GuardianPatrol>() == null)
         {
             Debug.Log("no enemy in range2222222");
         }
@@ -92,6 +104,14 @@ public class PlayerAttack : MonoBehaviour
         
     }
 
+    IEnumerator AttackDelay()
+    {
+        yield return new WaitForSeconds(0.4f);
+
+        Attack();
+        AttackNow.enabled = false;
+
+    }
 
     IEnumerator Waiter() //Time Active of Attack Now Screen
     {
@@ -108,7 +128,7 @@ public class PlayerAttack : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        Enemy = null;
+        Enemy = EnemyPlaceHolder;
     }
 
 }

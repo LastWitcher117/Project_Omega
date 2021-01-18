@@ -7,10 +7,12 @@ public class GetKey : MonoBehaviour
 {
     public bool EnterSignal = false;
     public ExitWay EW;
+    public GameManagerScript gms;
 
     private void OnTriggerEnter(Collider other)
     {
         EnterSignal = true;
+        gms.SignalFromTrigger = true;
     }
 
     private void OnTriggerExit(Collider other)
@@ -18,11 +20,6 @@ public class GetKey : MonoBehaviour
         EnterSignal = false;
         transform.position = transform.position + new Vector3(0f, -10f, 0f);
         EW.Lights.SetActive(true);
-    }
-
-    private void Update()
-    {
-        
     }
 
 }
