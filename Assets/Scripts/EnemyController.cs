@@ -15,7 +15,8 @@ public class EnemyController : MonoBehaviour
 
     public bool SupressMovement;
 
-    public ParticleSystem Stun;
+    public ParticleSystem VFXStunOverHead;
+    public ParticleSystem VFXStunSparks;
 
     //---Fmod
     public float LookRadiusDistance()
@@ -38,14 +39,18 @@ public class EnemyController : MonoBehaviour
 
         if(SupressMovement)
         {
-            Stun.Play();
+            VFXStunOverHead.Play();
+            VFXStunSparks.Play();
 
             SupressTime += Time.deltaTime;
             if(SupressTime >= StunTime)
             {
                 SupressTime = 0f;
-                Stun.Clear();
-                Stun.Stop();
+                VFXStunOverHead.Clear();
+                VFXStunOverHead.Stop();
+
+                VFXStunSparks.Clear();
+                VFXStunSparks.Stop();
                 SupressMovement = false;
             }
         }
@@ -81,5 +86,4 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
-
 }
