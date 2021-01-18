@@ -48,7 +48,8 @@ public class GuardianPatrol : MonoBehaviour
 
     public bool SupressMovement;
 
-    public ParticleSystem Stun;
+    public ParticleSystem VFXStunOverHead;
+    public ParticleSystem VFXStunSparks;
 
     public float distance;
 
@@ -150,14 +151,18 @@ public class GuardianPatrol : MonoBehaviour
             }
             if (SupressMovement)
             {
-                Stun.Play();
+                VFXStunOverHead.Play();
+                VFXStunSparks.Play();
 
                 SupressTime += Time.deltaTime;
                 if (SupressTime >= StunTime)
                 {
                     SupressTime = 0f;
-                    Stun.Clear();
-                    Stun.Stop();
+                    VFXStunOverHead.Clear();
+                    VFXStunOverHead.Stop();
+
+                    VFXStunSparks.Clear();
+                    VFXStunSparks.Stop();
                     SupressMovement = false;
                 }
             }
