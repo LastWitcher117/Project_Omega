@@ -17,6 +17,8 @@ public class AnimationController : MonoBehaviour
     public bool isAttacking;
     public bool isDying;
 
+    public bool Dash;
+    public bool Attack;
     public Health ay;
 
     void Start()
@@ -37,32 +39,49 @@ public class AnimationController : MonoBehaviour
             isDying = true;
         }
 
-/*/----------------------------------------------------------------------/*/
-        if (isWalking == true)
+        /*/----------------------------------------------------------------------/*/
+       
+            if (isWalking == true)
+            {
+                P_Animator.SetBool("Running", true);
+            }
+            else
+            {
+                P_Animator.SetBool("Running", false);
+            }
+
+        /*/----------------------------------------------------------------------/*/
+
+        if (Dash == true && Attack == true)
         {
-            P_Animator.SetBool("Running", true);
+            return;
         }
         else
         {
-            P_Animator.SetBool("Running", false);
+            if (isDashing == true)
+            {
+                P_Animator.SetBool("Dashing", true);
+            }
+            else
+            {
+                P_Animator.SetBool("Dashing", false);
+            }
         }
-/*/----------------------------------------------------------------------/*/
-        if(isDashing == true)
+        /*/----------------------------------------------------------------------/*/
+        if (Dash == true && Attack == true)
         {
-            P_Animator.SetBool("Dashing", true);
-        }
-        else
-        {
-            P_Animator.SetBool("Dashing", false);
-        }
-/*/----------------------------------------------------------------------/*/
-        if (isAttacking == true)
-        {
-            P_Animator.SetBool("Attacking", true);
+            return;
         }
         else
         {
-            P_Animator.SetBool("Attacking", false);
+            if (isAttacking == true)
+            {
+                P_Animator.SetBool("Attacking", true);
+            }
+            else
+            {
+                P_Animator.SetBool("Attacking", false);
+            }
         }
         /*/----------------------------------------------------------------------/*/
         if (isDying == true)

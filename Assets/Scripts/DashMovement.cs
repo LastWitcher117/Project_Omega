@@ -38,6 +38,7 @@ public class DashMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift)) //Input Leftclick höhö
             {
                 re.isDashing = true;
+                re.Dash = true;
 
                 StartCoroutine(DashAnimationWaiter());
 
@@ -80,6 +81,7 @@ public class DashMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(0.75f);
         re.isDashing = false;
+        re.Dash = false;
     }
 
                 

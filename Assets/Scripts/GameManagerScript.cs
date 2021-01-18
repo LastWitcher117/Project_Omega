@@ -55,7 +55,6 @@ public class GameManagerScript : MonoBehaviour
         }
 
        
-
         if (PointsNeededForHealth == snackpoints)
         {
             PointsNeededForHealth = PointsNeededForHealth + 50;
@@ -67,13 +66,8 @@ public class GameManagerScript : MonoBehaviour
                 HealthComponent.health = HealthComponent.health + 1;
                 Debug.Log(HealthComponent.health);
             }
-            
-            
-            
+                                 
         }
-
-
-        SignalFromTrigger = FindObjectOfType<GetKey>().EnterSignal;
 
         if (SignalFromTrigger == true)
         {
