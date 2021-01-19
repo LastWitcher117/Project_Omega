@@ -62,7 +62,7 @@ public class PlayerAttack : MonoBehaviour
             if (AttackNow.enabled == true)
             {
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/EnemyAttackAlert");
-                Debug.Log("mucho mucho play");
+                //Debug.Log("mucho mucho play");
             }
 
             Debug.Log("ENEMY IN RANGE " + Enemy.name);

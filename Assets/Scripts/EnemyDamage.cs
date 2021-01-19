@@ -47,7 +47,8 @@ public class EnemyDamage : MonoBehaviour
 
                 FindObjectOfType<AudioManager>().Stop("Theme");
                 FindObjectOfType<AudioManager>().Play("LoseSound");
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0); //FMOD  // new line
+                //FMOD  
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0); 
                 StartCoroutine(LoseScreen());
 
             }
