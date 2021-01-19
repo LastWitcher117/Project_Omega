@@ -1,381 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8077106139064966704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: EnemyDistanceVolumeController
-  m_EditorClassIdentifier: 
-  Name: EnemyDistanceVolumeController
-  Min: 0
-  Max: 20
-  Default: 20
-  Exists: 1
---- !u!114 &-7289702011072704192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Collectables/Key
-  m_EditorClassIdentifier: 
-  Path: event:/Collectables/Key
-  guid: 11e5333e42d97a4ead708f6eb3fcbd26
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1349
---- !u!114 &-7238213085769611081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMODAssets/FMOD-TempleTales/TempleTales/Build/Desktop/Master.strings.bank
-  SubDir: 
-  lastModified: 637463262806644801
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 2342
-  Exists: 1
---- !u!114 &-6673420965099553740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Hovering/VolumeSlider
-  m_EditorClassIdentifier: 
-  Name: VolumeSlider
-  Min: -60
-  Max: 0
-  Default: 0
-  Exists: 1
---- !u!114 &-6129121455238244437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/UI_Button_Backward
-  m_EditorClassIdentifier: 
-  Name: Surface
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
---- !u!114 &-5508849011687680228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/FMODAssets/FMOD-TempleTales/TempleTales/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637463262806714818
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-5410816592604786503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/VolumeSlider
-  m_EditorClassIdentifier: 
-  Path: event:/UI/VolumeSlider
-  guid: 33578e1c7b0edc4a95676ce3a9c9d9eb
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 8552484693692541501}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 80
---- !u!114 &-5150418868772070616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/UI_Button_Forward
-  m_EditorClassIdentifier: 
-  Path: event:/UI/UI_Button_Forward
-  guid: c9e5f4b3e1428240b6f62b4a0de8e066
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 378
---- !u!114 &-3540930224552791965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Collectables/SnakPoint Chromatic
-  m_EditorClassIdentifier: 
-  Path: event:/Collectables/SnakPoint Chromatic
-  guid: c4c9f9e46dc25a4e9171f3bc43fc8641
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &-3483611376619985133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Attack/PlayeerAttack_Dagger
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Attack/PlayeerAttack_Dagger
-  guid: fb646daff05ca243bda1a42dba296146
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 300
-  MaxDistance: 10000
-  Length: 2141
---- !u!114 &-2143873302739858138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Footsteps/Surface
-  m_EditorClassIdentifier: 
-  Name: Surface
-  Min: 0
-  Max: 2
-  Default: 0
-  Exists: 1
---- !u!114 &-998063453680554843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Footsteps/Not in use/DashOneShot Old
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Footsteps/Not in use/DashOneShot Old
-  guid: f166055385c91d46b63111d1ed49e252
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 20
-  MaxDistance: 10000
-  Length: 2433
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -7238213085769611081}
-  - {fileID: -5508849011687680228}
-  EditorEvents:
-  - {fileID: -7289702011072704192}
-  - {fileID: 4981421302634887234}
-  - {fileID: 8938292778993803802}
-  - {fileID: -5410816592604786503}
-  - {fileID: 2895221604816512814}
-  - {fileID: 7103843110131080346}
-  - {fileID: 8626127030956225012}
-  - {fileID: 3502441295978407754}
-  - {fileID: 8535277400354882972}
-  - {fileID: 5222406398750597900}
-  - {fileID: 8104806552025225893}
-  - {fileID: 6229676013678249473}
-  - {fileID: 645806212775692113}
-  - {fileID: -3540930224552791965}
-  - {fileID: -5150418868772070616}
-  - {fileID: 6208694642303495791}
-  - {fileID: 4427918971484045331}
-  - {fileID: -998063453680554843}
-  - {fileID: -3483611376619985133}
-  EditorParameters:
-  - {fileID: 4707033743093450936}
-  - {fileID: 3483102728762949668}
-  - {fileID: -8077106139064966704}
-  - {fileID: 4608458921277255800}
-  - {fileID: 3233617448083493347}
-  - {fileID: 448708659405528423}
-  MasterBanks:
-  - {fileID: -5508849011687680228}
-  StringsBanks:
-  - {fileID: -7238213085769611081}
-  stringsBankWriteTime: 637463262806644801
-  cacheVersion: 3
---- !u!114 &448708659405528423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: Ghost Game Paused
-  m_EditorClassIdentifier: 
-  Name: Ghost Game Paused
-  Min: 0
-  Max: 1
-  Default: 1
-  Exists: 1
---- !u!114 &645806212775692113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Footsteps/Footsteps
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Footsteps/Footsteps
-  guid: ac3b96e20ef28c4eb455dab4ffaed3b5
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -2143873302739858138}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 100
---- !u!114 &2895221604816512814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Hovering
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Hovering
-  guid: 4e6d435dd72c0740a8cc440effe273e6
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -6673420965099553740}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 127
---- !u!114 &3233617448083493347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: numSnacks
-  m_EditorClassIdentifier: 
-  Name: numSnacks
-  Min: 0
-  Max: 12
-  Default: 0
-  Exists: 1
---- !u!114 &3483102728762949668
+--- !u!114 &-7989955949641960130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -392,268 +17,7 @@ MonoBehaviour:
   Max: 0
   Default: 0
   Exists: 1
---- !u!114 &3502441295978407754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Collectables/Treasure
-  m_EditorClassIdentifier: 
-  Path: event:/Collectables/Treasure
-  guid: 7243791107f01547a440d0a979fec8b0
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 10000
-  Length: 1769
---- !u!114 &4427918971484045331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -4503823034629991807}
-  - {fileID: -609083215743902670}
-  EditorEvents:
-  - {fileID: -7278854721234679512}
-  - {fileID: 7251576275226118273}
-  - {fileID: 8550268112894182924}
-  - {fileID: -210717994796908420}
-  - {fileID: -7622725855280186865}
-  - {fileID: -5007060810940840564}
-  - {fileID: -110667353767415667}
-  - {fileID: 8815789276687325564}
-  - {fileID: 4700488271347900497}
-  - {fileID: 7653901372353304172}
-  - {fileID: 3076382294175561208}
-  - {fileID: -7941632083560512614}
-  - {fileID: -839897280569282706}
-  - {fileID: -626775077364675621}
-  - {fileID: -4867931216019028006}
-  - {fileID: -6989596475109751756}
-  - {fileID: 1253244938942920104}
-  - {fileID: 1686523230716526562}
-  - {fileID: 4622418854041009976}
-  EditorParameters:
-  - {fileID: -2579766409651926005}
-  - {fileID: -5368085262050666354}
-  - {fileID: 7335124953334064533}
-  - {fileID: -8875895154710650229}
-  - {fileID: 8538379131389219636}
-  - {fileID: 4125267083307102145}
-  MasterBanks:
-  - {fileID: -609083215743902670}
-  StringsBanks:
-  - {fileID: -4503823034629991807}
-  stringsBankWriteTime: 637461694590896548
-  cacheVersion: 3
---- !u!114 &1253244938942920104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Collectables/Not in use/SnakPoint Chromatic Old
-  m_EditorClassIdentifier: 
-  Path: event:/Collectables/Not in use/SnakPoint Chromatic Old
-  guid: df3322bae19ce74c8e04fe7b9d6a2b6b
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 4783
---- !u!114 &4608458921277255800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: Waiting-Moving-Dash
-  m_EditorClassIdentifier: 
-  Name: Waiting-Moving-Dash
-  Min: 0
-  Max: 3
-  Default: 2
-  Exists: 1
---- !u!114 &4707033743093450936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: GamePaused
-  m_EditorClassIdentifier: 
-  Name: GamePaused
-  Min: 0
-  Max: 2
-  Default: 1
-  Exists: 1
---- !u!114 &4981421302634887234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: Ghost Game Paused
-  m_EditorClassIdentifier: 
-  Name: Ghost Game Paused
-  Min: 0
-  Max: 1
-  Default: 1
-  Exists: 1
---- !u!114 &4622418854041009976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/GhostSound 2
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/GhostSound 2
-  guid: 14f816f212ce0042a131e803e9447a21
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2322
---- !u!114 &5222406398750597900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Footsteps/SimpleFootStep
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Footsteps/SimpleFootStep
-  guid: 880a378723097541860c2d2c2e4b24d1
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -6129121455238244437}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1950
---- !u!114 &6208694642303495791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Collectables/Not in use/Score
-  m_EditorClassIdentifier: 
-  Path: event:/Collectables/Not in use/Score
-  guid: d8773921d5e80b4d9c9cd8bb89a7e844
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1645
---- !u!114 &6229676013678249473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/UI_Button_Backward
-  m_EditorClassIdentifier: 
-  Path: event:/UI/UI_Button_Backward
-  guid: 9d1e686158f5ce41bfdac35ec175f0d7
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 363
---- !u!114 &7103843110131080346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Collectables/Not in use/MSUP oLD
-  m_EditorClassIdentifier: 
-  Path: event:/Collectables/Not in use/MSUP oLD
-  guid: 50ad53dcfbaef648b5650dec74a51202
-  Banks:
-  - {fileID: -5508849011687680228}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2932
---- !u!114 &8104806552025225893
+--- !u!114 &-7259581018252045577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -668,7 +32,7 @@ MonoBehaviour:
   Path: event:/Enemy/GhostSound 1
   guid: 9a7c4ecfdf502448a3fa0216389dce07
   Banks:
-  - {fileID: -5508849011687680228}
+  - {fileID: -2430768406189708524}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -676,7 +40,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3244
---- !u!114 &8535277400354882972
+--- !u!114 &-6801203395479174530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,20 +50,154 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Collectables/MSUP
+  m_Name: event:/Player/Footsteps/Not in use/DashOneShot Old
   m_EditorClassIdentifier: 
-  Path: event:/Collectables/MSUP
-  guid: 877ea2340aa81e45905cb628c3db7632
+  Path: event:/Player/Footsteps/Not in use/DashOneShot Old
+  guid: f166055385c91d46b63111d1ed49e252
   Banks:
-  - {fileID: -5508849011687680228}
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 20
+  MaxDistance: 10000
+  Length: 2433
+--- !u!114 &-6607736723542569096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Footsteps/SimpleFootStep
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Footsteps/SimpleFootStep
+  guid: 880a378723097541860c2d2c2e4b24d1
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -254033868912919308}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1950
+--- !u!114 &-6030469467049110528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Footsteps/DashOneShot
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Footsteps/DashOneShot
+  guid: 2d1500a208932b40806c8165d4b56abc
+  Banks:
+  - {fileID: -2430768406189708524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2932
---- !u!114 &8552484693692541501
+  Length: 2000
+--- !u!114 &-5958145654391462936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Collectables/SnakPoint Chromatic
+  m_EditorClassIdentifier: 
+  Path: event:/Collectables/SnakPoint Chromatic
+  guid: c4c9f9e46dc25a4e9171f3bc43fc8641
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-5831254833364773633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/VolumeSlider
+  m_EditorClassIdentifier: 
+  Path: event:/UI/VolumeSlider
+  guid: 33578e1c7b0edc4a95676ce3a9c9d9eb
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4207878389922824761}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 80
+--- !u!114 &-4594872861113664882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &-4557365806406817265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_Button_Forward
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_Button_Forward
+  guid: c9e5f4b3e1428240b6f62b4a0de8e066
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 378
+--- !u!114 &-4207878389922824761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -716,7 +214,7 @@ MonoBehaviour:
   Max: 0
   Default: 0
   Exists: 1
---- !u!114 &8626127030956225012
+--- !u!114 &-2910292295814541028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -731,7 +229,7 @@ MonoBehaviour:
   Path: event:/Collectables/Treasure
   guid: 7243791107f01547a440d0a979fec8b0
   Banks:
-  - {fileID: -5508849011687680228}
+  - {fileID: -2430768406189708524}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -739,7 +237,76 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 50
   Length: 2495
---- !u!114 &8938292778993803802
+--- !u!114 &-2628003226775764766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: numSnacks
+  m_EditorClassIdentifier: 
+  Name: numSnacks
+  Min: 0
+  Max: 12
+  Default: 0
+  Exists: 1
+--- !u!114 &-2430768406189708524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/FMOD-TempleTales/TempleTales/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637466743772320467
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-788327489480288430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: GamePaused
+  m_EditorClassIdentifier: 
+  Name: GamePaused
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
+--- !u!114 &-254033868912919308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SimpleFootStep/Surface
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &-62372318284436822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -749,16 +316,384 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Footsteps/DashOneShot
+  m_Name: event:/Player/Attack/PlayeerAttack_Dagger
   m_EditorClassIdentifier: 
-  Path: event:/Player/Footsteps/DashOneShot
-  guid: 2d1500a208932b40806c8165d4b56abc
+  Path: event:/Player/Attack/PlayeerAttack_Dagger
+  guid: fb646daff05ca243bda1a42dba296146
   Banks:
-  - {fileID: -5508849011687680228}
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 300
+  MaxDistance: 10000
+  Length: 2141
+--- !u!114 &-32332064609280174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/FMOD-TempleTales/TempleTales/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637466743771991343
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2342
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -32332064609280174}
+  - {fileID: -2430768406189708524}
+  EditorEvents:
+  - {fileID: 3919555844913895973}
+  - {fileID: 2686574867761479981}
+  - {fileID: -6030469467049110528}
+  - {fileID: -5831254833364773633}
+  - {fileID: 927769449039585638}
+  - {fileID: 5884281704498671035}
+  - {fileID: -2910292295814541028}
+  - {fileID: 3249803799790125337}
+  - {fileID: 3967942310401651205}
+  - {fileID: -6607736723542569096}
+  - {fileID: -7259581018252045577}
+  - {fileID: 7431276425828770787}
+  - {fileID: 4464855812141666130}
+  - {fileID: -5958145654391462936}
+  - {fileID: -4557365806406817265}
+  - {fileID: 6164682619361010573}
+  - {fileID: 258764069320703179}
+  - {fileID: -6801203395479174530}
+  - {fileID: -62372318284436822}
+  EditorParameters:
+  - {fileID: -788327489480288430}
+  - {fileID: -7989955949641960130}
+  - {fileID: 693892785027195881}
+  - {fileID: 4321899590017075434}
+  - {fileID: -2628003226775764766}
+  - {fileID: 7419814734722953214}
+  MasterBanks:
+  - {fileID: -2430768406189708524}
+  StringsBanks:
+  - {fileID: -32332064609280174}
+  stringsBankWriteTime: 637466743771991343
+  cacheVersion: 3
+--- !u!114 &258764069320703179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Collectables/Not in use/SnakPoint Chromatic Old
+  m_EditorClassIdentifier: 
+  Path: event:/Collectables/Not in use/SnakPoint Chromatic Old
+  guid: df3322bae19ce74c8e04fe7b9d6a2b6b
+  Banks:
+  - {fileID: -2430768406189708524}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 2000
+  Length: 4783
+--- !u!114 &367240219024823663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hovering/VolumeSlider
+  m_EditorClassIdentifier: 
+  Name: VolumeSlider
+  Min: -60
+  Max: 0
+  Default: 0
+  Exists: 1
+--- !u!114 &693892785027195881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: EnemyDistanceVolumeController
+  m_EditorClassIdentifier: 
+  Name: EnemyDistanceVolumeController
+  Min: 0
+  Max: 20
+  Default: 20
+  Exists: 1
+--- !u!114 &927769449039585638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Hovering
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Hovering
+  guid: 4e6d435dd72c0740a8cc440effe273e6
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 367240219024823663}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 127
+--- !u!114 &2686574867761479981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/GhostSound 2
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/GhostSound 2
+  guid: 14f816f212ce0042a131e803e9447a21
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2322
+--- !u!114 &3249803799790125337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enviroment/Door
+  m_EditorClassIdentifier: 
+  Path: event:/Enviroment/Door
+  guid: 7b47f605fbcf5e4bb32c9990572216b8
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 10000
+  Length: 1769
+--- !u!114 &3919555844913895973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Collectables/Key
+  m_EditorClassIdentifier: 
+  Path: event:/Collectables/Key
+  guid: 11e5333e42d97a4ead708f6eb3fcbd26
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1349
+--- !u!114 &3967942310401651205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Collectables/MSUP
+  m_EditorClassIdentifier: 
+  Path: event:/Collectables/MSUP
+  guid: 877ea2340aa81e45905cb628c3db7632
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2932
+--- !u!114 &4321899590017075434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Waiting-Moving-Dash
+  m_EditorClassIdentifier: 
+  Name: Waiting-Moving-Dash
+  Min: 0
+  Max: 3
+  Default: 2
+  Exists: 1
+--- !u!114 &4464855812141666130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Footsteps/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Footsteps/Footsteps
+  guid: ac3b96e20ef28c4eb455dab4ffaed3b5
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4594872861113664882}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 100
+--- !u!114 &5884281704498671035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Collectables/Not in use/MSUP oLD
+  m_EditorClassIdentifier: 
+  Path: event:/Collectables/Not in use/MSUP oLD
+  guid: 50ad53dcfbaef648b5650dec74a51202
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2932
+--- !u!114 &6164682619361010573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Collectables/Not in use/Score
+  m_EditorClassIdentifier: 
+  Path: event:/Collectables/Not in use/Score
+  guid: d8773921d5e80b4d9c9cd8bb89a7e844
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1645
+--- !u!114 &7419814734722953214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Ghost Game Paused
+  m_EditorClassIdentifier: 
+  Name: Ghost Game Paused
+  Min: 0
+  Max: 1
+  Default: 1
+  Exists: 1
+--- !u!114 &7431276425828770787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_Button_Backward
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_Button_Backward
+  guid: 9d1e686158f5ce41bfdac35ec175f0d7
+  Banks:
+  - {fileID: -2430768406189708524}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 363
