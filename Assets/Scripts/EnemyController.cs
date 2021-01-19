@@ -43,11 +43,12 @@ public class EnemyController : MonoBehaviour
             VFXStunSparks.Play();
 
             SupressTime += Time.deltaTime;
-            if(SupressTime >= StunTime)
+            if (SupressTime >= StunTime)
             {
                 SupressTime = 0f;
                 VFXStunOverHead.Clear();
                 VFXStunOverHead.Stop();
+
 
                 VFXStunSparks.Clear();
                 VFXStunSparks.Stop();
@@ -79,7 +80,6 @@ public class EnemyController : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
-
 
     void OnDrawGizmosSelected()
     {

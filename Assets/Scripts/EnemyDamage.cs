@@ -35,7 +35,7 @@ public class EnemyDamage : MonoBehaviour
             Dmg_Flashscreen.SetActive(true); //Activating red Screen
 
 
-    Cooldown = true;
+            Cooldown = true;
             FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
 
             StartCoroutine(Waiter());
