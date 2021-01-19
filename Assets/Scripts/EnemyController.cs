@@ -39,7 +39,6 @@ public class EnemyController : MonoBehaviour
         if(SupressMovement)
         {
             Stun.Play();
-
             SupressTime += Time.deltaTime;
             if(SupressTime >= StunTime)
             {
