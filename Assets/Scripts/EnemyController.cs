@@ -18,6 +18,8 @@ public class EnemyController : MonoBehaviour
     public ParticleSystem VFXStunOverHead;
     public ParticleSystem VFXStunSparks;
 
+    public GameObject StartPoint;
+  
     //---Fmod
     public float LookRadiusDistance()
     {
@@ -66,6 +68,14 @@ public class EnemyController : MonoBehaviour
                 FaceTarget();
             }
         }
+
+        if(distance >= lookRadius && !SupressMovement)
+        {
+            Vector3 PathToStartPoint = (StartPoint.transform.position);
+            agent.SetDestination(PathToStartPoint);
+            
+        }
+
 
         if (distance <= 1.0f)
         {
