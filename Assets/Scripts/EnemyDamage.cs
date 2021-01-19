@@ -29,7 +29,8 @@ public class EnemyDamage : MonoBehaviour
         {
             Health HealthComponent = other.GetComponent<Health>();
 
-            FindObjectOfType<AudioManager>().Play("EnemyAttack");
+            //FindObjectOfType<AudioManager>().Play("EnemyAttack");
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
 
             HealthComponent.health--;
             Dmg_Flashscreen.SetActive(true); //Activating red Screen
