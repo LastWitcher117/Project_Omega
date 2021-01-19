@@ -7,6 +7,8 @@ public class PlayerAttack : MonoBehaviour
     public GameObject Enemy;
     public GameObject EnemyPlaceHolder;
 
+    public bool TutorialAttack = false;
+
     public Canvas AttackNow;
 
     public ParticleSystem AttackParticleSystem;
@@ -14,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public AnimationController re;
 
     /// Cooldown
-    bool Cooldown; //Cooldown for attack
+    public bool Cooldown; //Cooldown for attack
     float ElapsedTime;
     public float CooldownTime;
 
@@ -31,16 +33,20 @@ public class PlayerAttack : MonoBehaviour
         {
             Cooldown = true;
 
-           // StartCoroutine(AttackDelay());
+            if (TutorialAttack == true)
+            {
+                Debug.Log("Its learning time.");
+            }
+            else
+            {
+                re.isAttacking = true;
+                re.Attack = true;
+                StartCoroutine(AttackAniamtion());
 
-            re.isAttacking = true;
-            re.Attack = true;
-            StartCoroutine(AttackAniamtion());
+                AttackParticleSystem.Play();
 
-            AttackParticleSystem.Play();
-
-            StartCoroutine(AttackDelay());        
-            
+                StartCoroutine(AttackDelay());
+            }
         }
 
         if (Cooldown == true)

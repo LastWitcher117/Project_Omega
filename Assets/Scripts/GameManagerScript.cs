@@ -29,6 +29,7 @@ public class GameManagerScript : MonoBehaviour
     private int PointsNeededForHealth = 50;
 
     public Health HealthComponent;
+    public bool HealthTutorial = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,7 @@ public class GameManagerScript : MonoBehaviour
             if(HealthComponent.health < 3)
             {
                 HealthComponent.health = HealthComponent.health + 1;
+                HealthTutorial = true;
                 Debug.Log(HealthComponent.health);
             }
                                  

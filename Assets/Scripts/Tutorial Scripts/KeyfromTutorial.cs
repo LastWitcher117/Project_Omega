@@ -16,20 +16,32 @@ public class KeyfromTutorial : MonoBehaviour
 
     public GameManagerScript gms;
 
+    public DoorTriggerTutorial DTT;
+
     private void OnTriggerEnter(Collider other)
     {
-        KeyIcon.SetActive(true);
+        if (other.tag == "Player")
+        {
+            KeyIcon.SetActive(true);
 
-        EnterSignal = true;
+            EnterSignal = true;
 
-        ExitWay.SetActive(true);
-        hasKeyTutorial = true;
+            ExitWay.SetActive(true);
+            hasKeyTutorial = true;
+
+            DTT.hasKey = true;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        KeyMesh.gameObject.SetActive(false);
-        KeyCollider.gameObject.SetActive(false);
-    }
+        if (other.tag == "Player")
+        {
+            KeyMesh.gameObject.SetActive(false);
+            KeyCollider.gameObject.SetActive(false);
 
+        }
+
+    }
 }
