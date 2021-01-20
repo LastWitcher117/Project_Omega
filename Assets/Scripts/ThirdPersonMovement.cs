@@ -43,6 +43,8 @@ public class ThirdPersonMovement : PortalTraveller
 
     public Canvas YouWinScreenHere;
 
+    public AnimationController AC;
+
     //public Health HealthScript;
 
     void Start()
@@ -59,9 +61,12 @@ public class ThirdPersonMovement : PortalTraveller
     
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        bool dash = Input.GetKey(KeyCode.LeftShift);
+        if (AC.inTutorial == false)
+        {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+            bool dash = Input.GetKey(KeyCode.LeftShift);
+        
         
         //FMOD
         h = horizontal;
@@ -69,7 +74,7 @@ public class ThirdPersonMovement : PortalTraveller
         isDashBool = dash;  
 
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
-    
+        
 
         if (direction.magnitude >= 0.1f)
         {
@@ -94,7 +99,7 @@ public class ThirdPersonMovement : PortalTraveller
 
         EnableWinScreenKey();
 
-
+        }
     }
 
     void CreateDust()

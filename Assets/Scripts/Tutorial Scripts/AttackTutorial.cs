@@ -8,9 +8,10 @@ public class AttackTutorial : MonoBehaviour
 
     public GameObject Enemy;
     public EnemyController EController;
+    public AnimationController AC;
 
-    public Canvas HowToAttack;
-    public Canvas HowToDash;
+    public GameObject HowToAttack;
+    public GameObject HowToDash;
 
     public bool FirstTimeAttack = false;
     public bool FirstTimeDash = false;
@@ -23,15 +24,15 @@ public class AttackTutorial : MonoBehaviour
         if (FirstTimeAttack == false)
         {
             if (PA.AttackNow.enabled == true)
-            {
-                Time.timeScale = 0f;
+            {               
+                AC.inTutorial = true;
                 HowToAttack.gameObject.SetActive(true);
             }
 
-            if (Input.GetMouseButtonDown(0) && PA.AttackNow.enabled == true)
+            if (Input.GetMouseButtonDown(0))
             {
-                Time.timeScale = 1f;
-                EController.SupressMovement = true;
+                AC.inTutorial = false;
+                EController.SupressMovement = false;
 
                 HowToAttack.gameObject.SetActive(false);
                 FirstTimeAttack = true;
@@ -44,15 +45,15 @@ public class AttackTutorial : MonoBehaviour
         {
             if (PA.AttackNow.enabled == true)
             {
-                PA.AttackNow.enabled = false;
-                Time.timeScale = 0f;
+                AC.inTutorial = true;
                 HowToDash.gameObject.SetActive(true);
+                
             }
 
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                Time.timeScale = 1f;
-
+                AC.inTutorial = false;
+                EController.SupressMovement = false;
 
                 HowToDash.gameObject.SetActive(false);
                 FirstTimeDash = false;

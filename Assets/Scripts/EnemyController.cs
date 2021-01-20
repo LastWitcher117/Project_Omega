@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public float StunTime;
 
     public float lookRadius = 10f;
+    public float SpeedStop;
+    public float SpeedNormal = 13f;
 
     Transform target;
     NavMeshAgent agent;
@@ -19,6 +21,9 @@ public class EnemyController : MonoBehaviour
     public ParticleSystem VFXStunSparks;
 
     public GameObject StartPoint;
+
+    public AnimationController AC;
+    public PlayerAttack PA;
   
     //---Fmod
     public float LookRadiusDistance()
@@ -81,6 +86,16 @@ public class EnemyController : MonoBehaviour
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
+
+        if (PA.AttackNow.enabled == true && AC.inTutorial == true)
+        {
+            agent.speed = 0f;
+        }
+        if (PA.AttackNow.enabled == false && AC.inTutorial == false)
+        {
+            agent.speed = 13f;
+        }
+
     }
 
 

@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
 
     public AnimationController re;
 
+
     /// Cooldown
     public bool Cooldown; //Cooldown for attack
     float ElapsedTime;
@@ -29,9 +30,10 @@ public class PlayerAttack : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && Cooldown == false)
+        if (Input.GetKey(KeyCode.Mouse0) && Cooldown == false && re.inTutorial == false && re.isDashing == false)
         {
             Cooldown = true;
+            re.AttacktoDashFix = true;
 
             if (TutorialAttack == true)
             {
@@ -58,6 +60,8 @@ public class PlayerAttack : MonoBehaviour
                 Cooldown = false;
                 re.Attack = false;
                 ElapsedTime = CooldownTime;
+
+                re.AttacktoDashFix = false;
             }
         }
 

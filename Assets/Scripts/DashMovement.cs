@@ -35,7 +35,7 @@ public class DashMovement : MonoBehaviour
 
         if (Time.time > nextDashTime)
         {
-            if (Input.GetKey(KeyCode.LeftShift)) //Input Leftclick höhö
+            if (Input.GetKey(KeyCode.LeftShift) && re.inTutorial == false && re.isAttacking == false && re.AttacktoDashFix == false) //Input Leftclick höhö
             {
                 re.isDashing = true;
                 re.Dash = true;

@@ -21,6 +21,9 @@ public class AnimationController : MonoBehaviour
     public bool Attack;
     public Health ay;
 
+    public bool inTutorial;
+    public bool AttacktoDashFix;
+
     void Start()
     {
         P_Animator = Player.GetComponent<Animator>();
@@ -41,7 +44,7 @@ public class AnimationController : MonoBehaviour
 
         /*/----------------------------------------------------------------------/*/
        
-            if (isWalking == true)
+            if (isWalking == true && inTutorial == false)
             {
                 P_Animator.SetBool("Running", true);
             }
@@ -58,13 +61,16 @@ public class AnimationController : MonoBehaviour
         }
         else
         {
-            if (isDashing == true)
+            if (inTutorial == false)
             {
-                P_Animator.SetBool("Dashing", true);
-            }
-            else
-            {
-                P_Animator.SetBool("Dashing", false);
+                if (isDashing == true && isAttacking == false)
+                {
+                    P_Animator.SetBool("Dashing", true);
+                }
+                else
+                {
+                    P_Animator.SetBool("Dashing", false);
+                }
             }
         }
         /*/----------------------------------------------------------------------/*/
@@ -74,13 +80,16 @@ public class AnimationController : MonoBehaviour
         }
         else
         {
-            if (isAttacking == true)
+            if (inTutorial == false)
             {
-                P_Animator.SetBool("Attacking", true);
-            }
-            else
-            {
-                P_Animator.SetBool("Attacking", false);
+                if (isAttacking == true && isDashing == false)
+                {
+                    P_Animator.SetBool("Attacking", true);
+                }
+                else
+                {
+                    P_Animator.SetBool("Attacking", false);
+                }
             }
         }
         /*/----------------------------------------------------------------------/*/

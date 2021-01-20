@@ -27,9 +27,10 @@ public class Pause_Menu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isPause == false)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
+
             if (GameIsPaused)
             {
                 Resume();
@@ -62,8 +63,10 @@ public class Pause_Menu : MonoBehaviour
 
     void Pause()
     {
+        
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+
         //AudioListener.pause = true;
         GameIsPaused = true;
         FindObjectOfType<AudioManager>().Pause("Theme");
