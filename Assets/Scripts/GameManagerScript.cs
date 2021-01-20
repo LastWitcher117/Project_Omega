@@ -26,7 +26,10 @@ public class GameManagerScript : MonoBehaviour
 
     public bool gameIsWon;
 
-    private int PointsNeededForHealth = 50;
+    public int PointsNeededForHealth;
+    private int HowManyPointsForHP;
+
+    public bool HPUpdate = false;
 
     public Health HealthComponent;
     public bool HealthTutorial = false;
@@ -36,11 +39,17 @@ public class GameManagerScript : MonoBehaviour
     {
         gameIsWon = false;
         Health HealthComponent = GetComponent<Health>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(HPUpdate == true)
+        {
+            HowManyPointsForHP = PointsNeededForHealth;
+        }
 
         if (snackpoints == 100 && tenScore == false)
         {
@@ -58,7 +67,7 @@ public class GameManagerScript : MonoBehaviour
        
         if (PointsNeededForHealth == snackpoints)
         {
-            PointsNeededForHealth = PointsNeededForHealth + 50;
+            PointsNeededForHealth = PointsNeededForHealth + HowManyPointsForHP;
 
             Debug.Log(PointsNeededForHealth);
 

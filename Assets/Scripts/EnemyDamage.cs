@@ -14,6 +14,8 @@ public class EnemyDamage : MonoBehaviour
 
     public AnimationController re;
 
+    public Pause_Menu PM;
+
     public ThirdPersonMovement ay;
 
 
@@ -42,6 +44,7 @@ public class EnemyDamage : MonoBehaviour
 
             if (HealthComponent.health == 0)
             {
+                PM.isPause = true;
                 You_Lose_Screen.enabled = true;
 
                 FindObjectOfType<AudioManager>().Stop("Theme");

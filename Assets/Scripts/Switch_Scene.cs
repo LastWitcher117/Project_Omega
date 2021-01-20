@@ -10,12 +10,15 @@ public class Switch_Scene : MonoBehaviour
 
     public int nextSceneToLoad;
 
+    public Pause_Menu PM;
+
     public GameObject ScorePoints;
     public GameManagerScript gm;
 
 
     public void OnTriggerEnter(Collider other)
     {
+        PM.isPause = true;
         You_Win_Screen.enabled = true;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);  // FMOD
         FindObjectOfType<AudioManager>().Play("WinSound");
