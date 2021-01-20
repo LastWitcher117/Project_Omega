@@ -54,6 +54,8 @@ public class EnemyController : MonoBehaviour
         if(SupressMovement)
         {
             Stun.Play();
+
+            //FMOD
             if (playEnemyStunned <= SupressTime)
             {
                 if (enemyStunnedSoundState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
@@ -70,8 +72,8 @@ public class EnemyController : MonoBehaviour
                 SupressTime = 0f;
                 Stun.Clear();
                 Stun.Stop();
-                //enemyStunnedSound.release();
                 SupressMovement = false;
+                //FMOD
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
             }
         }

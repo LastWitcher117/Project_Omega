@@ -58,6 +58,7 @@ public class Pause_Menu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Theme");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1); // new line
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 1); // new line
     }
 
     void Pause()
@@ -69,6 +70,7 @@ public class Pause_Menu : MonoBehaviour
         FindObjectOfType<AudioManager>().Pause("Theme");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0); // new line
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 0); // new line
     }
 
     public void LoadMenu()
