@@ -20,4 +20,9 @@ public class HP_Regen : MonoBehaviour
             HPRegen.gameObject.SetActive(false);
         }
     }
+
+    private void Start()
+    {
+        HPRegen.gameObject.SetActive(false);
+    }
 }

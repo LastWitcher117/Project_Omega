@@ -7,12 +7,14 @@ public class Run_Through_Wall : MonoBehaviour
     public GameObject Escape;
 
     public Pause_Menu PM;
+    public bool InsideCollider = false;
 
     private void OnTriggerEnter(Collider other)
     {
         Escape.SetActive(true);
         Time.timeScale = 0f;
         PM.isPause = true;
+        InsideCollider = true;
         
     }
 
@@ -23,14 +25,13 @@ public class Run_Through_Wall : MonoBehaviour
 
     void Start()
     {
-        
+        Escape.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        if (Input.GetKeyDown(KeyCode.Space) && Escape == true)
+        if (Input.GetKeyDown(KeyCode.Space) && InsideCollider == true)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
@@ -40,6 +41,6 @@ public class Run_Through_Wall : MonoBehaviour
             gameObject.SetActive(false);
 
         }
-
+        
     }
 }

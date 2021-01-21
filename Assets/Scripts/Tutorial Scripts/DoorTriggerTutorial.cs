@@ -17,7 +17,6 @@ public class DoorTriggerTutorial : MonoBehaviour
 
     bool doorOpen;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if(hasKey == true && FirstTime == false)

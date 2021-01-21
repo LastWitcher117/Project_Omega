@@ -37,7 +37,7 @@ public class Letter_to_Pacsy : MonoBehaviour
             AC.inTutorial = false;
             LetterToPacsy.gameObject.SetActive(false);
 
-            //Stp/break of the Audio here | Yes even if it interreupts the audio ;) 
+            //Stop/break of the Audio here | Yes even if it interreupts the audio ;) 
             //cause the player is able to walk inside the letter again if he skips it accidentally :D
         }
 
