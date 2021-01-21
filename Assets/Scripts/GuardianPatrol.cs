@@ -54,7 +54,14 @@ public class GuardianPatrol : MonoBehaviour
     public float distance;
 
 
+ 
     //---Fmod
+    FMOD.Studio.EventInstance enemyStunnedSound;
+    FMOD.Studio.PLAYBACK_STATE enemyStunnedSoundState;
+    Transform fTransform;
+    Rigidbody fRigidBody;
+    float playEnemyStunned = 0;
+
     public float LookRadiusDistance()
     {
         float distance = Vector3.Distance(target.position, transform.position);
@@ -88,12 +95,21 @@ public class GuardianPatrol : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
 
-       
+        //FMOD
+        enemyStunnedSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/EnemyStunned2");
+        fTransform = GetComponent<Transform>();
+        fRigidBody = GetComponent<Rigidbody>();
+
+
     }
 
     public void Update()
     {
         distance = Vector3.Distance(target.position, transform.position);
+
+        //FMOD
+        enemyStunnedSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(fTransform, fRigidBody));
+        enemyStunnedSound.getPlaybackState(out enemyStunnedSoundState);
 
         if (distance >= lookRadius && !SupressMovement)
         {
@@ -154,6 +170,23 @@ public class GuardianPatrol : MonoBehaviour
                 VFXStunOverHead.Play();
                 VFXStunSparks.Play();
 
+                //FMOD
+                /*if (enemyStunnedSoundState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
+                    enemyStunnedSound.start();
+                    Debug.Log("CUANTOS GUARDIAN PATROL MAREADOS?!!");
+                }*/
+                if (playEnemyStunned <= SupressTime)
+                {
+                    if (enemyStunnedSoundState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                    {
+                        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
+                        enemyStunnedSound.start();
+                        Debug.Log("CUANTOS GUARDIAN PATROL MAREADOS?!!");
+                    }
+                }
+
                 SupressTime += Time.deltaTime;
                 if (SupressTime >= StunTime)
                 {
@@ -164,6 +197,8 @@ public class GuardianPatrol : MonoBehaviour
                     VFXStunSparks.Clear();
                     VFXStunSparks.Stop();
                     SupressMovement = false;
+                    //FMOD
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
                 }
             }
 

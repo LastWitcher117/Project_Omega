@@ -21,6 +21,9 @@ public class PlayerAttack : MonoBehaviour
     float ElapsedTime;
     public float CooldownTime;
 
+    //FMOD
+    //bool waitPlay = false;
+
     void Start()
     {
         Enemy = EnemyPlaceHolder;
@@ -75,6 +78,11 @@ public class PlayerAttack : MonoBehaviour
             Enemy = other.gameObject;
 
             AttackNow.enabled = true;
+            if (AttackNow.enabled == true)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/EnemyAttackAlert");
+                //Debug.Log("mucho mucho play");
+            }
 
             Debug.Log("ENEMY IN RANGE ");
             StartCoroutine(Waiter());

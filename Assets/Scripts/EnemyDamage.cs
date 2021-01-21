@@ -31,7 +31,8 @@ public class EnemyDamage : MonoBehaviour
         {
             Health HealthComponent = other.GetComponent<Health>();
 
-            FindObjectOfType<AudioManager>().Play("EnemyAttack");
+            //FindObjectOfType<AudioManager>().Play("EnemyAttack");
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
 
             HealthComponent.health--;
             Dmg_Flashscreen.SetActive(true); //Activating red Screen
@@ -49,7 +50,10 @@ public class EnemyDamage : MonoBehaviour
 
                 FindObjectOfType<AudioManager>().Stop("Theme");
                 FindObjectOfType<AudioManager>().Play("LoseSound");
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0); //FMOD  // new line
+                //FMOD  
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 0); // new line
                 StartCoroutine(LoseScreen());
 
             }
@@ -77,6 +81,7 @@ public class EnemyDamage : MonoBehaviour
        
         SceneManager.LoadScene(1);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 1); // new line
     }
 
     void Update()

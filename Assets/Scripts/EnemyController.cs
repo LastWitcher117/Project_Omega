@@ -26,6 +26,12 @@ public class EnemyController : MonoBehaviour
     public PlayerAttack PA;
   
     //---Fmod
+    FMOD.Studio.EventInstance enemyStunnedSound;
+    FMOD.Studio.PLAYBACK_STATE enemyStunnedSoundState;
+    Transform fTransform;
+    Rigidbody fRigidBody;
+
+    float playEnemyStunned = 0;
     public float LookRadiusDistance()
     {
         float distance = Vector3.Distance(target.position, transform.position);
@@ -37,6 +43,11 @@ public class EnemyController : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+
+        //FMOD
+        enemyStunnedSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/EnemyStunned2");
+        fTransform = GetComponent<Transform>();
+        fRigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -44,11 +55,26 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
+        //FMOD
+        enemyStunnedSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(fTransform, fRigidBody));
+        enemyStunnedSound.getPlaybackState(out enemyStunnedSoundState);
+
         if(SupressMovement)
         {
             VFXStunOverHead.Play();
             VFXStunSparks.Play();
 
+            //FMOD
+            if (playEnemyStunned <= SupressTime)
+            {
+                if (enemyStunnedSoundState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
+                    enemyStunnedSound.start();
+                    Debug.Log("CUANTOS FANTASMAS MAREADOS?!!");
+                }
+            }
+            
             SupressTime += Time.deltaTime;
             if (SupressTime >= StunTime)
             {
@@ -60,6 +86,8 @@ public class EnemyController : MonoBehaviour
                 VFXStunSparks.Clear();
                 VFXStunSparks.Stop();
                 SupressMovement = false;
+                //FMOD
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
             }
         }
 
