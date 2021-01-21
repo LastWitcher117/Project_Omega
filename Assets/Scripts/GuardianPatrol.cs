@@ -53,8 +53,10 @@ public class GuardianPatrol : MonoBehaviour
 
     public float distance;
 
+    public bool Hunting;
 
- 
+
+
     //---Fmod
     FMOD.Studio.EventInstance enemyStunnedSound;
     FMOD.Studio.PLAYBACK_STATE enemyStunnedSoundState;
@@ -129,6 +131,8 @@ public class GuardianPatrol : MonoBehaviour
                     ExclamationMark.Stop();
                     ExclamationMark.Clear();
                     QuestionMark.Play();
+
+                    Hunting = false;
 
                     isSeeingPlayer = 0f;
 
@@ -206,6 +210,8 @@ public class GuardianPatrol : MonoBehaviour
             {
                 agent.SetDestination(target.position);
 
+                Hunting = true;
+
                 if (distance <= agent.stoppingDistance)
                 {
                     // Attack the target
@@ -213,6 +219,7 @@ public class GuardianPatrol : MonoBehaviour
                     FaceTarget();
                 }
             }
+
 
             if (distance <= 1.0f)
             {

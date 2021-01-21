@@ -24,6 +24,8 @@ public class EnemyController : MonoBehaviour
 
     public AnimationController AC;
     public PlayerAttack PA;
+    public bool Hunting = false;
+
   
     //---Fmod
     FMOD.Studio.EventInstance enemyStunnedSound;
@@ -95,6 +97,8 @@ public class EnemyController : MonoBehaviour
         {
             agent.SetDestination(target.position);
 
+            Hunting = true;
+
             if (distance <= agent.stoppingDistance)
             {
                 // Attack the target
@@ -106,7 +110,9 @@ public class EnemyController : MonoBehaviour
         {
             Vector3 PathToStartPoint = (StartPoint.transform.position);
             agent.SetDestination(PathToStartPoint);
-            
+
+            Hunting = false;
+
         }
 
 
