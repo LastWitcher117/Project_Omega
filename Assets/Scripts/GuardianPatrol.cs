@@ -105,8 +105,8 @@ public class GuardianPatrol : MonoBehaviour
                 //If we're going to wait, then wait.
                 if (_patrolWaiting)
                 {
-                    _waiting = true;
-                    _waitTimer = 0f;
+                    //_waiting = true;
+                    //_waitTimer = 0f;
                 }
                 else
                 {
@@ -169,13 +169,7 @@ public class GuardianPatrol : MonoBehaviour
 
             if (distance <= lookRadius && !SupressMovement)
             {
-
-                
-                
-
                 agent.SetDestination(target.position);
-
-                
 
                 if (distance <= agent.stoppingDistance)
                 {
@@ -209,12 +203,6 @@ void OnDrawGizmosSelected()
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
-
-    IEnumerator Waiter()
-    {
-        yield return new WaitForSeconds(10000000f);
-    }
-
 
     private void SetDestination()
     {
