@@ -167,6 +167,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugDrawRadius: 1
+--- !u!114 &17090027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3074632395901855981, guid: e9817004b4882854e873c1c53a21fdb1, type: 3}
+  m_PrefabInstance: {fileID: 1297308891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5893ae6eb2c698d4cb8b495236e6101d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &17631471
 GameObject:
   m_ObjectHideFlags: 0
@@ -9423,6 +9434,14 @@ PrefabInstance:
       propertyPath: playerGobject
       value: 
       objectReference: {fileID: 2137802390}
+    - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: AC
+      value: 
+      objectReference: {fileID: 1450037080}
+    - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: PA
+      value: 
+      objectReference: {fileID: 17090027}
     - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
       propertyPath: StunTime
       value: 2
@@ -27396,6 +27415,7 @@ MonoBehaviour:
   PM: {fileID: 116355067}
   DifficultySet: 0
   Health: {fileID: 2137802397}
+  AC: {fileID: 1450037080}
   EC1: {fileID: 2113147084}
   EC2: {fileID: 1731810029}
   EC3: {fileID: 1420356731}
@@ -27638,6 +27658,10 @@ PrefabInstance:
       propertyPath: gms
       value: 
       objectReference: {fileID: 1450037076}
+    - target: {fileID: 3074632394932346979, guid: e9817004b4882854e873c1c53a21fdb1, type: 3}
+      propertyPath: AC
+      value: 
+      objectReference: {fileID: 1450037080}
     - target: {fileID: 3074632394932346979, guid: e9817004b4882854e873c1c53a21fdb1, type: 3}
       propertyPath: re
       value: 
@@ -33396,6 +33420,8 @@ MonoBehaviour:
   Dash: 0
   Attack: 0
   ay: {fileID: 2137802397}
+  inTutorial: 0
+  AttacktoDashFix: 0
 --- !u!114 &1450037081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42784,10 +42810,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StunTime: 2
   lookRadius: 20
+  SpeedStop: 0
+  SpeedNormal: 13
   SupressMovement: 0
   VFXStunOverHead: {fileID: 0}
   VFXStunSparks: {fileID: 0}
   StartPoint: {fileID: 0}
+  AC: {fileID: 0}
+  PA: {fileID: 0}
 --- !u!54 &2049498791
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -42929,6 +42959,14 @@ PrefabInstance:
       propertyPath: playerGobject
       value: 
       objectReference: {fileID: 2137802390}
+    - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: AC
+      value: 
+      objectReference: {fileID: 1450037080}
+    - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: PA
+      value: 
+      objectReference: {fileID: 17090027}
     - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
       propertyPath: StunTime
       value: 2
@@ -44081,6 +44119,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2137802390}
     - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: AC
+      value: 
+      objectReference: {fileID: 1450037080}
+    - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: PA
+      value: 
+      objectReference: {fileID: 17090027}
+    - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
       propertyPath: StunTime
       value: 2
       objectReference: {fileID: 0}
@@ -44458,6 +44504,14 @@ PrefabInstance:
       propertyPath: playerGobject
       value: 
       objectReference: {fileID: 2137802390}
+    - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: AC
+      value: 
+      objectReference: {fileID: 1450037080}
+    - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: PA
+      value: 
+      objectReference: {fileID: 17090027}
     - target: {fileID: 3634097857969504772, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
       propertyPath: StunTime
       value: 5
