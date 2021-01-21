@@ -37,8 +37,8 @@ public class MusicManager : MonoBehaviour
 
             try
             {
-                EnemyFollowingCount = EnemyFollowingCount + ghost.GetComponent<EnemyController>().FollowingPlayer;
-                GuardianFollowingCount = GuardianFollowingCount + ghost.GetComponent<GuardianPatrol>().FollowingPlayer;
+               // EnemyFollowingCount = EnemyFollowingCount + ghost.GetComponent<EnemyController>().FollowingPlayer;
+               // GuardianFollowingCount = GuardianFollowingCount + ghost.GetComponent<GuardianPatrol>().FollowingPlayer;
 
                 // Debug.Log(ghost.GetComponent<EnemyController>().FollowingPlayer.ToString());
             }
