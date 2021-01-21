@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorTrigger : MonoBehaviour
 {
 
-    public GameObject Door;
+    public Animator Door;
     public GameObject KeyIcon;
     public bool hasKey;
     bool doorOpen;
@@ -30,15 +30,21 @@ public class DoorTrigger : MonoBehaviour
 
             if (doorOpen == false)
             {
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door");
-            }
+                StartCoroutine(Waiter());
+               
 
-            Door.SetActive(false);
+            Door.SetBool("DoorOpen", true);
             KeyIcon.SetActive(false);
             doorOpen = true;
         }
     }
 
+    IEnumerator Waiter()
+    {
+        yield return new WaitForSeconds(0.5f);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door");
+        }
+    }
 
   
 }
