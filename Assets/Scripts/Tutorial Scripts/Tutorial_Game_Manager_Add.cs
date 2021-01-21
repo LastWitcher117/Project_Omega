@@ -4,31 +4,41 @@ using UnityEngine;
 
 public class Tutorial_Game_Manager_Add : MonoBehaviour
 {
-    public Canvas TutorialZoom;
+    public GameObject TutorialZoom;
 
-    public Canvas TutorialHP;
+    public GameObject TutorialHP;
     public GameObject PressAnyKey_Text;
 
     public GameManagerScript gms;
+
     public Health HealthComponent;
     public bool FirstTimeHP = false;
 
+    public Pause_Menu PM;
+
+    public AnimationController AC;
+
     void Start()
     {
-       
         HealthComponent.health = HealthComponent.health - 1;
 
-        Time.timeScale = 0f;
-        
+       
+        AC.inTutorial = true;
+       // PM.isPause = false;
+
     }
 
     void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetAxis("Mouse ScrollWheel") < 0f || Input.GetKeyDown(KeyCode.Escape))
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
+
             Time.timeScale = 1f;
             TutorialZoom.gameObject.SetActive(false);
-            
+            //PM.isPause = false;
+            AC.inTutorial = false;
+           
         }
 
         if (gms.HealthTutorial == true && FirstTimeHP == false)

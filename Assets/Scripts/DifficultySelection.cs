@@ -16,6 +16,8 @@ public class DifficultySelection : MonoBehaviour
 
     public Health Health;
 
+    public AnimationController AC;
+
     public EnemyController EC1;
     public EnemyController EC2;
     public EnemyController EC3;
@@ -32,6 +34,7 @@ public class DifficultySelection : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Cursor.lockState = CursorLockMode.None;
+        AC.inTutorial = false;
         PM.isPause = true;
         SelectDifficulty.SetActive(true);
         Time.timeScale = 0f;
