@@ -61,6 +61,8 @@ public class GuardianPatrol : MonoBehaviour
     Rigidbody fRigidBody;
     float playEnemyStunned = 0;
 
+    public int FollowingPlayer = 0; // from Héctor
+
     public float LookRadiusDistance()
     {
         float distance = Vector3.Distance(target.position, transform.position);
@@ -200,12 +202,9 @@ public class GuardianPatrol : MonoBehaviour
             if (distance <= lookRadius && !SupressMovement)
             {
 
-                
-                
-
                 agent.SetDestination(target.position);
-
-                
+                FollowingPlayer = 1; // From Héctor
+                // Debug.Log("Following");
 
                 if (distance <= agent.stoppingDistance)
                 {
@@ -213,6 +212,12 @@ public class GuardianPatrol : MonoBehaviour
                     
                     FaceTarget();
                 }
+            }
+
+            else // From Héctor
+            {
+                FollowingPlayer = 0;
+                // Debug.Log("Not Following");
             }
 
             if (distance <= 1.0f)

@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+
+    public int FollowingPlayer = 0; // from Héctor
+
     float SupressTime;
     public float StunTime;
 
@@ -82,12 +85,23 @@ public class EnemyController : MonoBehaviour
         {
             agent.SetDestination(target.position);
 
+            FollowingPlayer = 1; // From Héctor
+            // Debug.Log("Following");
+
             if (distance <= agent.stoppingDistance)
             {
                 // Attack the target
                 FaceTarget();
             }
         }
+
+        else // From Héctor
+        {
+            FollowingPlayer = 0;
+            // Debug.Log("Not Following");
+        }
+
+        
 
         if (distance <= 1.0f)
         {

@@ -4491,7 +4491,7 @@ GameObject:
   - component: {fileID: 413388015}
   m_Layer: 0
   m_Name: Enemy Filip
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
@@ -30917,6 +30917,7 @@ GameObject:
   - component: {fileID: 1450037079}
   - component: {fileID: 1450037080}
   - component: {fileID: 1450037081}
+  - component: {fileID: 1450037082}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -31031,6 +31032,18 @@ MonoBehaviour:
   GTS: {fileID: 2137802393}
   Lights: {fileID: 1489039945}
   Light: 0
+--- !u!114 &1450037082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450037075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de57c36930f1f2d47ae3862f6edce2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1451635412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 235546002869362005, guid: bab7822e9282cd1458345f67859f71d8, type: 3}
@@ -39535,7 +39548,7 @@ GameObject:
   - component: {fileID: 2049498795}
   m_Layer: 0
   m_Name: Enemy Filip v.2
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39552,6 +39565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabb059db88c4154dabe117882887995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FollowingPlayer: 0
   StunTime: 2
   lookRadius: 20
   SupressMovement: 0
@@ -40776,6 +40790,10 @@ PrefabInstance:
     - target: {fileID: 175884421138894242, guid: 5e23a7ebb065d384987e68b2e6de3b88, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175884421138894242, guid: 5e23a7ebb065d384987e68b2e6de3b88, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 175884421138894242, guid: 5e23a7ebb065d384987e68b2e6de3b88, type: 3}
       propertyPath: m_NavMeshLayer
