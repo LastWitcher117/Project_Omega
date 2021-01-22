@@ -27,12 +27,14 @@ public class GameManagerScript : MonoBehaviour
     public bool gameIsWon;
 
     public int PointsNeededForHealth;
-    private int HowManyPointsForHP;
+    public int HowManyPointsForHP;
 
     public bool HPUpdate = false;
 
     public Health HealthComponent;
     public bool HealthTutorial = false;
+
+    public GetTreasure GT;
 
     // Start is called before the first frame update
     void Start()
@@ -64,9 +66,15 @@ public class GameManagerScript : MonoBehaviour
 
         }
 
-       
+        if (GT.CollectedTreasure == true)
+        {
+            PointsNeededForHealth = PointsNeededForHealth + 1000;
+            GT.CollectedTreasure = false;
+        }
+
         if (PointsNeededForHealth == snackpoints)
         {
+           
             PointsNeededForHealth = PointsNeededForHealth + HowManyPointsForHP;
 
             Debug.Log(PointsNeededForHealth);

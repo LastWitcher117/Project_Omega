@@ -18,6 +18,8 @@ public class EnemyDamage : MonoBehaviour
 
     public ThirdPersonMovement ay;
 
+    public GameObject Attack;
+
 
     void Start()
     {
@@ -35,6 +37,9 @@ public class EnemyDamage : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
 
             HealthComponent.health--;
+
+            Attack.SetActive(true);
+
             Dmg_Flashscreen.SetActive(true); //Activating red Screen
 
 
@@ -65,6 +70,7 @@ public class EnemyDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         Dmg_Flashscreen.SetActive(false);
+        
     }
 
     IEnumerator LoseScreen() //Time Active of red DMG Screen
@@ -92,6 +98,7 @@ public class EnemyDamage : MonoBehaviour
             if (ElapsedTime <= 0f)
             {
                 Cooldown = false;
+                Attack.SetActive(false);
                 ElapsedTime = CooldownTime;
             }
         }
