@@ -18,6 +18,8 @@ public class DifficultySelection : MonoBehaviour
 
     public AnimationController AC;
 
+    public TimerCountdown TC;
+
     public EnemyController EC1;
     public EnemyController EC2;
     public EnemyController EC3;
@@ -59,6 +61,8 @@ public class DifficultySelection : MonoBehaviour
 
         gms.PointsNeededForHealth = 50;
 
+        TC.timeLeft = 2000;
+
         SelectDifficulty.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
@@ -83,6 +87,8 @@ public class DifficultySelection : MonoBehaviour
         GP7.StunTime = 2f;
 
         gms.PointsNeededForHealth = 200;
+
+        TC.timeLeft = 1500;
 
         SelectDifficulty.SetActive(false);
         Time.timeScale = 1f;
@@ -109,6 +115,8 @@ public class DifficultySelection : MonoBehaviour
         GP7.StunTime = 1f;
 
         gms.PointsNeededForHealth = 2000;
+
+        TC.timeLeft = 1000;
 
         SelectDifficulty.SetActive(false);
         Time.timeScale = 1f;
@@ -138,6 +146,8 @@ public class DifficultySelection : MonoBehaviour
         Health.health--;
 
         gms.PointsNeededForHealth = 90000000;
+
+        TC.timeLeft = 720;
 
         SelectDifficulty.SetActive(false);
         Time.timeScale = 1f;

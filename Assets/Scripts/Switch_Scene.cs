@@ -14,10 +14,12 @@ public class Switch_Scene : MonoBehaviour
 
     public GameObject ScorePoints;
     public GameManagerScript gm;
+    public TimerCountdown TC;
 
 
     public void OnTriggerEnter(Collider other)
     {
+        TC.PlayerWon = true;
         PM.isPause = true;
         You_Win_Screen.enabled = true;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);  // FMOD
