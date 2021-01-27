@@ -9,7 +9,9 @@ public class DoorTrigger : MonoBehaviour
     public GameObject KeyIcon;
     public bool hasKey;
     bool doorOpen;
- 
+
+    public GameObject YouNeedKey;
+
 
     // Update is called once per frame
 
@@ -31,11 +33,18 @@ public class DoorTrigger : MonoBehaviour
             if (doorOpen == false)
             {
                 StartCoroutine(Waiter());
-               
+
+            }
 
             Door.SetBool("DoorOpen", true);
             KeyIcon.SetActive(false);
             doorOpen = true;
+        }
+        else
+        {
+
+            YouNeedKey.gameObject.SetActive(true);
+
         }
     }
 
@@ -43,8 +52,14 @@ public class DoorTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door");
-        }
     }
 
-  
+    private void OnTriggerExit(Collider other)
+    {
+        YouNeedKey.gameObject.SetActive(false);
+    }
+
 }
+
+  
+

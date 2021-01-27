@@ -20,6 +20,8 @@ public class EnemyDamage : MonoBehaviour
 
     public GameObject Attack;
 
+    public Animator EnemyAnim;
+
 
     void Start()
     {
@@ -50,6 +52,8 @@ public class EnemyDamage : MonoBehaviour
 
             if (HealthComponent.health == 0)
             {
+                EnemyAnim.SetBool("PlayerDead", true);
+
                 PM.isPause = true;
                 You_Lose_Screen.enabled = true;
 
