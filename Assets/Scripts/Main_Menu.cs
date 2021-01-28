@@ -37,6 +37,8 @@ public class Main_Menu : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 1); //new line
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        //Stoppe Main Music 
     }
 
     public void GetIntoPlayOptions()

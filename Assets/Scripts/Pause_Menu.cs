@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class Pause_Menu : MonoBehaviour
 {
     public bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public bool isPause = false;
+    public bool MusicChange;
 
     public AudioSource ButtonClick;
 
@@ -18,6 +20,11 @@ public class Pause_Menu : MonoBehaviour
     private FMOD.Studio.PLAYBACK_STATE fVState;
     private FMOD.Studio.PLAYBACK_STATE hState;
     public GameObject volumeSlider;
+
+
+
+    //string FMOD_Event_Path = "event:/Music/Menu_Music_Main";
+    //public FMOD.Studio.EventInstance Menu_Music_Event_Instance;
 
     private void Start()
     {
@@ -31,9 +38,12 @@ public class Pause_Menu : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
 
+
+
             if (GameIsPaused)
             {
                 Resume();
+               
             }
             else
             {
@@ -81,6 +91,9 @@ public class Pause_Menu : MonoBehaviour
         Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().Stop("WinSound");
         SceneManager.LoadScene(0);
+
+        //Menu_Music_Event_Instance = FMODUnity.RuntimeManager.CreateInstance(FMOD_Event_Path);
+        //Menu_Music_Event_Instance.start();
 
         StartCoroutine(GamePauseParameterFMod());
     }
