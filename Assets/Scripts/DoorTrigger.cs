@@ -12,7 +12,6 @@ public class DoorTrigger : MonoBehaviour
 
     public GameObject YouNeedKey;
 
-
     // Update is called once per frame
 
     private void Update()
@@ -24,7 +23,6 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       
 
         if(hasKey == true)
         {

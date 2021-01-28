@@ -20,6 +20,7 @@ public class GlobalMusicParamters : MonoBehaviour
     public bool ChasingMusic;
 
     public Pause_Menu PM;
+    public DifficultySelection DS;
 
     string FMOD_Event_Path = "event:/Music/Music_Main";
     public FMOD.Studio.EventInstance Music_Event_Instance;
@@ -38,13 +39,13 @@ public class GlobalMusicParamters : MonoBehaviour
         MasterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
 
         MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        Music_Event_Instance.start();
 
+        Music_Event_Instance.start();
     }
 
     private void Update()
-    {
-        if(PM.GameIsPaused == true)
+    {                         
+        if(PM.GameIsPaused == true || DS.PM.isPause == true)
         {
             Music_Event_Instance.setPaused(true);
         }
@@ -52,8 +53,6 @@ public class GlobalMusicParamters : MonoBehaviour
         {
             Music_Event_Instance.setPaused(false);
         }
-     
-       
 
 
         HuntingEnemy = false;
