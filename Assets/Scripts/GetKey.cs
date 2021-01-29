@@ -13,10 +13,7 @@ public class GetKey : MonoBehaviour
     {
         EnterSignal = true;
         gms.SignalFromTrigger = true;
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
         EnterSignal = false;
         transform.position = transform.position + new Vector3(0f, -10f, 0f);
         EW.Lights.SetActive(true);
