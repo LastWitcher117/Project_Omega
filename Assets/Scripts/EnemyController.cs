@@ -73,7 +73,7 @@ public class EnemyController : MonoBehaviour
                 {
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
                     enemyStunnedSound.start();
-                    Debug.Log("CUANTOS FANTASMAS MAREADOS?!!");
+                    //Debug.Log("CUANTOS FANTASMAS MAREADOS?!!");
                 }
             }
             

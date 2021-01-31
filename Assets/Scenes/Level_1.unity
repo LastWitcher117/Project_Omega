@@ -7306,6 +7306,7 @@ GameObject:
   - component: {fileID: 272958398}
   - component: {fileID: 272958397}
   - component: {fileID: 272958402}
+  - component: {fileID: 272958403}
   m_Layer: 0
   m_Name: GetKey
   m_TagString: Untagged
@@ -7418,6 +7419,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 963194228}
   ObjectTurningSpeed: 1000
+--- !u!114 &272958403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272958396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/Collectables/Key
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &273230294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36288,7 +36312,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 116355067}
         m_TargetAssemblyTypeName: Pause_Menu, Assembly-CSharp
-        m_MethodName: ButtonSound
+        m_MethodName: UiButtonSoundForward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -64912,7 +64936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 23.920044, y: -31.449951}
+  m_AnchoredPosition: {x: 23.920044, y: -31.44992}
   m_SizeDelta: {x: -1531.4738, y: -1044.8097}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1634195865
@@ -71723,7 +71747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -49.00006, y: -159.29999}
+  m_AnchoredPosition: {x: -49, y: -159.30002}
   m_SizeDelta: {x: -1694.8259, y: -1052.6565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1778900283

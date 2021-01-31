@@ -151,6 +151,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{fa26b69a-47f0-4f30-b6a5-f14a8cc7af51}">
 		<relationship name="effects">
+			<destination>{6ab25b50-21d8-4e64-acd2-cd3c60241489}</destination>
 			<destination>{5692924f-b20f-4869-bfa5-fb5792f3475c}</destination>
 			<destination>{087f2f13-af77-47bd-b14c-fd2307df176e}</destination>
 		</relationship>
@@ -192,6 +193,44 @@
 			<destination>{0aabd193-9267-4c74-b464-642830bfc834}</destination>
 		</relationship>
 	</object>
+	<object class="MultibandEqEffect" id="{6ab25b50-21d8-4e64-acd2-cd3c60241489}">
+		<property name="filterTypeA">
+			<value>9</value>
+		</property>
+		<property name="filterTypeD">
+			<value>9</value>
+		</property>
+		<property name="filterTypeE">
+			<value>9</value>
+		</property>
+		<property name="frequencyA">
+			<value>420</value>
+		</property>
+		<property name="frequencyD">
+			<value>1050</value>
+		</property>
+		<property name="frequencyE">
+			<value>5200</value>
+		</property>
+		<property name="qualityA">
+			<value>2.5999999</value>
+		</property>
+		<property name="qualityD">
+			<value>1.5999999</value>
+		</property>
+		<property name="qualityE">
+			<value>1.39999986</value>
+		</property>
+		<property name="gainA">
+			<value>-11</value>
+		</property>
+		<property name="gainD">
+			<value>-11.5</value>
+		</property>
+		<property name="gainE">
+			<value>-13</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{5692924f-b20f-4869-bfa5-fb5792f3475c}" />
 	<object class="SpatialiserEffect" id="{087f2f13-af77-47bd-b14c-fd2307df176e}" />
 	<object class="MixerBusFader" id="{9fe4ac1b-ed94-4b04-9710-033908f32694}" />
@@ -200,7 +239,7 @@
 			<value>0.98163841807909602</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>-4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{0aabd193-9267-4c74-b464-642830bfc834}">
@@ -208,7 +247,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-55</value>
 		</property>
 		<property name="curveShape">
 			<value>0.0432538763</value>

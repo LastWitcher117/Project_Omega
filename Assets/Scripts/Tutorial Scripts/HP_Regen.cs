@@ -17,6 +17,7 @@ public class HP_Regen : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Time.timeScale = 1f;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
             HPRegen.gameObject.SetActive(false);
         }
     }

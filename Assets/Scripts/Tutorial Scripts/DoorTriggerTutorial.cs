@@ -61,6 +61,7 @@ public class DoorTriggerTutorial : MonoBehaviour
             {
                 GoodJobKey.gameObject.SetActive(false);
                 AC.inTutorial = false;
+                FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
 
             }
         }
@@ -71,6 +72,7 @@ public class DoorTriggerTutorial : MonoBehaviour
             {
                 YouNeedKey.gameObject.SetActive(false);
                 AC.inTutorial = false;
+                FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
             }
         }
     }

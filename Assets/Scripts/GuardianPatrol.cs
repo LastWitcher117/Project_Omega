@@ -187,7 +187,7 @@ public class GuardianPatrol : MonoBehaviour
                     {
                         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
                         enemyStunnedSound.start();
-                        Debug.Log("CUANTOS GUARDIAN PATROL MAREADOS?!!");
+                        //Debug.Log("CUANTOS GUARDIAN PATROL MAREADOS?!!");
                     }
                 }
 

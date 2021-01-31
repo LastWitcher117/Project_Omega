@@ -90,6 +90,7 @@ public class EnemyDamage : MonoBehaviour
         Time.timeScale = 1f;
        
         SceneManager.LoadScene(1);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 1); // new line
     }
