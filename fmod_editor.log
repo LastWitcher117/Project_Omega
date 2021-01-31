@@ -2,12 +2,20 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20010 (110198), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] SoundI::release                          : Temple Talesy_Ambience_BackgroundLoop_v1 (0000016733D74598)
+[LOG] SoundI::release                          :     Temple Talesy_Ambience_BackgroundLoop_v1 (0000016730D2CDC8)
+[LOG] SoundI::release                          :     Temple Talesy_Ambience_BackgroundLoop_v1 (0000016733D74088)
+[LOG] SoundI::release                          : Temple Talesy_Ambience_BackgroundLoop_v1 (00000167D832EA58)
+[LOG] SoundI::release                          :     Temple Talesy_Ambience_BackgroundLoop_v1 (0000016730D2C0C8)
+[LOG] SoundI::release                          :     Temple Talesy_Ambience_BackgroundLoop_v1 (0000016733D728E8)
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=8, nSamplesPerSec=48000, nAvgBytesPerSec=1536000, nBlockAlign=32, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x0000063F, SubFormat=00000003-0000-0010-8000-00AA00389B71.
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] DownMix::init                            : dspbuffersize: 1024  rate: 48000. output speaker mode: 7, input speaker mode 3
+[LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001F7E8AA2318 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000016730E6A798 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,37 +23,38 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] SoundI::getSubSound                      : sound 000001F5545E0758.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 0000016733D72FA8.  Subsound index 0 / 1
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F735895708
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF6D158
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Player_Attack_Electric_v2', format=2, channels=2, frequency=48000, lengthbytes=27840, lengthpcm=103200, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.610596.
+[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_09', format=2, channels=2, frequency=48000, lengthbytes=10752, lengthpcm=38308, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.506836.
@@ -54,14 +63,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_02', format=2, channels=2, frequency=48000, lengthbytes=11360, lengthpcm=37654, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.491425.
@@ -70,14 +79,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_ScoreBonus-A5', format=2, channels=2, frequency=48000, lengthbytes=13824, lengthpcm=41320, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.563110.
@@ -86,14 +95,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_08', format=2, channels=2, frequency=48000, lengthbytes=11168, lengthpcm=38029, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.534912.
@@ -102,14 +111,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_03', format=2, channels=2, frequency=48000, lengthbytes=10400, lengthpcm=33661, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.588623.
@@ -118,14 +127,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_11', format=2, channels=2, frequency=48000, lengthbytes=15328, lengthpcm=46760, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.549255.
@@ -134,14 +143,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_07', format=2, channels=2, frequency=48000, lengthbytes=11648, lengthpcm=38787, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.528351.
@@ -150,14 +159,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_04', format=2, channels=2, frequency=48000, lengthbytes=11168, lengthpcm=37056, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.525116.
@@ -166,14 +175,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_10', format=2, channels=2, frequency=48000, lengthbytes=9088, lengthpcm=30890, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.555756.
@@ -182,14 +191,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_06', format=2, channels=2, frequency=48000, lengthbytes=11040, lengthpcm=37587, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.524109.
@@ -198,14 +207,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_01', format=2, channels=2, frequency=48000, lengthbytes=8768, lengthpcm=26655, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.503510.
@@ -214,40 +223,39 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001D776FF28C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588D728
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9DE2C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9DE2C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9DE2C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9DE2C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001672FF69378
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Collectable_LastVersion_05', format=2, channels=2, frequency=48000, lengthbytes=11712, lengthpcm=38637, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.510498.
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] SystemI::createSound                     : filename = Assets\FMODAssets\FMOD-TempleTales\TempleTales\Build\Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F7DFABE208 : node = 000001F737D6FED0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F738423A28.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F7DFABE208
+[LOG] SystemI::createSound                     : setdata soundi = 00000167340324B8 : node = 00000167E09C3E70
+[LOG] SystemI::createSound                     : add node to async list : head = 0000016730D2E298.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000167340324B8
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\FMODAssets\FMOD-TempleTales\TempleTales\Build\Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3718400
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 99072
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F737D6FFE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000167E09C3F80
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Temple_Tales_v2_Loop', format=2, channels=2, frequency=48000, lengthbytes=898944, lengthpcm=3124067, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.606354.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F7DFABE208
-[LOG] SoundI::getSubSound                      : sound 000001F7DFABE208.  Subsound index 0 / 1
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F7DFABE3B8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F7DFABE3B8
-[LOG] SoundI::release                          : Temple_Tales_v2_Intro (000001F5545E0758)
-[LOG] SoundI::release                          :     Temple_Tales_v2_Intro (000001F737AC5CA8)
-[LOG] SoundI::release                          :     Temple_Tales_v2_Intro (000001F5545E0908)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000167340324B8
+[LOG] SoundI::getSubSound                      : sound 00000167340324B8.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000016734032668
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000016734032668
+[LOG] SoundI::release                          : Temple_Tales_v2_Intro (0000016733D72FA8)
+[LOG] SoundI::release                          :     Temple_Tales_v2_Intro (0000016730E837A8)
+[LOG] SoundI::release                          :     Temple_Tales_v2_Intro (0000016733D73158)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
@@ -255,330 +263,142 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F735890488
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Player_Dash_Animated', format=2, channels=2, frequency=48000, lengthbytes=18848, lengthpcm=78618, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.713989.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F735890488
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Player_Dash_Animated-004', format=2, channels=2, frequency=48000, lengthbytes=19872, lengthpcm=83243, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.759308.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F735890488
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Player_Dash_Animated-001', format=2, channels=2, frequency=48000, lengthbytes=18592, lengthpcm=78865, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.791656.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F735890488
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Player_Dash_Animated-002', format=2, channels=2, frequency=48000, lengthbytes=18944, lengthpcm=79561, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.750000.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F735890488
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Player_Dash_Animated-003', format=2, channels=2, frequency=48000, lengthbytes=17952, lengthpcm=75726, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.765533.
-[LOG] SystemI::createSound                     : filename = Assets\FMODAssets\FMOD-TempleTales\TempleTales\Build\Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F5545E0908 : node = 000001F739703090
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F738423A28.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F5545E0908
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMODAssets\FMOD-TempleTales\TempleTales\Build\Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F7397031A0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Temple_Tales_v2_ChaseLoop', format=2, channels=2, frequency=48000, lengthbytes=694880, lengthpcm=2343050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.237366.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F5545E0908
-[LOG] SoundI::getSubSound                      : sound 000001F5545E0908.  Subsound index 0 / 1
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F735890AB8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Talesy_Enemy_AttackAlert_v1', format=2, channels=2, frequency=48000, lengthbytes=29408, lengthpcm=118795, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.618896.
-[LOG] SoundI::release                          : Temple_Tales_v2_Loop (000001F7DFABE208)
-[LOG] SoundI::release                          :     Temple_Tales_v2_Loop (000001F737AC35A8)
-[LOG] SoundI::release                          :     Temple_Tales_v2_Loop (000001F7DFABE3B8)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] SoundI::release                          :  (000001F73934F648)
-[LOG] SoundI::release                          :     Temple Tales_Player_Dash_Animated-001 (000001F737AC5628)
-[LOG] SoundI::release                          :  (000001F73934F368)
-[LOG] SoundI::release                          :     Temple Tales_Player_Dash_Animated-002 (000001F737AC5CA8)
-[LOG] SystemI::createSound                     : filename = Assets\FMODAssets\FMOD-TempleTales\TempleTales\Build\Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001F736FD10C8 : node = 000001F739703450
-[LOG] SystemI::createSound                     : add node to async list : head = 000001F738423A28.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001F736FD10C8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMODAssets\FMOD-TempleTales\TempleTales\Build\Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001F739703560
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Temple_Tales_v2_Loop', format=2, channels=2, frequency=48000, lengthbytes=898944, lengthpcm=3124067, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.606354.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001F736FD10C8
-[LOG] SoundI::getSubSound                      : sound 000001F736FD10C8.  Subsound index 0 / 1
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588BA48
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Player_Dash_Animated-001', format=2, channels=2, frequency=48000, lengthbytes=18592, lengthpcm=78865, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.791656.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000042367FF1AC
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA90E1C2D0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA90E1C2A0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA90E1C3A0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA90E1C460
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001F73588BA48
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_Player_Dash_Animated-002', format=2, channels=2, frequency=48000, lengthbytes=18944, lengthpcm=79561, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.750000.
-[LOG] SoundI::release                          : Temple_Tales_v2_ChaseLoop (000001F5545E0908)
-[LOG] SoundI::release                          :     Temple_Tales_v2_ChaseLoop (000001F737AC30C8)
-[LOG] SoundI::release                          :     Temple_Tales_v2_ChaseLoop (000001F5545E19E8)
-[LOG] SoundI::release                          :  (000001F7E83EA5F8)
-[LOG] SoundI::release                          :     Temple Talesy_Enemy_AttackAlert_v1 (000001F738423A78)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] SoundI::release                          :  (000001F737D70658)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_06 (000001F737AC23C8)
-[LOG] SoundI::release                          :  (000001F737D70378)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_07 (000001F737AC4C68)
-[LOG] SoundI::release                          :  (000001F737D70C18)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_10 (000001F737AC5148)
-[LOG] SoundI::release                          :  (000001F738D02368)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_01 (000001F737AC28A8)
-[LOG] SoundI::release                          :  (000001F5545DD068)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_08 (000001F737AC4448)
-[LOG] SoundI::release                          :  (000001F738D02088)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_05 (000001F737AC2568)
-[LOG] SoundI::release                          :  (000001F737D70208)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_03 (000001F737AC2A48)
-[LOG] SoundI::release                          :  (000001F5545DC7C8)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_02 (000001F737AC4FA8)
-[LOG] SoundI::release                          :  (000001F737D70D88)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_11 (000001F737AC2088)
-[LOG] SoundI::release                          :  (000001F5545DCAA8)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_ScoreBonus-A5 (000001F737AC4928)
-[LOG] SoundI::release                          :  (000001F737D70AA8)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_04 (000001F737AC2228)
-[LOG] SoundI::release                          :  (000001F5545DD348)
-[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_09 (000001F737AC3F68)
-[LOG] SoundI::release                          :  (000001F5545DD4B8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Attack_Electric_v2 (000001F737AC2708)
-[LOG] SoundI::release                          :  (000001F7E83EA488)
-[LOG] SoundI::release                          :     Temple Tales_Player_Dash_Animated-001 (000001F737AC3268)
-[LOG] SoundI::release                          :  (000001F7E83EA318)
-[LOG] SoundI::release                          :     Temple Tales_Player_Dash_Animated-002 (000001F737AC5628)
-[LOG] SoundI::release                          :  (000001F7E83EA768)
-[LOG] SoundI::release                          :     Temple Tales_Player_Dash_Animated-003 (000001F737AC3DC8)
-[LOG] SoundI::release                          :  (000001F73903A6D8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Dash_Animated-004 (000001F737AC2D88)
-[LOG] SoundI::release                          :  (000001F73903A118)
-[LOG] SoundI::release                          :     Temple Tales_Player_Dash_Animated (000001F737AC3A88)
-[LOG] SoundI::release                          : Temple_Tales_v2_Loop (000001F736FD10C8)
-[LOG] SoundI::release                          :     Temple_Tales_v2_Loop (000001F737AC2F28)
-[LOG] SoundI::release                          :     Temple_Tales_v2_Loop (000001F736FD1938)
-[LOG] SoundI::release                          :  (000001F73903A3F8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-001 (000001F737AC5488)
-[LOG] SoundI::release                          :  (000001F554558558)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-002 (000001F737AC4E08)
-[LOG] SoundI::release                          :  (000001F554558108)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-003 (000001F737AC5968)
-[LOG] SoundI::release                          :  (000001F73934FC08)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-004 (000001F789F06FB8)
-[LOG] SoundI::release                          :  (000001F73886EBC8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-005 (000001F789F04098)
-[LOG] SoundI::release                          :  (000001F554558278)
-[LOG] SoundI::release                          :     Temple Tales_Heel-001 (000001F737AC4788)
-[LOG] SoundI::release                          :  (000001F73934F1F8)
-[LOG] SoundI::release                          :     Temple Tales_Heel-002 (000001F789F04A58)
-[LOG] SoundI::release                          :  (000001F554558B18)
-[LOG] SoundI::release                          :     Temple Tales_Heel-003 (000001F789F06798)
-[LOG] SoundI::release                          :  (000001F7E8EC9C48)
-[LOG] SoundI::release                          :     Temple Tales_Heel-004 (000001F789F04578)
-[LOG] SoundI::release                          :  (000001F738671DE8)
-[LOG] SoundI::release                          :     Temple Tales_Toe-001 (000001F789F043D8)
-[LOG] SoundI::release                          :  (000001F73903A568)
-[LOG] SoundI::release                          :     Temple Tales_Toe-002 (000001F737AC3C28)
-[LOG] SoundI::release                          :  (000001F738671F58)
-[LOG] SoundI::release                          :     Temple Tales_Toe-003 (000001F789F065F8)
-[LOG] SoundI::release                          :  (000001F554558C88)
-[LOG] SoundI::release                          :     Temple Tales_Toe-004 (000001F737AC4108)
-[LOG] SoundI::release                          :  (000001F5545589A8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-001 (000001F737AC45E8)
-[LOG] SoundI::release                          :  (000001F738671548)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-002 (000001F789F04F38)
-[LOG] SoundI::release                          :  (000001F73886F188)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-003 (000001F789F05A98)
-[LOG] SoundI::release                          :  (000001F73886ED38)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-004 (000001F789F058F8)
-[LOG] SoundI::release                          :  (000001F73886EA58)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-001 (000001F789F055B8)
-[LOG] SoundI::release                          :  (000001F739039CC8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-002 (000001F737AC5B08)
-[LOG] SoundI::release                          :  (000001F7E8EC90C8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-003 (000001F789F05418)
-[LOG] SoundI::release                          :  (000001F73982F668)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-004 (000001F789F04D98)
-[LOG] SoundI::release                          :  (000001F7E8EC9238)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-006 (000001F789F06458)
-[LOG] SoundI::release                          :  (000001F739039FA8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-007 (000001F737AC2BE8)
-[LOG] SoundI::release                          :  (000001F7386716B8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-008 (000001F789F05278)
-[LOG] SoundI::release                          :  (000001F73886F5D8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-009 (000001F789F05F78)
-[LOG] SoundI::release                          :  (000001F738672238)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps (000001F789F077D8)
-[LOG] SoundI::release                          :  (000001F738671828)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-005 (000001F789F07978)
-[LOG] SoundI::release                          :  (000001F554557F98)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-006 (000001F737AC52E8)
-[LOG] SoundI::release                          :  (000001F5545586C8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-007 (000001F789F06C78)
-[LOG] SoundI::release                          :  (000001F7E8EC97F8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-008 (000001F789F07158)
-[LOG] SoundI::release                          :  (000001F7E8EC9518)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe (000001F789F06118)
-[LOG] SoundI::release                          :  (000001F739039E38)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-005 (000001F737AC42A8)
-[LOG] SoundI::release                          :  (000001F73886EEA8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-006 (000001F789F07E58)
-[LOG] SoundI::release                          :  (000001F554558838)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-007 (000001F737AC57C8)
-[LOG] SoundI::release                          :  (000001F73886E8E8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-008 (000001F789F05758)
-[LOG] SoundI::release                          :  (000001F7386720C8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel (000001F789F050D8)
-[LOG] SoundI::release                          :  (000001F73886F018)
-[LOG] SoundI::release                          :     Temple Tales_Heel-005 (000001F789F07CB8)
-[LOG] SoundI::release                          :  (000001F7E8EC9AD8)
-[LOG] SoundI::release                          :     Temple Tales_Heel-006 (000001F789F062B8)
-[LOG] SoundI::release                          :  (000001F73886F2F8)
-[LOG] SoundI::release                          :     Temple Tales_Heel-007 (000001F789F06AD8)
-[LOG] SoundI::release                          :  (000001F73934F088)
-[LOG] SoundI::release                          :     Temple Tales_Heel-008 (000001F789F05DD8)
-[LOG] SoundI::release                          :  (000001F738671998)
-[LOG] SoundI::release                          :     Temple Tales_Heel (000001F789F04718)
-[LOG] SoundI::release                          :  (000001F5545583E8)
-[LOG] SoundI::release                          :     Temple Tales_Toe-005 (000001F789F06938)
-[LOG] SoundI::release                          :  (000001F7E8EC93A8)
-[LOG] SoundI::release                          :     Temple Tales_Toe-006 (000001F789F048B8)
-[LOG] SoundI::release                          :  (000001F738671B08)
-[LOG] SoundI::release                          :     Temple Tales_Toe-007 (000001F789F07498)
-[LOG] SoundI::release                          :  (000001F7E8EC9DB8)
-[LOG] SoundI::release                          :     Temple Tales_Toe-008 (000001F789F04BF8)
-[LOG] SoundI::release                          :  (000001F7E8EC9688)
-[LOG] SoundI::release                          :     Temple Tales_Toe (000001F789F04238)
-[LOG] SoundI::release                          :  (000001F73982F4F8)
-[LOG] SoundI::release                          :     Temple Talesy_Enemy Stunned_Mix Print _A + B Print 1__v1 (000001F789F07B18)
-[LOG] SoundI::release                          :  (000001F73886F468)
-[LOG] SoundI::release                          :     Temple_Tales_v2_ChaseSting (000001F789F05C38)
-[LOG] SoundI::release                          :  (000001F73903A848)
-[LOG] SoundI::release                          :     Temple Tales_Player_Enemies_Ghost Loop Short (000001F737AC4AC8)
-[LOG] SoundI::release                          :  (000001F73982F0A8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Enemies_Ghost Loop mono-2cycles (000001F789F06E18)
-[LOG] SoundI::release                          :  (000001F7E8EC9968)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_03 (000001F789F07638)
-[LOG] SoundI::release                          :  (000001F738671C78)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_01 (000001F789F072F8)
+[LOG] SoundI::release                          :  (000001671B17FD28)
+[LOG] SoundI::release                          :     Temple Tales_Player_Attack_Electric_v2 (0000016730E803A8)
+[LOG] SoundI::release                          :  (000001671B181708)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_06 (0000016730E81588)
+[LOG] SoundI::release                          :  (000001671B17EEC8)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_07 (0000016730E80BC8)
+[LOG] SoundI::release                          :  (000001671B17F768)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_10 (0000016730E80D68)
+[LOG] SoundI::release                          :  (000001671B181FA8)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_01 (0000016730E81728)
+[LOG] SoundI::release                          :  (000001671B182E08)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_08 (0000016730E83128)
+[LOG] SoundI::release                          :  (000001671B17F488)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_05 (0000016730D2CDC8)
+[LOG] SoundI::release                          :  (000001671B181428)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_03 (0000016730E83E28)
+[LOG] SoundI::release                          :  (000001671B183F48)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_02 (0000016730E806E8)
+[LOG] SoundI::release                          :  (000001671B181598)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_11 (0000016730E80888)
+[LOG] SoundI::release                          :  (000001671B17E798)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_ScoreBonus-A5 (0000016730E82F88)
+[LOG] SoundI::release                          :  (000001671B180178)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_04 (0000016730E81248)
+[LOG] SoundI::release                          : Temple_Tales_v2_Loop (00000167340324B8)
+[LOG] SoundI::release                          :     Temple_Tales_v2_Loop (00000167E08D5DF8)
+[LOG] SoundI::release                          :     Temple_Tales_v2_Loop (0000016734032668)
+[LOG] SoundI::release                          :  (000001671B17ED58)
+[LOG] SoundI::release                          :     Temple Tales_Collectable_LastVersion_09 (0000016730E80548)
+[LOG] SoundI::release                          :  (000001671B183C68)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-001 (0000016730E82428)
+[LOG] SoundI::release                          :  (000001671B182288)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-002 (0000016730E83948)
+[LOG] SoundI::release                          :  (000001671B181E38)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-003 (0000016730E80F08)
+[LOG] SoundI::release                          :  (000001671B17BF58)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-004 (0000016730D2C8E8)
+[LOG] SoundI::release                          :  (000001671B183538)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-005 (0000016730D2BD88)
+[LOG] SoundI::release                          :  (000001671B17FBB8)
+[LOG] SoundI::release                          :     Temple Tales_Heel-001 (0000016730E80208)
+[LOG] SoundI::release                          :  (000001671B17C518)
+[LOG] SoundI::release                          :     Temple Tales_Heel-002 (0000016730D2D928)
+[LOG] SoundI::release                          :  (000001671B1830E8)
+[LOG] SoundI::release                          :     Temple Tales_Heel-003 (0000016730E82908)
+[LOG] SoundI::release                          :  (000001671B180458)
+[LOG] SoundI::release                          :     Temple Tales_Heel-004 (0000016730D2C5A8)
+[LOG] SoundI::release                          :  (000001671B183258)
+[LOG] SoundI::release                          :     Temple Tales_Toe-001 (0000016730D2EB08)
+[LOG] SoundI::release                          :  (000001671B182C98)
+[LOG] SoundI::release                          :     Temple Tales_Toe-002 (0000016730E810A8)
+[LOG] SoundI::release                          :  (000001671B182568)
+[LOG] SoundI::release                          :     Temple Tales_Toe-003 (0000016730D2ECA8)
+[LOG] SoundI::release                          :  (000001671B180FD8)
+[LOG] SoundI::release                          :     Temple Tales_Toe-004 (0000016730E80A28)
+[LOG] SoundI::release                          :  (000001671B182118)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-001 (0000016730E83468)
+[LOG] SoundI::release                          :  (000001671B183988)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-002 (0000016730D2D2A8)
+[LOG] SoundI::release                          :  (000001671B180CF8)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-003 (0000016730E820E8)
+[LOG] SoundI::release                          :  (000001671B1823F8)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-004 (0000016730E81F48)
+[LOG] SoundI::release                          :  (000001671B181B58)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe-001 (0000016730D2B708)
+[LOG] SoundI::release                          :  (000001671B17F038)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe-002 (0000016730E82768)
+[LOG] SoundI::release                          :  (000001671B1802E8)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe-003 (0000016730D2B088)
+[LOG] SoundI::release                          :  (000001671B17D378)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe-004 (0000016730D2CC28)
+[LOG] SoundI::release                          :  (000001671B180738)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-006 (0000016730D2E488)
+[LOG] SoundI::release                          :  (000001671B1812B8)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-007 (0000016730E83AE8)
+[LOG] SoundI::release                          :  (000001671B180B88)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-008 (0000016730D2D788)
+[LOG] SoundI::release                          :  (000001671B180E68)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-009 (0000016730E825C8)
+[LOG] SoundI::release                          :  (000001671B1808A8)
+[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps (0000016730D2DC68)
+[LOG] SoundI::release                          :  (000001671B1829B8)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe-005 (0000016730D2B228)
+[LOG] SoundI::release                          :  (000001671B17FA48)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe-006 (0000016730E82AA8)
+[LOG] SoundI::release                          :  (000001671B17F318)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe-007 (0000016730E81DA8)
+[LOG] SoundI::release                          :  (000001671B1819E8)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe-008 (0000016730D2E7C8)
+[LOG] SoundI::release                          :  (000001671B17E908)
+[LOG] SoundI::release                          :     Temple Tales_Stone_toe (0000016730D2D108)
+[LOG] SoundI::release                          :  (000001671B181148)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-005 (0000016730E82288)
+[LOG] SoundI::release                          :  (000001671B181878)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-006 (0000016730D2BBE8)
+[LOG] SoundI::release                          :  (000001671B1826D8)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-007 (0000016730E832C8)
+[LOG] SoundI::release                          :  (000001671B181CC8)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-008 (0000016730D2B8A8)
+[LOG] SoundI::release                          :  (000001671B180A18)
+[LOG] SoundI::release                          :     Temple Tales_Stone_Heel (0000016730D2D5E8)
+[LOG] SoundI::release                          :  (000001671B182B28)
+[LOG] SoundI::release                          :     Temple Tales_Heel-005 (0000016730D2B568)
+[LOG] SoundI::release                          :  (000001671B180008)
+[LOG] SoundI::release                          :     Temple Tales_Heel-006 (0000016730D2C268)
+[LOG] SoundI::release                          :  (000001671B1805C8)
+[LOG] SoundI::release                          :     Temple Tales_Heel-007 (0000016730D2BA48)
+[LOG] SoundI::release                          :  (000001671B178FE8)
+[LOG] SoundI::release                          :     Temple Tales_Heel-008 (0000016730D2E968)
+[LOG] SoundI::release                          :  (000001671B17EBE8)
+[LOG] SoundI::release                          :     Temple Tales_Heel (0000016730D2EE48)
+[LOG] SoundI::release                          :  (000001671B183818)
+[LOG] SoundI::release                          :     Temple Tales_Toe-005 (0000016730E80068)
+[LOG] SoundI::release                          :  (000001671B182F78)
+[LOG] SoundI::release                          :     Temple Tales_Toe-006 (0000016730D2C408)
+[LOG] SoundI::release                          :  (000001671B1836A8)
+[LOG] SoundI::release                          :     Temple Tales_Toe-007 (0000016730D2B3C8)
+[LOG] SoundI::release                          :  (000001671B17F1A8)
+[LOG] SoundI::release                          :     Temple Tales_Toe-008 (0000016730D2E2E8)
+[LOG] SoundI::release                          :  (000001671B17EA78)
+[LOG] SoundI::release                          :     Temple Tales_Toe (0000016730D2E628)
+[LOG] SoundI::release                          :  (000001671B17CC48)
+[LOG] SoundI::release                          :     Temple Talesy_Enemy Stunned_Mix Print _A + B Print 1__v1 (0000016730D2CA88)
+[LOG] SoundI::release                          :  (000001671B1833C8)
+[LOG] SoundI::release                          :     Temple_Tales_v2_ChaseSting (0000016730E83608)
+[LOG] SoundI::release                          :  (000001671B183DD8)
+[LOG] SoundI::release                          :     Temple Tales_Player_Enemies_Ghost Loop Short (0000016730E813E8)
+[LOG] SoundI::release                          :  (000001671B179158)
+[LOG] SoundI::release                          :     Temple Tales_Player_Enemies_Ghost Loop mono-2cycles (0000016730D2DE08)
+[LOG] SoundI::release                          :  (000001671B17AE18)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_03 (0000016730D2DAC8)
+[LOG] SoundI::release                          :  (000001671B182848)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_01 (0000016730D2D448)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
