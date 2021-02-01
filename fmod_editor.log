@@ -9,7 +9,7 @@
 [LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000022456E0E078 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002732B43BC28 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,3 +20,76 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000EB090FEFEC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9235C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9235C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9235C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9235C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000273289AF6D8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_02', format=2, channels=2, frequency=48000, lengthbytes=4704, lengthpcm=18158, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.516205.
+[LOG] SystemI::createSound                     : filename = Assets\FMODAssets\FMOD-TempleTales\TempleTales\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 000002732E30E7D8 : node = 00000273D2790530
+[LOG] SystemI::createSound                     : add node to async list : head = 000002732D95FBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002732E30E7D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\FMODAssets\FMOD-TempleTales\TempleTales\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3718400
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 99072
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000273D2790640
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 4000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='49 Swish, Quick Light Whipping Swish Art Of Foley Fs-09 Sound Ideas', format=2, channels=2, frequency=48000, lengthbytes=61120, lengthpcm=1555840, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.936798.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002732E30E7D8
+[LOG] SoundI::getSubSound                      : sound 000002732E30E7D8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : 49 Swish, Quick Light Whipping Swish Art Of Foley Fs-09 Sound Ideas (000002732E30E7D8)
+[LOG] SoundI::release                          :     49 Swish, Quick Light Whipping Swish Art Of Foley Fs-09 Sound Ideas (000002732D95C7F8)
+[LOG] SoundI::release                          :     49 Swish, Quick Light Whipping Swish Art Of Foley Fs-09 Sound Ideas (000002732E30F3A8)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 3718400
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 99072
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000EB090FEFEC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA9235C2D0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA9235C2A0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA9235C3A0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA9235C460
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000273289AF2B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Temple Tales_UI_Buttons_04', format=2, channels=2, frequency=48000, lengthbytes=5856, lengthpcm=17449, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.149567.
+[LOG] SoundI::release                          :  (00000272CB370D98)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_02 (000002732D95EA18)
+[LOG] SoundI::release                          :  (00000272CB36FC58)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_04 (000002732D95E058)
+[LOG] SoundI::release                          :  (00000272CB3728E8)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_03 (000002732D95EBB8)
+[LOG] SoundI::release                          :  (00000272CB370F08)
+[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_01 (000002732D95D358)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
