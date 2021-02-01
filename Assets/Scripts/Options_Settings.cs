@@ -57,6 +57,7 @@ public class Options_Settings : MonoBehaviour
     public void SetVolume(float volume)
     {
         FVolumeSlider(volume);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("MASTER VOLUME", volume);
     }
 
     public void ButtonSound()

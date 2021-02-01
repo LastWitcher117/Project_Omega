@@ -39,6 +39,7 @@ public class Letter_to_Pacsy : MonoBehaviour
         {
             AC.inTutorial = false;
             LetterToPacsy.gameObject.SetActive(false);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
 
 
 

@@ -10,6 +10,7 @@ public class PlayerFootStepsSound : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Waiting-Moving-Dash", 1);
     }
 
+
     public void PlayrFSLeft()
     {
         // footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);

@@ -123,7 +123,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{27e3e378-0f4d-4aa1-9ff9-b8432883a9a9}">
 		<property name="volume">
-			<value>-3.5</value>
+			<value>-8</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{a9a84fcf-9d89-4108-8db0-26a0c8261606}</destination>
@@ -220,6 +220,9 @@
 		<property name="start">
 			<value>10</value>
 		</property>
+		<property name="volume">
+			<value>-3.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{8ae53be8-b695-4fc5-be0d-73cba7c21700}</destination>
 		</relationship>
@@ -258,6 +261,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{74a47c99-bdc3-4ea3-8652-2265d6a31458}">
+		<property name="volume">
+			<value>-5.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>
@@ -287,6 +293,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{a9a84fcf-9d89-4108-8db0-26a0c8261606}">
 		<relationship name="effects">
+			<destination>{034758ed-cf9a-4146-819f-61a7a4e7a817}</destination>
 			<destination>{8d742c5b-04c0-4efe-a8b9-3a1fcdf1542b}</destination>
 			<destination>{ab1d328a-c630-43dd-a7fa-038ffbefbe85}</destination>
 		</relationship>
@@ -322,6 +329,38 @@
 	<object class="MixerBusPanner" id="{454125af-e66d-4bb2-b07b-36529e03801a}">
 		<property name="stereoPan">
 			<value>-20</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{034758ed-cf9a-4146-819f-61a7a4e7a817}">
+		<property name="filterTypeA">
+			<value>8</value>
+		</property>
+		<property name="filterTypeB">
+			<value>9</value>
+		</property>
+		<property name="filterTypeC">
+			<value>9</value>
+		</property>
+		<property name="frequencyA">
+			<value>4107.41016</value>
+		</property>
+		<property name="frequencyB">
+			<value>2160.84595</value>
+		</property>
+		<property name="frequencyC">
+			<value>850.559509</value>
+		</property>
+		<property name="qualityB">
+			<value>1.14999998</value>
+		</property>
+		<property name="gainA">
+			<value>6.72413731</value>
+		</property>
+		<property name="gainB">
+			<value>-9</value>
+		</property>
+		<property name="gainC">
+			<value>4</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{8d742c5b-04c0-4efe-a8b9-3a1fcdf1542b}" />

@@ -58,7 +58,7 @@ namespace FMODUnity
             // Deserialize the cache from the unity resources
             if (eventCache == null)
             {
-               // eventCache = AssetDatabase.LoadAssetAtPath(CacheAssetFullName, typeof(EventCache)) as EventCache;
+                eventCache = AssetDatabase.LoadAssetAtPath(CacheAssetFullName, typeof(EventCache)) as EventCache;
                 if (eventCache == null || eventCache.cacheVersion != EventCache.CurrentCacheVersion)
                 {
                     UnityEngine.Debug.Log("FMOD Studio: Cannot find serialized event cache or cache in old format, creating new instance");

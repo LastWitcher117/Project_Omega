@@ -143,6 +143,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{d03fa91c-ab4c-4f3a-9d62-f130da268379}">
 		<relationship name="effects">
+			<destination>{4014bd23-c09e-4317-8cc0-4ace8d5eb626}</destination>
 			<destination>{1bb00b25-8770-4ac5-ba49-ece11468b1f8}</destination>
 			<destination>{af992102-eb71-4bcd-af23-40dbfbb1d02e}</destination>
 		</relationship>
@@ -181,6 +182,50 @@
 			<destination>{be4c72c3-e448-48a4-b81c-46f7f32aa0d1}</destination>
 		</relationship>
 	</object>
+	<object class="MultibandEqEffect" id="{4014bd23-c09e-4317-8cc0-4ace8d5eb626}">
+		<property name="filterTypeA">
+			<value>9</value>
+		</property>
+		<property name="filterTypeB">
+			<value>9</value>
+		</property>
+		<property name="filterTypeC">
+			<value>9</value>
+		</property>
+		<property name="frequencyA">
+			<value>636.399536</value>
+		</property>
+		<property name="frequencyB">
+			<value>379.118347</value>
+		</property>
+		<property name="frequencyC">
+			<value>1988.98267</value>
+		</property>
+		<property name="frequencyD">
+			<value>1209.69006</value>
+		</property>
+		<property name="qualityB">
+			<value>0.99999994</value>
+		</property>
+		<property name="qualityC">
+			<value>1.0999999</value>
+		</property>
+		<property name="qualityD">
+			<value>5</value>
+		</property>
+		<property name="gainA">
+			<value>5.6896553</value>
+		</property>
+		<property name="gainB">
+			<value>-8</value>
+		</property>
+		<property name="gainC">
+			<value>5.6896553</value>
+		</property>
+		<property name="gainD">
+			<value>5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{1bb00b25-8770-4ac5-ba49-ece11468b1f8}" />
 	<object class="SpatialiserEffect" id="{af992102-eb71-4bcd-af23-40dbfbb1d02e}">
 		<property name="minimumDistance">
@@ -193,7 +238,7 @@
 			<value>0.98163841807909602</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>-5.5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{be4c72c3-e448-48a4-b81c-46f7f32aa0d1}">
@@ -201,7 +246,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-46.25</value>
 		</property>
 		<property name="curveShape">
 			<value>0.0432538763</value>
