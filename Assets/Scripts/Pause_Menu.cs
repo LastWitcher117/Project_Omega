@@ -151,4 +151,16 @@ public class Pause_Menu : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);  // FMOD
     }
+
+    public void LoadNewGame()
+    {
+        Time.timeScale = 1f;
+        FindObjectOfType<AudioManager>().Stop("WinSound");
+        SceneManager.LoadScene(1);
+
+        //Menu_Music_Event_Instance = FMODUnity.RuntimeManager.CreateInstance(FMOD_Event_Path);
+        //Menu_Music_Event_Instance.start();
+
+        StartCoroutine(GamePauseParameterFMod());
+    }
 }
