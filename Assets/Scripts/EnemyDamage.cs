@@ -83,6 +83,7 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator LoseScreen() //Time Active of red DMG Screen
     {
+        Cursor.lockState = CursorLockMode.None;
         ay.enabled = false;
         yield return new WaitForSeconds(3f);
         Time.timeScale = 0f;
@@ -93,7 +94,6 @@ public class EnemyDamage : MonoBehaviour
         }
         Time.timeScale = 1f;
        
-        SceneManager.LoadScene(1);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 1); // new line
