@@ -691,6 +691,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 336084146304234747, guid: a1574d8d2829a204599c1dedf70c9c6a, type: 3}
   m_PrefabInstance: {fileID: 1775106474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &60350097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7847299440818848125, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+  m_PrefabInstance: {fileID: 171034741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &60350099
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60350097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 107ca22b741ed2b419c662ec4283302c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &62737561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2449,6 +2473,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 171034743}
     - target: {fileID: 3634097857969504773, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: EnemyAnim
+      value: 
+      objectReference: {fileID: 60350099}
+    - target: {fileID: 3634097857969504773, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
       propertyPath: CooldownTime
       value: 100
       objectReference: {fileID: 0}
@@ -2506,6 +2534,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634097857969504792, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847299440818848114, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847299440818848114, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847299440818848114, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847299440818848114, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847299440818848114, guid: bd3e6be9cc9ca6341a58c65b0bf37c03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17308,7 +17356,7 @@ MonoBehaviour:
   TPM: {fileID: 64071691}
   gameIsWon: 0
   PointsNeededForHealth: 50
-  HowManyPointsForHP: 0
+  HowManyPointsForHP: 50
   HPUpdate: 0
   HealthComponent: {fileID: 64071688}
   HealthTutorial: 0

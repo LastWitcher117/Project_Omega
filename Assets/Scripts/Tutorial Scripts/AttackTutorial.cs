@@ -29,7 +29,7 @@ public class AttackTutorial : MonoBehaviour
                 HowToAttack.gameObject.SetActive(true);
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && AC.inTutorial == true)
             {
                 AC.inTutorial = false;
                 EController.SupressMovement = false;

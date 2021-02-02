@@ -59,12 +59,18 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (tookDamage == true)
+        if (other.tag == "Player" && Cooldown == false)
         {
+            Cooldown = true;
             tookDamage = false;
             StartCoroutine(AttackWaiter());
         }
         
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        tookDamage = false;
     }
 
 
