@@ -19,6 +19,7 @@ public class TimerCountdown : MonoBehaviour
     public bool takingAway = false;
 
     public bool PlayerWon = false;
+    public bool noTimeLeft = false;
 
 
     // Start is called before the first frame update
@@ -39,16 +40,10 @@ public class TimerCountdown : MonoBehaviour
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
 
-        if(PlayerWon == true)
-        {
-            GMS.snackpoints = GMS.snackpoints + (timeLeft * 3);
-            PlayerWon = false;
-        }
-
-
-        /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
+       
         if (timeLeft == 0)
         {
+            /*/
             AC.isDying = true;
             PM.isPause = true;
             You_Lose_Screen.enabled = true;
@@ -61,6 +56,24 @@ public class TimerCountdown : MonoBehaviour
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 0);
 
             StartCoroutine(LoseScreen());
+            /*/
+
+            noTimeLeft = true;
+
+        }
+
+        /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
+
+        if (PlayerWon == true && noTimeLeft == false)
+        {
+            GMS.snackpoints = GMS.snackpoints + (timeLeft * 3);
+            PlayerWon = false;
+        }
+
+        if (PlayerWon == true && noTimeLeft == true)
+        {
+            GMS.snackpoints = GMS.snackpoints + (timeLeft * 1);
+            PlayerWon = false;
         }
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
     }

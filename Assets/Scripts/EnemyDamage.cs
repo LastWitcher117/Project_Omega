@@ -10,6 +10,9 @@ public class EnemyDamage : MonoBehaviour
     bool Cooldown; //Cooldown for attack
     float ElapsedTime;
     public float CooldownTime;
+
+    public bool tookDamage = false;
+
     public GameObject Dmg_Flashscreen;
 
     public AnimationController re;
@@ -22,6 +25,8 @@ public class EnemyDamage : MonoBehaviour
 
     public Animator EnemyAnim;
 
+    public Health HP;
+
 
     void Start()
     {
@@ -32,41 +37,34 @@ public class EnemyDamage : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && Cooldown == false) //&& Cooldown == false
-        {
-            Health HealthComponent = other.GetComponent<Health>();
-
+        {          
             //FindObjectOfType<AudioManager>().Play("EnemyAttack");
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
 
-            HealthComponent.health--;
+
+            tookDamage = true;
+            HP.health--;
 
             Attack.SetActive(true);
-
             Dmg_Flashscreen.SetActive(true); //Activating red Screen
-
 
             Cooldown = true;
             FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
 
             StartCoroutine(Waiter());
 
-            if (HealthComponent.health == 0)
-            {
-                EnemyAnim.SetBool("PlayerDead", true);
-
-                PM.isPause = true;
-                You_Lose_Screen.enabled = true;
-
-                FindObjectOfType<AudioManager>().Stop("Theme");
-                FindObjectOfType<AudioManager>().Play("LoseSound");
-                //FMOD  
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
-                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 0); // new line
-                StartCoroutine(LoseScreen());
-
-            }
+          
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (tookDamage == true)
+        {
+            tookDamage = false;
+            StartCoroutine(AttackWaiter());
+        }
+        
     }
 
 
@@ -107,6 +105,43 @@ public class EnemyDamage : MonoBehaviour
                 ElapsedTime = CooldownTime;
             }
         }
+
+        if (HP.health == 0)
+        {
+            EnemyAnim.SetBool("PlayerDead", true);
+
+            PM.isPause = true;
+            You_Lose_Screen.enabled = true;
+
+            FindObjectOfType<AudioManager>().Stop("Theme");
+            FindObjectOfType<AudioManager>().Play("LoseSound");
+            //FMOD  
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 0); // new line
+            StartCoroutine(LoseScreen());
+
+        }
+
     }
+
+    IEnumerator AttackWaiter()
+    {
+        Attack.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        Attack.SetActive(false);
+        HP.health--;
+        Dmg_Flashscreen.SetActive(true);
+
+        
+        Dmg_Flashscreen.SetActive(true); //Activating red Screen
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
+        FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
+
+        StartCoroutine(Waiter());
+        tookDamage = true;
+    }
+
 }
 

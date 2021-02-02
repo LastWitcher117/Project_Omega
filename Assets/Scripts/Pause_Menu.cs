@@ -34,7 +34,7 @@ public class Pause_Menu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && GameIsPaused == false)
         {
             Cursor.lockState = CursorLockMode.None;
 

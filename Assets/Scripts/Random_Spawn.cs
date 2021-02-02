@@ -23,7 +23,7 @@ public class Random_Spawn : MonoBehaviour
 
     void Start()
     {
-        spawnLocation = Random.Range(1, 4);
+        spawnLocation = Random.Range(1, 5);
         Debug.Log(spawnLocation);
 
         if(spawnLocation == 1)
@@ -64,5 +64,9 @@ public class Random_Spawn : MonoBehaviour
         {
             way4.SetActive(true);
         }
+
+/*/-----------------------------------------------------------------------------------------/*/
+
+       
     }
 }

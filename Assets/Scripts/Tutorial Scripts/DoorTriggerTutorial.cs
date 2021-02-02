@@ -12,6 +12,9 @@ public class DoorTriggerTutorial : MonoBehaviour
 
     public AnimationController AC;
 
+    public Animator Door1;
+    public Animator Door2;
+
     public bool hasKey;
     public bool FirstTime;
 
@@ -21,7 +24,7 @@ public class DoorTriggerTutorial : MonoBehaviour
     {
         if(hasKey == true && FirstTime == false)
         {
-            Door.SetActive(false);
+            //Door.SetActive(false);
             KeyIcon.SetActive(false);
 
             if (doorOpen == false)
@@ -31,8 +34,8 @@ public class DoorTriggerTutorial : MonoBehaviour
 
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door");
 
-                
-
+                Door1.SetBool("DoorOpen", true);
+                Door2.SetBool("DoorOpen", true);
             }
 
             doorOpen = true;

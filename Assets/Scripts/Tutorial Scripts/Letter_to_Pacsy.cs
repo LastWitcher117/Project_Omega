@@ -13,6 +13,8 @@ public class Letter_to_Pacsy : MonoBehaviour
 
     public bool Switch = false;
 
+    FMOD.Studio.Bus MasterBus;
+
     private void OnTriggerEnter(Collider other)
     {
         if (Switch == false)
@@ -39,6 +41,8 @@ public class Letter_to_Pacsy : MonoBehaviour
         {
             AC.inTutorial = false;
             LetterToPacsy.gameObject.SetActive(false);
+
+            MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
 
 
@@ -47,6 +51,13 @@ public class Letter_to_Pacsy : MonoBehaviour
             //cause the player is able to walk inside the letter again if he skips it accidentally :D
         }
 
+    }
+
+    private void Start()
+    {
+        MasterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
+
+        MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
 }

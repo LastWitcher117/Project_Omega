@@ -15,8 +15,6 @@ public class GetTreasure : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/Treasure");
             gms.snackpoints = gms.snackpoints + 1000;
             CollectedTreasure = true;
-
-            GetTreasures.SetActive(false);
             
         }
     }

@@ -35,12 +35,17 @@ public class GameManagerScript : MonoBehaviour
     public bool HealthTutorial = false;
 
     public GetTreasure GT;
+    public bool hasCollectedTreasure = false;
+
+    public GameObject AmbienceLoop;
+    public bool isAmbiencing = false;
 
     // Start is called before the first frame update
     void Start()
     {
         gameIsWon = false;
         Health HealthComponent = GetComponent<Health>();
+        isAmbiencing = true;
         
     }
 
@@ -48,7 +53,14 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
 
-        if(HPUpdate == true)
+        if (isAmbiencing == true)
+        {
+            isAmbiencing = false;
+            StartCoroutine(AmbienceLoopWaiter());
+        }
+
+
+        if (HPUpdate == true)
         {
             HowManyPointsForHP = PointsNeededForHealth;
         }
@@ -69,6 +81,7 @@ public class GameManagerScript : MonoBehaviour
         if (GT.CollectedTreasure == true)
         {
             PointsNeededForHealth = PointsNeededForHealth + 1000;
+            hasCollectedTreasure = true;
             GT.CollectedTreasure = false;
         }
 
@@ -123,6 +136,14 @@ public class GameManagerScript : MonoBehaviour
         MSUP_Screen.SetActive(false);
         MSUP_Player.SetActive(false);
         TPM.speed = MS - SpeedStrengh;
+    }
+
+    IEnumerator AmbienceLoopWaiter()
+    {
+        AmbienceLoop.SetActive(true);
+        yield return new WaitForSeconds(56f);
+        AmbienceLoop.SetActive(false);
+        isAmbiencing = true;
     }
 
 }
