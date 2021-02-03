@@ -9,6 +9,7 @@ public class AttackTutorial : MonoBehaviour
     public GameObject Enemy;
     public EnemyController EController;
     public AnimationController AC;
+    public Pause_Menu PM;
 
     public GameObject HowToAttack;
     public GameObject HowToDash;
@@ -27,6 +28,8 @@ public class AttackTutorial : MonoBehaviour
             {               
                 AC.inTutorial = true;
                 HowToAttack.gameObject.SetActive(true);
+                PM.GameIsPaused = true;
+                
             }
 
             if (Input.GetMouseButtonDown(0) && AC.inTutorial == true)
@@ -35,7 +38,10 @@ public class AttackTutorial : MonoBehaviour
                 EController.SupressMovement = false;
 
                 HowToAttack.gameObject.SetActive(false);
+                
                 FirstTimeAttack = true;
+                PM.GameIsPaused = false;
+                
                 
             }
 
@@ -47,6 +53,7 @@ public class AttackTutorial : MonoBehaviour
             {
                 AC.inTutorial = true;
                 HowToDash.gameObject.SetActive(true);
+                PM.GameIsPaused = true;
                 
             }
 
@@ -56,6 +63,7 @@ public class AttackTutorial : MonoBehaviour
                 EController.SupressMovement = false;
 
                 HowToDash.gameObject.SetActive(false);
+                PM.GameIsPaused = false;
                 FirstTimeDash = false;
                 SecondTimeDash = true;
             }
