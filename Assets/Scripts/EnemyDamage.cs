@@ -27,6 +27,10 @@ public class EnemyDamage : MonoBehaviour
 
     public Health HP;
 
+    public CameraGoingOnTower CGOT_Blue;
+    public CameraGoingOnTower CGOT_Orange;
+    public CameraGoingOnTower CGOT_Pruple;
+    public CameraGoingOnTower CGOT_Green;
 
     void Start()
     {
@@ -36,7 +40,7 @@ public class EnemyDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && Cooldown == false) //&& Cooldown == false
+        if (other.tag == "Player" && Cooldown == false && CGOT_Blue == false && CGOT_Green == false && CGOT_Orange == false && CGOT_Pruple == false) //&& Cooldown == false
         {          
             //FindObjectOfType<AudioManager>().Play("EnemyAttack");
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
