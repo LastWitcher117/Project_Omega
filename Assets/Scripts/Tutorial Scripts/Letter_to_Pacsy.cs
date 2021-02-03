@@ -6,6 +6,8 @@ public class Letter_to_Pacsy : MonoBehaviour
 {
 
     public GameObject LetterToPacsy;
+    
+    public GameObject Letter_To_Pacsy_Trigger;
 
     public AnimationController AC;
 
@@ -15,7 +17,7 @@ public class Letter_to_Pacsy : MonoBehaviour
 
     public bool Switch = false;
 
-    FMOD.Studio.Bus MasterBus;
+    //FMOD.Studio.Bus MasterBus;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -38,6 +40,7 @@ public class Letter_to_Pacsy : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Switch = false;
+        Letter_To_Pacsy_Trigger.SetActive(true);
     }
 
     private void Update()
@@ -48,21 +51,9 @@ public class Letter_to_Pacsy : MonoBehaviour
             AC.inTutorial = false;
             LetterToPacsy.gameObject.SetActive(false);
 
-            MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
+            Letter_To_Pacsy_Trigger.SetActive(false);
 
-
-
-            //Stop/break of the Audio here | Yes even if it interreupts the audio ;) 
-            //cause the player is able to walk inside the letter again if he skips it accidentally :D
         }
-    }
-
-    private void Start()
-    {
-        MasterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
-
-        MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
 }
