@@ -13,7 +13,7 @@ public class Run_Through_Wall : MonoBehaviour
     {
         Escape.SetActive(true);
         Time.timeScale = 0f;
-        PM.isPause = true;
+        PM.enabled = false;
         InsideCollider = true;
         
     }
@@ -36,7 +36,7 @@ public class Run_Through_Wall : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
             Escape.SetActive(false);
-            PM.isPause = false;
+            PM.enabled = true;
 
             gameObject.SetActive(false);
 

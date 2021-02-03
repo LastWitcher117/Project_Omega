@@ -24,7 +24,7 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
 
        
         AC.inTutorial = true;
-       // PM.isPause = false;
+        PM.enabled = false;
 
     }
 
@@ -36,7 +36,7 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
 
             Time.timeScale = 1f;
             TutorialZoom.gameObject.SetActive(false);
-            //PM.isPause = false;
+            PM.enabled = true;
             AC.inTutorial = false;
            
         }
@@ -45,6 +45,7 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
         {
             TutorialHP.gameObject.SetActive(true);
             Time.timeScale = 0f;
+            PM.enabled = false;
 
             PressAnyKey_Text.gameObject.SetActive(true);
 
@@ -54,6 +55,7 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
                 gms.HealthTutorial = false;
                 TutorialHP.gameObject.SetActive(false);
                 FirstTimeHP = true;
+                PM.enabled = true;
             }
                     
         }
