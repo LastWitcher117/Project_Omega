@@ -7,39 +7,31 @@ public class TowerDownCamera : MonoBehaviour
     public GameObject MC;
     public GameObject AtTowerLooker;
 
+    public TowerUPLooker TUL;
+
     public bool WasOnTop = false;
+
+    public bool isTeleporting = false;
+
+    public AnimationController AC;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-                if (WasOnTop == false)
-                {
-                    MC.SetActive(false);
-                    AtTowerLooker.SetActive(true);
-                }
-
+            AtTowerLooker.SetActive(true);
+            MC.SetActive(false);
                
-               if(WasOnTop == true)
-               {
-
-                   AtTowerLooker.SetActive(false);
-                   MC.SetActive(true);
-
-               }
+               WasOnTop = true;
+              TUL.isUP = true;
+                AC.inTutorial = true;
                 
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            if(WasOnTop == true)
-            {
-               WasOnTop = false;
-            }
-        }
+       
     }
 }
 

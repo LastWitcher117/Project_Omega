@@ -33,11 +33,6 @@ public class DifficultySelection : MonoBehaviour
     public GuardianPatrol GP6;
     public GuardianPatrol GP7;
 
-    private void Start()
-    {
-        PM.enabled = false;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         Cursor.lockState = CursorLockMode.None;
@@ -46,7 +41,8 @@ public class DifficultySelection : MonoBehaviour
         SelectDifficulty.SetActive(true);
         Time.timeScale = 0f;
         gms.HPUpdate = true;
-    
+        PM.enabled = false;
+
     }
 
     public void EasyDifficulty()
