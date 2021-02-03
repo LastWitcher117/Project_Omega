@@ -11,7 +11,7 @@ public class HP_Regen : MonoBehaviour
     {
         Time.timeScale = 0f;
         HPRegen.gameObject.SetActive(true);
-        PM.GameIsPaused = true;
+        PM.enabled = false;
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class HP_Regen : MonoBehaviour
             Time.timeScale = 1f;
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
             HPRegen.gameObject.SetActive(false);
-            PM.GameIsPaused = false;
+            PM.enabled = true;
         }
     }
 

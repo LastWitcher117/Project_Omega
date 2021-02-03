@@ -18,6 +18,7 @@ public class LightingBarrier : MonoBehaviour
     public Canvas You_Lose_Screen;
 
     public bool tookDamage = false;
+    public bool WasGoingAway = false;
 
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class LightingBarrier : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        WasGoingAway = false;
         HP.health--;
 
         tookDamage = true;
@@ -62,6 +63,11 @@ public class LightingBarrier : MonoBehaviour
             tookDamage = false;
             StartCoroutine(LightningDMG());
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        WasGoingAway = true;
     }
 
     IEnumerator Waiter() //Time Active of red DMG Screen
@@ -91,12 +97,16 @@ public class LightingBarrier : MonoBehaviour
 
     IEnumerator LightningDMG()
     {
-        yield return new WaitForSeconds(2f);
-        HP.health--;
-        Dmg_Flashscreen.SetActive(true);
-        StartCoroutine(Waiter());
-        tookDamage = true;
         
+            yield return new WaitForSeconds(2f);
+        if (WasGoingAway == false)
+        {
+            HP.health--;
+            Dmg_Flashscreen.SetActive(true);
+            StartCoroutine(Waiter());
+            tookDamage = true;
+        }
+       
     }
 
 }

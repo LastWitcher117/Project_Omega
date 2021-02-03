@@ -21,7 +21,7 @@ public class Letter_to_Pacsy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PM.GameIsPaused = true;
+        PM.enabled = false;
         Cursor.lockState = CursorLockMode.Locked;
 
         if (Switch == false)
@@ -47,7 +47,7 @@ public class Letter_to_Pacsy : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && InLetter == true)
         {
-
+            PM.enabled = true;
             AC.inTutorial = false;
             LetterToPacsy.gameObject.SetActive(false);
 

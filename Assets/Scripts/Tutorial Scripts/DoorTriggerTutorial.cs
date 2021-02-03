@@ -12,6 +12,8 @@ public class DoorTriggerTutorial : MonoBehaviour
 
     public AnimationController AC;
 
+    public Pause_Menu PM;
+
     public Animator Door1;
     public Animator Door2;
 
@@ -31,6 +33,7 @@ public class DoorTriggerTutorial : MonoBehaviour
             {
                 GoodJobKey.gameObject.SetActive(true);
                 AC.inTutorial = true;
+                PM.enabled = false;
 
                 FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door");
 
@@ -44,6 +47,8 @@ public class DoorTriggerTutorial : MonoBehaviour
         else
         {
             YouNeedKey.gameObject.SetActive(true);
+            PM.enabled = false;
+
             AC.inTutorial = true;
             FirstTime = true;
 
@@ -63,6 +68,8 @@ public class DoorTriggerTutorial : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 GoodJobKey.gameObject.SetActive(false);
+                PM.enabled = true;
+
                 AC.inTutorial = false;
                 FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
 
@@ -74,6 +81,8 @@ public class DoorTriggerTutorial : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 YouNeedKey.gameObject.SetActive(false);
+                PM.enabled = true;
+
                 AC.inTutorial = false;
                 FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
             }

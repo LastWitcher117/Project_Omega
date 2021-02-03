@@ -8,6 +8,9 @@ public class KeyfromTutorial : MonoBehaviour
     public GameObject ExitWay;
     public GameObject KeyIcon;
 
+    public GameObject KeyParticleSystem;
+    public GameObject GetKeyParticleSystem;
+
     public MeshRenderer KeyMesh;
     public Collider KeyCollider;
 
@@ -30,18 +33,25 @@ public class KeyfromTutorial : MonoBehaviour
             hasKeyTutorial = true;
 
             DTT.hasKey = true;
+
+
+            KeyMesh.enabled = false;
+            KeyCollider.enabled = false;
+
+            KeyParticleSystem.SetActive(false);
+            GetKeyParticleSystem.SetActive(true);
+
+            //StartCoroutine(ParticleWaiter());
+
+
         }
 
     }
 
-    private void OnTriggerExit(Collider other)
+    IEnumerator ParticleWaiter()
     {
-        if (other.tag == "Player")
-        {
-            KeyMesh.gameObject.SetActive(false);
-            KeyCollider.gameObject.SetActive(false);
-
-        }
-
+        yield return new WaitForSeconds(1.5f);
+        GetKeyParticleSystem.SetActive(false);
     }
+
 }

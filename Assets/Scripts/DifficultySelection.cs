@@ -33,6 +33,11 @@ public class DifficultySelection : MonoBehaviour
     public GuardianPatrol GP6;
     public GuardianPatrol GP7;
 
+    private void Start()
+    {
+        PM.enabled = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Cursor.lockState = CursorLockMode.None;
@@ -162,8 +167,17 @@ public class DifficultySelection : MonoBehaviour
         if(DifficultySet == true)
         {
             PM.isPause = false;
+            
             gms.HPUpdate = false;
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (DifficultySet == true)
+        {
+            PM.enabled = true;
         }
     }
 
