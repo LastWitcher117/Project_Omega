@@ -28,7 +28,7 @@ public class AttackTutorial : MonoBehaviour
             {               
                 AC.inTutorial = true;
                 HowToAttack.gameObject.SetActive(true);
-                PM.GameIsPaused = true;
+                PM.enabled = false;
                 
             }
 
@@ -40,7 +40,7 @@ public class AttackTutorial : MonoBehaviour
                 HowToAttack.gameObject.SetActive(false);
                 
                 FirstTimeAttack = true;
-                PM.GameIsPaused = false;
+                PM.enabled = true;
                 
                 
             }
@@ -53,8 +53,8 @@ public class AttackTutorial : MonoBehaviour
             {
                 AC.inTutorial = true;
                 HowToDash.gameObject.SetActive(true);
-                PM.GameIsPaused = true;
-                
+                PM.enabled = false;
+
             }
 
             if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -63,7 +63,7 @@ public class AttackTutorial : MonoBehaviour
                 EController.SupressMovement = false;
 
                 HowToDash.gameObject.SetActive(false);
-                PM.GameIsPaused = false;
+                PM.enabled = true;
                 FirstTimeDash = false;
                 SecondTimeDash = true;
             }

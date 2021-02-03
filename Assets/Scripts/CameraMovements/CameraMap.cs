@@ -18,6 +18,6 @@ public class CameraMap : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         vcam.SetActive(false);
-        MainCamera.SetActive(true);
+        MainCamera.SetActive(false);
     }
 }
