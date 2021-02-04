@@ -18,6 +18,8 @@ public class DifficultySelection : MonoBehaviour
 
     public AnimationController AC;
 
+    public GameObject AmbienceLoop;
+
     public TimerCountdown TC;
 
     public EnemyController EC1;
@@ -43,6 +45,7 @@ public class DifficultySelection : MonoBehaviour
         gms.HPUpdate = true;
         PM.enabled = false;
 
+        gms.isAmbiencing = false;
     }
 
     public void EasyDifficulty()
@@ -70,6 +73,7 @@ public class DifficultySelection : MonoBehaviour
 
         DifficultySet = true;
         PM.isPause = false;
+        gms.isAmbiencing = true;
     }
 
     public void MediumDifficulty()
@@ -98,6 +102,7 @@ public class DifficultySelection : MonoBehaviour
         DifficultySet = true;
         PM.isPause = false;
 
+        gms.isAmbiencing = true;
     }
 
     public void HardDifficulty()
@@ -126,6 +131,7 @@ public class DifficultySelection : MonoBehaviour
         DifficultySet = true;
         PM.isPause = false;
 
+        gms.isAmbiencing = true;
     }
 
     public void DarkeaterManus()
@@ -156,6 +162,8 @@ public class DifficultySelection : MonoBehaviour
 
         DifficultySet = true;
         PM.isPause = false;
+
+        gms.isAmbiencing = true;
     }
 
     private void OnTriggerExit(Collider other)

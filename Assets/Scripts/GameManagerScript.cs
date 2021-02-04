@@ -45,7 +45,7 @@ public class GameManagerScript : MonoBehaviour
     {
         gameIsWon = false;
         Health HealthComponent = GetComponent<Health>();
-        isAmbiencing = true;
+        //isAmbiencing = true;
         
     }
 
