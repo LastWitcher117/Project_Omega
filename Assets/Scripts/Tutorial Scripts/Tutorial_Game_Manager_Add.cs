@@ -18,6 +18,8 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
 
     public AnimationController AC;
 
+    public bool inBegginingTutorial = false;
+
     void Start()
     {
         HealthComponent.health = HealthComponent.health - 1;
@@ -25,6 +27,7 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
        
         AC.inTutorial = true;
         PM.enabled = false;
+        inBegginingTutorial = true;
 
     }
 
@@ -38,7 +41,9 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
             TutorialZoom.gameObject.SetActive(false);
             PM.enabled = true;
             AC.inTutorial = false;
-           
+            inBegginingTutorial = false;
+            gms.TutorialWeapon = true;
+
         }
 
         if (gms.HealthTutorial == true && FirstTimeHP == false)
@@ -56,6 +61,7 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
                 TutorialHP.gameObject.SetActive(false);
                 FirstTimeHP = true;
                 PM.enabled = true;
+                FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
             }
                     
         }

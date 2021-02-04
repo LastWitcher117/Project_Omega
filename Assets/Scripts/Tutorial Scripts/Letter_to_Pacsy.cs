@@ -17,6 +17,12 @@ public class Letter_to_Pacsy : MonoBehaviour
 
     public bool Switch = false;
 
+    public bool FirstTimeSpace = false;
+
+    public Animator PacsysLetterReadSpeed;
+
+    public bool ReadSpeedToSlow = false;
+
     //FMOD.Studio.Bus MasterBus;
 
     private void OnTriggerEnter(Collider other)
@@ -47,6 +53,13 @@ public class Letter_to_Pacsy : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && InLetter == true)
         {
+
+            PacsysLetterReadSpeed.speed = 1000f;
+            StartCoroutine(SpaceWaiter());
+        }
+
+            if (Input.GetKeyDown(KeyCode.Space) && InLetter == true && FirstTimeSpace == true)
+        {
             PM.enabled = true;
             AC.inTutorial = false;
             LetterToPacsy.gameObject.SetActive(false);
@@ -54,6 +67,19 @@ public class Letter_to_Pacsy : MonoBehaviour
             Letter_To_Pacsy_Trigger.SetActive(false);
 
         }
+
+            if(ReadSpeedToSlow == true)
+        {
+            ReadSpeedToSlow = false;
+            PacsysLetterReadSpeed.speed = 1f;
+        }
+
+    }
+
+    IEnumerator SpaceWaiter()
+    {
+        yield return new WaitForSeconds(0.5f);
+        FirstTimeSpace = true;
     }
 
 }

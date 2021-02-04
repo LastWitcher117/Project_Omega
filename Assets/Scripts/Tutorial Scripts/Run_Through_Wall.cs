@@ -35,6 +35,7 @@ public class Run_Through_Wall : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1f;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
             Escape.SetActive(false);
             PM.enabled = true;
 

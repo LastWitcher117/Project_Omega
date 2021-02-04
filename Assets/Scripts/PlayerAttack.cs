@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour
 
     public AnimationController re;
 
+    public GameManagerScript GMS;
+
 
     /// Cooldown
     public bool Cooldown; //Cooldown for attack
@@ -33,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && Cooldown == false && re.inTutorial == false && re.isDashing == false)
+        if (Input.GetKey(KeyCode.Mouse0) && Cooldown == false && re.inTutorial == false && re.isDashing == false && GMS.TutorialWeapon == false)
         {
             Cooldown = true;
             re.AttacktoDashFix = true;
