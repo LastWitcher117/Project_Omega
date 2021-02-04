@@ -11,5 +11,7 @@ public class PacysLetterTrigger : MonoBehaviour
     {
         Letter.SetActive(true);
         LTP.Switch = false;
+        LTP.FirstTimeSpace = false;
+        LTP.ReadSpeedToSlow = true;
     }
 }

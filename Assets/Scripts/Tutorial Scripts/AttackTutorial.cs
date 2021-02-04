@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackTutorial : MonoBehaviour
 {
     public PlayerAttack PA;
+    public Tutorial_Game_Manager_Add TGMA;
 
     public GameObject Enemy;
     public EnemyController EController;
@@ -32,7 +33,7 @@ public class AttackTutorial : MonoBehaviour
                 
             }
 
-            if (Input.GetMouseButtonDown(0) && AC.inTutorial == true)
+            if (Input.GetMouseButtonDown(0) && AC.inTutorial == true & TGMA.inBegginingTutorial == false)
             {
                 AC.inTutorial = false;
                 EController.SupressMovement = false;

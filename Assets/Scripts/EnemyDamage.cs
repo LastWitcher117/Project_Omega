@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class EnemyDamage : MonoBehaviour
 {
     public Canvas You_Lose_Screen;
-    bool Cooldown; //Cooldown for attack
+    
     float ElapsedTime;
     public float CooldownTime;
 
-    public bool tookDamage = false;
+    public bool insideAttackCollider = false;
+    public bool inTowerTP = false;
+    public bool isOnCooldown; //Cooldown for attack
 
     public GameObject Dmg_Flashscreen;
 
@@ -21,7 +23,7 @@ public class EnemyDamage : MonoBehaviour
 
     public ThirdPersonMovement ay;
 
-    public GameObject Attack;
+    public GameObject EnemyAttack;
 
     public Animator EnemyAnim;
 
@@ -37,53 +39,61 @@ public class EnemyDamage : MonoBehaviour
         ElapsedTime = CooldownTime;
     }
 
+    /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && Cooldown == false && CGOT_Blue == false && CGOT_Green == false && CGOT_Orange == false && CGOT_Pruple == false) //&& Cooldown == false
-        {          
-            //FindObjectOfType<AudioManager>().Play("EnemyAttack");
-            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
+        if (other.tag == "Player" && isOnCooldown == false && inTowerTP == false && insideAttackCollider == false) //&& Cooldown == false
+        {                    
+           
+            isOnCooldown = true;
+            insideAttackCollider = true;
 
-
-            tookDamage = true;
             HP.health--;
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
+            EnemyAttack.SetActive(true);
 
-            Attack.SetActive(true);
-            Dmg_Flashscreen.SetActive(true); //Activating red Screen
 
-            Cooldown = true;
-            FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
+            Dmg_Flashscreen.SetActive(true); //Activating red Screen      
+            
+            StartCoroutine(RedDamageScreenWaiter());
 
-            StartCoroutine(Waiter());
 
-          
+            //FindObjectOfType<AudioManager>().Play("EnemyAttack");
+            //FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
         }
     }
 
+    /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && Cooldown == false)
+        if (other.tag == "Player" && insideAttackCollider == true)
         {
-            Cooldown = true;
-            tookDamage = false;
+            isOnCooldown = true;          
             StartCoroutine(AttackWaiter());
+            
         }
         
     }
 
+    /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
+
     private void OnTriggerExit(Collider other)
     {
-        tookDamage = false;
+        insideAttackCollider = false;
     }
 
+    /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
-    IEnumerator Waiter() //Time Active of red DMG Screen
+    IEnumerator RedDamageScreenWaiter() //Time Active of red DMG Screen
     {
         yield return new WaitForSeconds(0.3f);
         Dmg_Flashscreen.SetActive(false);
         
     }
+
+    /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
     IEnumerator LoseScreen() //Time Active of red DMG Screen
     {
@@ -105,16 +115,26 @@ public class EnemyDamage : MonoBehaviour
 
     void Update()
     {
-        if (Cooldown == true)
+        /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
+
+        if (CGOT_Blue == true || CGOT_Green == true || CGOT_Orange == true || CGOT_Pruple == true)
         {
-            ElapsedTime -= Time.deltaTime;
-            if (ElapsedTime <= 0f)
-            {
-                Cooldown = false;
-                Attack.SetActive(false);
-                ElapsedTime = CooldownTime;
-            }
+            inTowerTP = false;
         }
+
+        if(CGOT_Blue == false && CGOT_Green == false && CGOT_Orange == false && CGOT_Pruple == false)
+        {
+            inTowerTP = true;
+        }
+
+        /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
+
+        if (isOnCooldown == true)
+        {
+            StartCoroutine(CooldownRefresher());
+        }
+
+        /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
         if (HP.health == 0)
         {
@@ -135,23 +155,37 @@ public class EnemyDamage : MonoBehaviour
 
     }
 
+    /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
+
     IEnumerator AttackWaiter()
     {
-        Attack.SetActive(true);
-        yield return new WaitForSeconds(2.5f);
-        Attack.SetActive(false);
-        HP.health--;
-        Dmg_Flashscreen.SetActive(true);
-
         
-        Dmg_Flashscreen.SetActive(true); //Activating red Screen
+        yield return new WaitForSeconds(CooldownTime);
 
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
-        FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
+        if (insideAttackCollider == true)
+        {
+            EnemyAttack.SetActive(true);
+            HP.health--;
 
-        StartCoroutine(Waiter());
-        tookDamage = true;
+            EnemyAttack.SetActive(false);
+            Dmg_Flashscreen.SetActive(true);       
+
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);           
+            StartCoroutine(RedDamageScreenWaiter());
+
+            //FindObjectOfType<AudioManager>().Play("Hit1"); //TODO: Singleton (Static instance that can be accessed globally)
+        }
     }
 
+    /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
+
+    IEnumerator CooldownRefresher()
+    {
+        yield return new WaitForSeconds(CooldownTime);
+        isOnCooldown = false;
+
+    }
+
+    /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 }
 

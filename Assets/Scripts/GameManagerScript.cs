@@ -40,6 +40,8 @@ public class GameManagerScript : MonoBehaviour
     public GameObject AmbienceLoop;
     public bool isAmbiencing = false;
 
+    public bool TutorialWeapon = false;
+
     // Start is called before the first frame update
     void Start()
     {
