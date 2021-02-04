@@ -9,6 +9,11 @@ public class LightingBarrier : MonoBehaviour
     public GameObject Lightning;
     public GameObject LightningDamageDealer;
 
+    public GameObject AfterLightning;
+
+    public GameObject CameraToDoor;
+    public GameObject ThirdPersonCamera;
+
     public DoorTrigger DT;
     public Health HP;
     public Pause_Menu PM;
@@ -21,13 +26,28 @@ public class LightingBarrier : MonoBehaviour
     public bool WasGoingAway = false;
 
 
+    public void Cutscene()
+    {
+
+        CameraToDoor.SetActive(true);
+        ThirdPersonCamera.SetActive(false);
+
+        StartCoroutine(StayAtBarrier());
+
+        
+
+    }
+
+
     // Update is called once per frame
     void Update()
     {
         if(DT.hasKey == true)
         {
-            Lightning.SetActive(false);
-            LightningDamageDealer.SetActive(false);
+
+
+            Cutscene();
+            
         }
 
         if(HP.health == 0)
@@ -107,6 +127,17 @@ public class LightingBarrier : MonoBehaviour
             tookDamage = true;
         }
        
+    }
+
+    IEnumerator StayAtBarrier()
+    {
+
+        yield return new WaitForSeconds(2.5f);
+
+        Lightning.SetActive(false);
+        AfterLightning.SetActive(true);
+        LightningDamageDealer.SetActive(false);
+
     }
 
 }
