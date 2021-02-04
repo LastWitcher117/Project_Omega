@@ -6,47 +6,66 @@ using UnityEngine.SceneManagement;
 
 public class LightingBarrier : MonoBehaviour
 {
-    public GameObject Lightning;
-    public GameObject LightningDamageDealer;
+    public GameObject Lightning1;
+    public GameObject Lightning2;
+
+    public ParticleSystem Lighning11;
+    public ParticleSystem Lighning12;
+    public ParticleSystem Lighning13;
+    public ParticleSystem Lighning14;
+    public ParticleSystem Lighning15;
+    public ParticleSystem Lighning16;
+
+    public ParticleSystem Lighning21;
+    public ParticleSystem Lighning22;
+    public ParticleSystem Lighning23;
+    public ParticleSystem Lighning24;
+    public ParticleSystem Lighning25;
+    public ParticleSystem Lighning26;
+
+
+    public Collider LightningDamageDealer;
+
 
     public GameObject AfterLightning;
 
+
     public GameObject CameraToDoor;
+    public GameObject PassingCamera;
     public GameObject ThirdPersonCamera;
+
 
     public DoorTrigger DT;
     public Health HP;
     public Pause_Menu PM;
     public ThirdPersonMovement ay;
+    public AnimationController AC;
+
 
     public GameObject Dmg_Flashscreen;
     public Canvas You_Lose_Screen;
 
+
     public bool tookDamage = false;
     public bool WasGoingAway = false;
-
-
-    public void Cutscene()
-    {
-
-        CameraToDoor.SetActive(true);
-        ThirdPersonCamera.SetActive(false);
-
-        StartCoroutine(StayAtBarrier());
-
-        
-
-    }
-
+    public bool CutsceneWasPlayed = false;
+    public bool inCutscene = false;
 
     // Update is called once per frame
     void Update()
     {
-        if(DT.hasKey == true)
+        /*/
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DT.hasKey = true;
+        }
+        /*/
+
+        if(DT.hasKey == true && CutsceneWasPlayed == false)
         {
 
 
-            Cutscene();
+            CutsceneStart();
             
         }
 
@@ -129,14 +148,92 @@ public class LightingBarrier : MonoBehaviour
        
     }
 
-    IEnumerator StayAtBarrier()
+    public void CutsceneStart()
+    {
+        CutsceneWasPlayed = false;
+        inCutscene = true;
+
+        CameraToDoor.SetActive(false);
+        ThirdPersonCamera.SetActive(false);
+        PassingCamera.SetActive(true);
+
+        StartCoroutine(PassingToBarrier());
+
+        AC.inTutorial = true;
+
+    }
+
+    IEnumerator PassingToBarrier()
     {
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2f);
 
-        Lightning.SetActive(false);
+        ThirdPersonCamera.SetActive(false);        
+        PassingCamera.SetActive(false);
+        CameraToDoor.SetActive(true);
+
+
         AfterLightning.SetActive(true);
-        LightningDamageDealer.SetActive(false);
+        StartCoroutine(DeactivateLightning());
+
+    }
+
+
+    IEnumerator DeactivateLightning()
+    {
+        
+        yield return new WaitForSeconds(3.5f);
+
+        Lightning1.SetActive(false);
+        Lightning2.SetActive(false);
+
+        StopLightning();
+
+        
+
+        StartCoroutine(BarrierToPassing());
+
+    }
+
+    IEnumerator BarrierToPassing()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        ThirdPersonCamera.SetActive(false);
+        CameraToDoor.SetActive(false);
+        PassingCamera.SetActive(true);
+
+        StartCoroutine(CutsceneEnd());
+
+    }
+
+    IEnumerator CutsceneEnd()
+    {
+        yield return new WaitForSeconds(2f);
+
+        CameraToDoor.SetActive(false);
+        PassingCamera.SetActive(false);
+        ThirdPersonCamera.SetActive(true);
+
+        AC.inTutorial = false;
+        inCutscene = false;
+    }
+
+    void StopLightning()
+    {
+        Lighning11.Stop();
+        Lighning12.Stop();
+        Lighning13.Stop();
+        Lighning14.Stop();
+        Lighning15.Stop();
+        Lighning16.Stop();
+
+        Lighning21.Stop();
+        Lighning22.Stop();
+        Lighning23.Stop();
+        Lighning24.Stop();
+        Lighning25.Stop();
+        Lighning26.Stop();
 
     }
 

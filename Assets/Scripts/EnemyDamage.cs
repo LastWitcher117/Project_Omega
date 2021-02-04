@@ -34,6 +34,8 @@ public class EnemyDamage : MonoBehaviour
     public CameraGoingOnTower CGOT_Pruple;
     public CameraGoingOnTower CGOT_Green;
 
+    public LightingBarrier LB;
+
     void Start()
     {
         ElapsedTime = CooldownTime;
@@ -43,7 +45,7 @@ public class EnemyDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && isOnCooldown == false && inTowerTP == false && insideAttackCollider == false) //&& Cooldown == false
+        if (other.tag == "Player" && isOnCooldown == false && inTowerTP == false && insideAttackCollider == false && LB.inCutscene == true) //&& Cooldown == false
         {                    
            
             isOnCooldown = true;
@@ -82,6 +84,7 @@ public class EnemyDamage : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         insideAttackCollider = false;
+        StopCoroutine(AttackWaiter());
     }
 
     /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
