@@ -33,6 +33,7 @@ public class LightingBarrier : MonoBehaviour
     public GameObject CameraToDoor;
     public GameObject PassingCamera;
     public GameObject ThirdPersonCamera;
+    public GameObject DoorBlocker;
 
 
     public DoorTrigger DT;
@@ -54,17 +55,17 @@ public class LightingBarrier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*/
+       
         if (Input.GetKeyDown(KeyCode.Space))
         {
             DT.hasKey = true;
         }
-        /*/
+        
 
         if(DT.hasKey == true && CutsceneWasPlayed == false)
         {
 
-
+            CutsceneWasPlayed = true;
             CutsceneStart();
             
         }
@@ -150,7 +151,7 @@ public class LightingBarrier : MonoBehaviour
 
     public void CutsceneStart()
     {
-        CutsceneWasPlayed = false;
+        CutsceneWasPlayed = true;
         inCutscene = true;
 
         CameraToDoor.SetActive(false);
@@ -235,6 +236,8 @@ public class LightingBarrier : MonoBehaviour
         Lighning25.Stop();
         Lighning26.Stop();
 
+        LightningDamageDealer.enabled = false;
+        DoorBlocker.SetActive(false);
     }
 
 }

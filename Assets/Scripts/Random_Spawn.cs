@@ -16,6 +16,11 @@ public class Random_Spawn : MonoBehaviour
     public GameObject key3;
     public GameObject key4;
 
+    public GameObject KeyEffect1;
+    public GameObject KeyEffect2;
+    public GameObject KeyEffect3;
+    public GameObject KeyEffect4;
+
     public float spawnLocation;
 
     public GameManagerScript gms;
@@ -29,18 +34,22 @@ public class Random_Spawn : MonoBehaviour
         if(spawnLocation == 1)
         {
             key1.SetActive(true);
+            KeyEffect1.SetActive(true);
         }
         if (spawnLocation == 2)
         {
             key2.SetActive(true);
+            KeyEffect2.SetActive(true);
         }
         if (spawnLocation == 3)
         {
             key3.SetActive(true);
+            KeyEffect3.SetActive(true);
         }
         if (spawnLocation == 4)
         {
             key4.SetActive(true);
+            KeyEffect4.SetActive(true);
         }
         //transform.position = positions[Random.Range(0, positions.Length)];
         //transform.position = positions(481.67, 1.669998, 189.55);

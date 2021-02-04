@@ -8,6 +8,7 @@ public class GetKey : MonoBehaviour
     public bool EnterSignal = false;
     public ExitWay EW;
     public GameManagerScript gms;
+    public GameObject KeyParticleSystem;
 
     public Random_Spawn rs;
 
@@ -15,6 +16,8 @@ public class GetKey : MonoBehaviour
     {
         EnterSignal = true;
         gms.SignalFromTrigger = true;
+
+        KeyParticleSystem.SetActive(false);
 
         EnterSignal = false;
         transform.position = transform.position + new Vector3(0f, -10f, 0f);
