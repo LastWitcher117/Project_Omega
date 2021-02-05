@@ -39,6 +39,8 @@ public class EnemyDamage : MonoBehaviour
     public float time;
     public bool AttackMode = false;
 
+    public bool PlayerIsDead;
+
     public LightingBarrier LB;
 
     /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
@@ -115,7 +117,7 @@ public class EnemyDamage : MonoBehaviour
             {
                Attack();
                isOnCooldown = false;
-                AttackMode = false;
+               AttackMode = false;
             }
         }
 
@@ -125,9 +127,9 @@ public class EnemyDamage : MonoBehaviour
         }
         /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
-        if (HP.health == 0)
-        {        
-           StartCoroutine(LoseScreen());
+        if(HP.health == 0)
+        {
+            PlayerIsDead = true;
         }
 
     }
@@ -176,15 +178,24 @@ public class EnemyDamage : MonoBehaviour
 
     public void Attack()
     {
-        
-        EnemyAttack.SetActive(true);
-        HP.health--;
+        if (PlayerIsDead == false)
+        {
+            EnemyAttack.SetActive(true);
+            HP.health--;
 
+            
+            Dmg_Flashscreen.SetActive(true);
+
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
+            StartCoroutine(RedDamageScreenWaiter());
+            StartCoroutine(VFXWaiter());
+        }
+    }
+    
+    IEnumerator VFXWaiter()
+    {
+        yield return new WaitForSeconds(2f);
         EnemyAttack.SetActive(false);
-        Dmg_Flashscreen.SetActive(true);
-
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
-        StartCoroutine(RedDamageScreenWaiter());
     }
 
 }

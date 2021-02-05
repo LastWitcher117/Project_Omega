@@ -23,9 +23,13 @@ public class Switch_Scene : MonoBehaviour
     public Text scoreText;
     public Text SnackPoints;
 
+    public Text LoseScorePoints;
+
     public bool Adder = false;
     public int PointsValueMultiplier;
     public int TimeTakerValue;
+
+    public Health HP;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -66,6 +70,11 @@ public class Switch_Scene : MonoBehaviour
         }
         /*/
 
+        if(HP.health == 0)
+        {
+            LoseScorePoints.GetComponent<Text>().text = gm.snackpoints.ToString(); 
+        }
+
         if (TC.timeLeft >= TimeTakerValue && TC.PlayerWon == true) //33
         {
             
@@ -74,7 +83,7 @@ public class Switch_Scene : MonoBehaviour
                 gm.snackpoints = (int)scoreAmount;
                 SnackPoints.GetComponent<Text>().text = gm.snackpoints.ToString();
 
-                ScorePoints.GetComponent<Text>().text = (int)scoreAmount + " Score ";
+                ScorePoints.GetComponent<Text>().text = (int)scoreAmount + "";
 
                 Adder = false;
                 StartCoroutine(EndScreenAdder());
