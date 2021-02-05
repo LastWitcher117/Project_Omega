@@ -2,14 +2,12 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20010 (110198), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=8, nSamplesPerSec=48000, nAvgBytesPerSec=1536000, nBlockAlign=32, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x0000063F, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] DownMix::init                            : dspbuffersize: 1024  rate: 48000. output speaker mode: 7, input speaker mode 3
-[LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000015B61DF8928 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000120F0223838 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,131 +15,6 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] SoundI::release                          : Temple_Tales_v2_Intro (0000015B581CAB78)
-[LOG] SoundI::release                          :     Temple_Tales_v2_Intro (0000015AAF406408)
-[LOG] SoundI::release                          :     Temple_Tales_v2_Intro (0000015B581C9DF8)
-[LOG] SoundI::release                          :  (0000015A4D2D3AE8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-001 (0000015AAF405708)
-[LOG] SoundI::release                          :  (0000015A4D2D1E28)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-002 (0000015AAF406748)
-[LOG] SoundI::release                          :  (0000015A4D2D12A8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-003 (0000015AAF405568)
-[LOG] SoundI::release                          :  (0000015A4D2CCDA8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-004 (0000015B58363558)
-[LOG] SoundI::release                          :  (0000015A4D2C9CC8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-005 (0000015AAF871BD8)
-[LOG] SoundI::release                          :  (0000015A4D2D05B8)
-[LOG] SoundI::release                          :     Temple Tales_Heel-001 (0000015AAF4065A8)
-[LOG] SoundI::release                          :  (0000015A4D2CCF18)
-[LOG] SoundI::release                          :     Temple Tales_Heel-002 (0000015AAF8730F8)
-[LOG] SoundI::release                          :  (0000015A4D2D2278)
-[LOG] SoundI::release                          :     Temple Tales_Heel-003 (0000015AAF870858)
-[LOG] SoundI::release                          :  (0000015A4D2CD648)
-[LOG] SoundI::release                          :     Temple Tales_Heel-004 (0000015AAF873778)
-[LOG] SoundI::release                          :  (0000015A4D2CE4A8)
-[LOG] SoundI::release                          :     Temple Tales_Toe-001 (0000015AAF86FE98)
-[LOG] SoundI::release                          :  (0000015A4D2D0FC8)
-[LOG] SoundI::release                          :     Temple Tales_Toe-002 (0000015AAF405A48)
-[LOG] SoundI::release                          :  (0000015A4D2C9E38)
-[LOG] SoundI::release                          :     Temple Tales_Toe-003 (0000015AAF873298)
-[LOG] SoundI::release                          :  (0000015A4D2D26C8)
-[LOG] SoundI::release                          :     Temple Tales_Toe-004 (0000015AAF870D38)
-[LOG] SoundI::release                          :  (0000015A4D2D3DC8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-001 (0000015AAF406DC8)
-[LOG] SoundI::release                          :  (0000015A4D2CF028)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-002 (0000015AAF871A38)
-[LOG] SoundI::release                          :  (0000015A4D2D4668)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-003 (0000015AAF8701D8)
-[LOG] SoundI::release                          :  (0000015A4D2CB988)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-004 (0000015AAF870038)
-[LOG] SoundI::release                          :  (0000015A4D2C9FA8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-001 (0000015AAF872F58)
-[LOG] SoundI::release                          :  (0000015A4D2D4F08)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-002 (0000015AAF4058A8)
-[LOG] SoundI::release                          :  (0000015A4D2CEBD8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-003 (0000015AAF8713B8)
-[LOG] SoundI::release                          :  (0000015A4D2CE338)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-004 (0000015AAF872258)
-[LOG] SoundI::release                          :  (0000015A4D2CC958)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-006 (0000015AAF871D78)
-[LOG] SoundI::release                          :  (0000015A4D2D1F98)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-007 (0000015AAF4053C8)
-[LOG] SoundI::release                          :  (0000015A4D2CAF78)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-008 (0000015AAF871898)
-[LOG] SoundI::release                          :  (0000015A4D2D3C58)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps-009 (0000015AAF8706B8)
-[LOG] SoundI::release                          :  (0000015A4D2CAB28)
-[LOG] SoundI::release                          :     Temple Tales_Player_Fullsteps (0000015AAF8728D8)
-[LOG] SoundI::release                          :  (0000015A4D2CB6A8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-005 (0000015AAF872C18)
-[LOG] SoundI::release                          :  (0000015A4D2D5078)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-006 (0000015AAF406268)
-[LOG] SoundI::release                          :  (0000015A4D2D2108)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-007 (0000015AAF870B98)
-[LOG] SoundI::release                          :  (0000015A4D2CB3C8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe-008 (0000015AAF872738)
-[LOG] SoundI::release                          :  (0000015A4D2CA848)
-[LOG] SoundI::release                          :     Temple Tales_Stone_toe (0000015AAF873AB8)
-[LOG] SoundI::release                          :  (0000015A4D2D1868)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-005 (0000015AAF405F28)
-[LOG] SoundI::release                          :  (0000015A4D2CF758)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-006 (0000015AAF871F18)
-[LOG] SoundI::release                          :  (0000015A4D2D1588)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-007 (0000015AAF871078)
-[LOG] SoundI::release                          :  (0000015A4D2CF5E8)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel-008 (0000015AAF873918)
-[LOG] SoundI::release                          :  (0000015A4D2CAC98)
-[LOG] SoundI::release                          :     Temple Tales_Stone_Heel (0000015AAF872A78)
-[LOG] SoundI::release                          :  (0000015A4D2CF308)
-[LOG] SoundI::release                          :     Temple Tales_Heel-005 (0000015AAF873438)
-[LOG] SoundI::release                          :  (0000015A4D2CE618)
-[LOG] SoundI::release                          :     Temple Tales_Heel-006 (0000015AAF870ED8)
-[LOG] SoundI::release                          :  (0000015A4D2CB818)
-[LOG] SoundI::release                          :     Temple Tales_Heel-007 (0000015AAF873C58)
-[LOG] SoundI::release                          :  (0000015A4D2CA6D8)
-[LOG] SoundI::release                          :     Temple Tales_Heel-008 (0000015B583636F8)
-[LOG] SoundI::release                          :  (0000015A4D2CF198)
-[LOG] SoundI::release                          :     Temple Tales_Heel (0000015AAF870378)
-[LOG] SoundI::release                          :  (0000015A4D2D4C28)
-[LOG] SoundI::release                          :     Temple Tales_Toe-005 (0000015AAF8709F8)
-[LOG] SoundI::release                          :  (0000015A4D2CD1F8)
-[LOG] SoundI::release                          :     Temple Tales_Toe-006 (0000015AAF8735D8)
-[LOG] SoundI::release                          :  (0000015A4D2CF478)
-[LOG] SoundI::release                          :     Temple Tales_Toe-007 (0000015AAF8720B8)
-[LOG] SoundI::release                          :  (0000015A4D2CD088)
-[LOG] SoundI::release                          :     Temple Tales_Toe-008 (0000015AAF872DB8)
-[LOG] SoundI::release                          :  (0000015A4D2CD7B8)
-[LOG] SoundI::release                          :     Temple Tales_Toe (0000015AAF8716F8)
-[LOG] SoundI::release                          :  (0000015A4D2CDC08)
-[LOG] SoundI::release                          :     Temple Talesy_Enemy Stunned_Mix Print _A + B Print 1__v1 (0000015AAF871218)
-[LOG] SoundI::release                          :  (0000015A4D2D0448)
-[LOG] SoundI::release                          :     Temple_Tales_v2_ChaseSting (0000015AAF870518)
-[LOG] SoundI::release                          :  (0000015A4D2CE788)
-[LOG] SoundI::release                          :     Temple Tales_Player_Enemies_Ghost Loop mono-2cycles (0000015AAF8723F8)
-[LOG] SoundI::release                          :  (0000015A4D2D44F8)
-[LOG] SoundI::release                          :     Temple Tales_Player_Enemies_Ghost Loop Short (0000015AAF4060C8)
-[LOG] SoundI::release                          :  (0000015A4D2CC508)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_03 (0000015AAF872598)
-[LOG] SoundI::release                          :  (0000015A4D2CE8F8)
-[LOG] SoundI::release                          :     Temple Tales_UI_Buttons_01 (0000015AAF871558)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] SystemI::close                           : Closed.
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
-[LOG] SystemI::close                           : Closed.

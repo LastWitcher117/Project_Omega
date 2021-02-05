@@ -12,10 +12,20 @@ public class Switch_Scene : MonoBehaviour
 
     public Pause_Menu PM;
 
+    public AnimationController AC;
+    
     public GameObject ScorePoints;
     public GameManagerScript gm;
     public TimerCountdown TC;
 
+    public float scoreAmount;
+    public float pointIncreasedPersSecond;
+    public Text scoreText;
+    public Text SnackPoints;
+
+    public bool Adder = false;
+    public int PointsValueMultiplier;
+    public int TimeTakerValue;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -24,7 +34,7 @@ public class Switch_Scene : MonoBehaviour
         You_Win_Screen.enabled = true;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);  // FMOD
         FindObjectOfType<AudioManager>().Play("WinSound");
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
 
         /*float pauseEndTime = Time.realtimeSinceStartup + 2.5f;
         while (Time.realtimeSinceStartup < pauseEndTime)
@@ -38,11 +48,53 @@ public class Switch_Scene : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         gm.gameIsWon = true;
+        TC.InEndScreen = true;
+
+        AC.inTutorial = true;
+        PM.enabled = false;
+        Adder = true;
+        scoreAmount = gm.snackpoints;
     }
 
     public void Update()
     {
-         ScorePoints.GetComponent<Text>().text = gm.snackpoints.ToString();
-       
+        /*/
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            Adder = true;
+            scoreAmount = gm.snackpoints;
+        }
+        /*/
+
+        if (TC.timeLeft >= TimeTakerValue && TC.PlayerWon == true) //33
+        {
+            
+            if(Adder == true)
+            {
+                gm.snackpoints = (int)scoreAmount;
+                SnackPoints.GetComponent<Text>().text = gm.snackpoints.ToString();
+
+                ScorePoints.GetComponent<Text>().text = (int)scoreAmount + " Score ";
+
+                Adder = false;
+                StartCoroutine(EndScreenAdder());
+            }
+            
+        }
+        
+        if(TC.timeLeft <= 0)
+        {
+            Time.timeScale = 0f;
+        }
+
+        //scoreText.text = (int)scoreAmount + " Score ";
+        //scoreAmount += pointIncreasedPersSecond * Time.deltaTime;
+    }
+
+    IEnumerator EndScreenAdder()
+    {
+        yield return new WaitForSeconds(0.00005f);
+        scoreAmount += TimeTakerValue * PointsValueMultiplier; 
+        Adder = true;
     }
 }

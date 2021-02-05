@@ -13,6 +13,7 @@ public class TimerCountdown : MonoBehaviour
     public Pause_Menu PM;   
     public AnimationController AC;
     public GameManagerScript GMS;
+    public Switch_Scene SS;
 
     public int timeLeft = 360;
 
@@ -21,26 +22,52 @@ public class TimerCountdown : MonoBehaviour
     public bool PlayerWon = false;
     public bool noTimeLeft = false;
 
+    public bool InEndScreen = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         textDisplay.GetComponent<Text>().text = "" + timeLeft;
         PlayerWon = false;
+        InEndScreen = false;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
-        if (takingAway == false && timeLeft > 0)
+    {   
+        
+        /*/
+        if(Input.GetKeyDown(KeyCode.H))
         {
-            StartCoroutine(TimerTake());
+            InEndScreen = true;
+            PlayerWon = true;
+        }
+        /*/
+
+        /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
+        if (InEndScreen == false)
+        {
+            if (takingAway == false && timeLeft > 0 && PlayerWon == false)
+            {
+                StartCoroutine(TimerTake());
+            }
         }
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
+        if(InEndScreen == true &&  timeLeft >= SS.TimeTakerValue && PlayerWon == true) //33
+        {
+            takingAway = true;
+            StartCoroutine(TimerTakeEndScreen());
 
-       
+        }
+        /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
+        if (timeLeft <=(SS.TimeTakerValue - 1)) //33
+        {
+            textDisplay.GetComponent<Text>().text = "" + 0;
+            Time.timeScale = 0f;
+        }
+        /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
         if (timeLeft == 0)
         {
             /*/
@@ -63,7 +90,7 @@ public class TimerCountdown : MonoBehaviour
         }
 
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
-
+        /*/
         if (PlayerWon == true && noTimeLeft == false)
         {
             GMS.snackpoints = GMS.snackpoints + (timeLeft * 3);
@@ -75,6 +102,7 @@ public class TimerCountdown : MonoBehaviour
             GMS.snackpoints = GMS.snackpoints + (timeLeft * 1);
             PlayerWon = false;
         }
+        /*/
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
     }
 
@@ -88,22 +116,14 @@ public class TimerCountdown : MonoBehaviour
         takingAway = false;
 
     }
-
-    IEnumerator LoseScreen()
+    /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
+    IEnumerator TimerTakeEndScreen()
     {
-        ay.enabled = false;
-        yield return new WaitForSeconds(3f);
-        Time.timeScale = 0f;
-        float pauseEndTime = Time.realtimeSinceStartup + 3.2f;
-        while (Time.realtimeSinceStartup < pauseEndTime)
-        {
-            yield return 0;
-        }
-        Time.timeScale = 1f;
-
-        SceneManager.LoadScene(1);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 1);
+        InEndScreen = false;
+        yield return new WaitForSeconds(0.00005f);
+        timeLeft -= SS.TimeTakerValue; //33
+        textDisplay.GetComponent<Text>().text = "" + timeLeft;
+        InEndScreen = true;
     }
 
 }

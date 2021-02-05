@@ -30,6 +30,10 @@ public class Pause_Menu : MonoBehaviour
     {
         fVolumeSlider = FMODUnity.RuntimeManager.CreateInstance("event:/UI/VolumeSlider");
         hovering = FMODUnity.RuntimeManager.CreateInstance("event:/UI/Hovering");
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 1); // new line
     }
 
     void Update()

@@ -19,6 +19,8 @@ public class AttackTutorial : MonoBehaviour
     public bool FirstTimeDash = false;
     public bool SecondTimeDash = false;
 
+    public bool inAttackTut;
+
 
     // Update is called once per frame
     void Update()
@@ -30,10 +32,11 @@ public class AttackTutorial : MonoBehaviour
                 AC.inTutorial = true;
                 HowToAttack.gameObject.SetActive(true);
                 PM.enabled = false;
+                inAttackTut = true;
                 
             }
 
-            if (Input.GetMouseButtonDown(0) && AC.inTutorial == true & TGMA.inBegginingTutorial == false)
+            if (Input.GetMouseButtonDown(0) && AC.inTutorial == true && TGMA.inBegginingTutorial == false && inAttackTut == true)
             {
                 AC.inTutorial = false;
                 EController.SupressMovement = false;
@@ -42,6 +45,7 @@ public class AttackTutorial : MonoBehaviour
                 
                 FirstTimeAttack = true;
                 PM.enabled = true;
+                inAttackTut = false;
                 
                 
             }

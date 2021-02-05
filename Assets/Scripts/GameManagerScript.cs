@@ -42,9 +42,12 @@ public class GameManagerScript : MonoBehaviour
 
     public bool TutorialWeapon = false;
 
+    public Pause_Menu PM;
+
     // Start is called before the first frame update
     void Start()
     {
+        PM.enabled = true;
         gameIsWon = false;
         Health HealthComponent = GetComponent<Health>();
         //isAmbiencing = true;

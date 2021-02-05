@@ -55,12 +55,12 @@ public class LightingBarrier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       /*/
         if (Input.GetKeyDown(KeyCode.Space))
         {
             DT.hasKey = true;
         }
-        
+        /*/
 
         if(DT.hasKey == true && CutsceneWasPlayed == false)
         {
@@ -72,15 +72,6 @@ public class LightingBarrier : MonoBehaviour
 
         if(HP.health == 0)
         {
-            PM.isPause = true;
-            You_Lose_Screen.enabled = true;
-
-            FindObjectOfType<AudioManager>().Stop("Theme");
-            FindObjectOfType<AudioManager>().Play("LoseSound");
-            //FMOD  
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 0); // new line
             StartCoroutine(LoseScreen());
         }
 
@@ -119,23 +110,29 @@ public class LightingBarrier : MonoBehaviour
 
     IEnumerator LoseScreen() //Time Active of red DMG Screen
     {
+        Cursor.lockState = CursorLockMode.None;
         ay.enabled = false;
-        yield return new WaitForSeconds(3f);
-        Time.timeScale = 0f;
-        float pauseEndTime = Time.realtimeSinceStartup + 3.2f;
-        while (Time.realtimeSinceStartup < pauseEndTime)
-        {
-            yield return 0;
-        }
-        Time.timeScale = 1f;
 
-        SceneManager.LoadScene(1);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 1); // new line
+
+        PM.enabled = false;
+        You_Lose_Screen.enabled = true;
+
+        //FindObjectOfType<AudioManager>().Stop("Theme");
+        //FindObjectOfType<AudioManager>().Play("LoseSound");
+
+        yield return new WaitForSeconds(4f);
+
+        //FMOD  
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 0); // new line
+
+        PM.isPause = true;
+
+        Time.timeScale = 0f;
     }
 
-    IEnumerator LightningDMG()
+        IEnumerator LightningDMG()
     {
         
             yield return new WaitForSeconds(2f);
