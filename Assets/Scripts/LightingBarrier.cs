@@ -164,7 +164,7 @@ public class LightingBarrier : MonoBehaviour
     IEnumerator PassingToBarrier()
     {
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         ThirdPersonCamera.SetActive(false);        
         PassingCamera.SetActive(false);

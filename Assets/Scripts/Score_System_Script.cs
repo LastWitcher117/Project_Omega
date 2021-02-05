@@ -6,11 +6,16 @@ using UnityEngine.UI;
 public class Score_System_Script : MonoBehaviour
 {
     public GameManagerScript gm;
+    public Switch_Scene SS;
+    public TimerCountdown TC;
+
     public int score;
     public int highscore;
     string highscoreKey;
     string FirstHighscoreKey;
     public GameObject newHighscoreSprite;
+
+    public bool AfterCountingTime = false;
     
 
     public GameObject highscorePoints;
@@ -44,10 +49,13 @@ public class Score_System_Script : MonoBehaviour
     void HighscoreCheck()
     {
         highscorePoints.GetComponent<Text>().text = highscore.ToString();
-        score = gm.snackpoints;
-        if(score > highscore)
+
+        score = (int)SS.scoreAmount;
+
+        if(score > highscore && AfterCountingTime == true)
         {
-            PlayerPrefs.SetInt(highscoreKey, score);
+            TC.FinalEndScore -= SS.TimeTakerValue * SS.PointsValueMultiplier;
+            PlayerPrefs.SetInt(highscoreKey, (int)TC.FinalEndScore);
            // PlayerPrefs.SetInt(FirstHighscoreKey, score);
             PlayerPrefs.Save();
             newHighscoreSprite.SetActive(true);

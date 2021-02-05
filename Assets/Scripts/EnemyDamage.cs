@@ -130,6 +130,7 @@ public class EnemyDamage : MonoBehaviour
         if(HP.health == 0)
         {
             PlayerIsDead = true;
+            EnemyAnim.SetBool("PlayerDead", true);
         }
 
     }

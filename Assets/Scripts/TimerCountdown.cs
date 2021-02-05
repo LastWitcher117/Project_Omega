@@ -14,8 +14,10 @@ public class TimerCountdown : MonoBehaviour
     public AnimationController AC;
     public GameManagerScript GMS;
     public Switch_Scene SS;
+    public Score_System_Script SSS;
 
     public int timeLeft = 360;
+    public float FinalEndScore;
 
     public bool takingAway = false;
 
@@ -65,6 +67,10 @@ public class TimerCountdown : MonoBehaviour
         if (timeLeft <=(SS.TimeTakerValue - 1)) //33
         {
             textDisplay.GetComponent<Text>().text = "" + 0;
+
+            FinalEndScore = SS.scoreAmount ;
+            
+            SSS.AfterCountingTime = true;
             Time.timeScale = 0f;
         }
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/

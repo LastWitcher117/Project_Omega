@@ -33,6 +33,8 @@ public class Switch_Scene : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+
+
         TC.PlayerWon = true;
         PM.isPause = true;
         You_Win_Screen.enabled = true;
@@ -80,8 +82,8 @@ public class Switch_Scene : MonoBehaviour
             
             if(Adder == true)
             {
-                gm.snackpoints = (int)scoreAmount;
-                SnackPoints.GetComponent<Text>().text = gm.snackpoints.ToString();
+                //gm.snackpoints = (int)scoreAmount;
+                //SnackPoints.GetComponent<Text>().text = gm.snackpoints.ToString();
 
                 ScorePoints.GetComponent<Text>().text = (int)scoreAmount + "";
 
