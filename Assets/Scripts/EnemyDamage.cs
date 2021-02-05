@@ -45,11 +45,11 @@ public class EnemyDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && isOnCooldown == false && inTowerTP == false && insideAttackCollider == false && LB.inCutscene == true) //&& Cooldown == false
+        if (other.tag == "Player" && isOnCooldown == false && inTowerTP == false && insideAttackCollider == false) //&& Cooldown == false
         {                    
            
             isOnCooldown = true;
-            insideAttackCollider = true;
+            insideAttackCollider = true;    
 
             HP.health--;
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
@@ -70,7 +70,7 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && insideAttackCollider == true)
+        if (other.tag == "Player")
         {
             isOnCooldown = true;          
             StartCoroutine(AttackWaiter());
@@ -83,7 +83,7 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        insideAttackCollider = false;
+       // insideAttackCollider = false;
         StopCoroutine(AttackWaiter());
     }
 
@@ -165,7 +165,7 @@ public class EnemyDamage : MonoBehaviour
         
         yield return new WaitForSeconds(CooldownTime);
 
-        if (insideAttackCollider == true)
+        if (insideAttackCollider == true && isOnCooldown == false)
         {
             EnemyAttack.SetActive(true);
             HP.health--;
