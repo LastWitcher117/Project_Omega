@@ -97,8 +97,7 @@ public class ThirdPersonMovement : PortalTraveller
             re.isWalking = false;
         }
 
-        EnableWinScreenKey();
-
+         
         }
     }
 
@@ -152,24 +151,6 @@ public class ThirdPersonMovement : PortalTraveller
         velocity = toPortal.TransformVector(fromPortal.InverseTransformVector(velocity));
         Physics.SyncTransforms();
     }
-
-    public void EnableWinScreenKey()
-    {
-        if (Input.GetKey(KeyCode.F1))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0f;
-            YouWinScreenHere.enabled = true;
-
-        }
-        if (Input.GetKey(KeyCode.F2))
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            YouWinScreenHere.enabled = false;
-            Time.timeScale = 1f;
-        }
-    }
-
     /*public void PlayrFSRight()
     {
         footStepsSounds.setParameterByName("Waiting-Moving-Dash", 1);
@@ -181,8 +162,6 @@ public class ThirdPersonMovement : PortalTraveller
         footStepsSounds.setParameterByName("Waiting-Moving-Dash", 0);
        // FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Waiting-Moving-Dash", 0);
     }*/
-
-
 }
 
     
