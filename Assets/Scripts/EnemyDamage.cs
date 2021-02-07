@@ -40,6 +40,7 @@ public class EnemyDamage : MonoBehaviour
     public bool AttackMode = false;
 
     public bool PlayerIsDead;
+    public bool InTutorialScene;
 
     public LightingBarrier LB;
 
@@ -179,7 +180,7 @@ public class EnemyDamage : MonoBehaviour
 
     public void Attack()
     {
-        if (PlayerIsDead == false)
+        if (PlayerIsDead == false && InTutorialScene == false)
         {
             EnemyAttack.SetActive(true);
             HP.health--;

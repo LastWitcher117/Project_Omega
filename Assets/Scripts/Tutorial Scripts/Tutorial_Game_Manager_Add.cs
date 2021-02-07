@@ -18,6 +18,8 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
 
     public AnimationController AC;
 
+    public EnemyDamage ED;
+
     public bool inBegginingTutorial = false;
 
     void Start()
@@ -44,6 +46,16 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
             inBegginingTutorial = false;
             gms.TutorialWeapon = true;
 
+        }
+
+        if(HealthComponent.health == 1)
+        {
+            ED.InTutorialScene = true;
+            HealthComponent.health = 2;
+        }
+        if(HealthComponent.health == 3)
+        {
+            ED.InTutorialScene = false;
         }
 
         if (gms.HealthTutorial == true && FirstTimeHP == false)
