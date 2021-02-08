@@ -80,8 +80,9 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-       insideAttackCollider = false;
-        Timer = Time.time + Cooldown;
+
+        StartCoroutine(EnterAttackTrigger());
+       
     }
 
     /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
@@ -96,6 +97,8 @@ public class EnemyDamage : MonoBehaviour
 
     void Update()
     {
+
+        Debug.Log(Timer);
         /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
         if (CGOT_Blue.TPNoDMG == true || CGOT_Green.TPNoDMG == true || CGOT_Orange.TPNoDMG == true || CGOT_Pruple.TPNoDMG == true)
@@ -198,6 +201,13 @@ public class EnemyDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         EnemyAttack.SetActive(false);
+    }
+
+    IEnumerator EnterAttackTrigger()
+    {
+        yield return new WaitForSeconds(3f);
+        insideAttackCollider = false;
+        Timer = Time.time + Cooldown;
     }
 
 }

@@ -69,6 +69,8 @@ public class GetWeapon : MonoBehaviour
             WeaponStone1.SetActive(true);
             WeaponStone2.SetActive(true);
 
+            inWeaponGetter = false;
+
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
         }
     }
