@@ -17,13 +17,16 @@ public class Switch_Scene : MonoBehaviour
     public GameObject ScorePoints;
     public GameManagerScript gm;
     public TimerCountdown TC;
+    public Score_System_Script SSS;
 
     public float scoreAmount;
     public float pointIncreasedPersSecond;
     public Text scoreText;
     public Text SnackPoints;
 
+    public Text OldHighscore;
     public Text LoseScorePoints;
+
 
     public bool Adder = false;
     public int PointsValueMultiplier;
@@ -74,7 +77,8 @@ public class Switch_Scene : MonoBehaviour
 
         if(HP.health == 0)
         {
-            LoseScorePoints.GetComponent<Text>().text = gm.snackpoints.ToString(); 
+            LoseScorePoints.GetComponent<Text>().text = gm.snackpoints.ToString();
+            OldHighscore.GetComponent<Text>().text = SSS.highscore.ToString();
         }
 
         if (TC.timeLeft >= TimeTakerValue && TC.PlayerWon == true) //33
@@ -93,7 +97,7 @@ public class Switch_Scene : MonoBehaviour
             
         }
         
-        if(TC.timeLeft <= 0)
+        if(TC.timeLeft <= 0 && TC.PlayerWon == true)
         {
             Time.timeScale = 0f;
         }

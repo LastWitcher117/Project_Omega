@@ -64,7 +64,7 @@ public class TimerCountdown : MonoBehaviour
 
         }
         /*/-------------------------------------------------------------------------------------------------------------------------------------------------/*/
-        if (timeLeft <=(SS.TimeTakerValue - 1)) //33
+        if (timeLeft <=(SS.TimeTakerValue - 1) && PlayerWon == true) //33
         {
             textDisplay.GetComponent<Text>().text = "" + 0;
 

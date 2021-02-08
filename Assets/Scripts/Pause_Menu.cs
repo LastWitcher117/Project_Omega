@@ -161,7 +161,8 @@ public class Pause_Menu : MonoBehaviour
     {
         Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().Stop("WinSound");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
 
         //Menu_Music_Event_Instance = FMODUnity.RuntimeManager.CreateInstance(FMOD_Event_Path);
         //Menu_Music_Event_Instance.start();

@@ -98,7 +98,7 @@ public class EnemyDamage : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(Timer);
+
         /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
         if (CGOT_Blue.TPNoDMG == true || CGOT_Green.TPNoDMG == true || CGOT_Orange.TPNoDMG == true || CGOT_Pruple.TPNoDMG == true)

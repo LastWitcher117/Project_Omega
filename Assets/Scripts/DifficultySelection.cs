@@ -35,8 +35,14 @@ public class DifficultySelection : MonoBehaviour
     public GuardianPatrol GP6;
     public GuardianPatrol GP7;
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        
         Cursor.lockState = CursorLockMode.None;
         AC.inTutorial = false;
         PM.isPause = true;
@@ -183,6 +189,9 @@ public class DifficultySelection : MonoBehaviour
         {
             PM.enabled = true;
         }
+
+        Debug.Log(" Time.timeScale =" + Time.timeScale);
+
     }
 
 }

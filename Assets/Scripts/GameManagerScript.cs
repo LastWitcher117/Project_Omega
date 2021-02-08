@@ -44,11 +44,14 @@ public class GameManagerScript : MonoBehaviour
 
     public Pause_Menu PM;
 
+    public TimerCountdown TC;
+
     // Start is called before the first frame update
     void Start()
     {
         PM.enabled = true;
         gameIsWon = false;
+        TC.PlayerWon = false;
         Health HealthComponent = GetComponent<Health>();
         //isAmbiencing = true;
         
