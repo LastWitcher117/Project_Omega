@@ -22,6 +22,8 @@ public class GlobalMusicParamters : MonoBehaviour
     public Pause_Menu PM;
     public DifficultySelection DS;
 
+    public Health HP;
+
     string FMOD_Event_Path = "event:/Music/Music_Main";
     public FMOD.Studio.EventInstance Music_Event_Instance;
 
@@ -95,6 +97,15 @@ public class GlobalMusicParamters : MonoBehaviour
            
         }
         
+
+        if(HP.health == 0)
+        {
+            //Loose Sound 
+        }
+
+
+
+
     }
     private void SwapMusic(bool isHunting)   
     {
