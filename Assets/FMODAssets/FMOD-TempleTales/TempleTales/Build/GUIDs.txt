@@ -3,13 +3,16 @@
 {3d10595e-ca5e-4d5f-a7aa-3acdd47f84bd} bus:/
 {6d6ea306-9cdd-475c-a786-400fc9dfa5ba} bus:/Enemy
 {8332bcce-3369-4e78-9b7e-aa505ea6e359} bus:/Enviroment
+{5c2a692f-f62b-491c-9152-7853d2d5d236} bus:/Music
 {2456b304-6f4a-4a7b-a778-fb84a2665418} bus:/Player
 {a86c9f1e-eb34-4379-8f11-38a7a7e16ce3} bus:/Player/Collectables
 {336acc64-8d7c-4b5e-aa80-73ceae6132be} bus:/Player/PlayerMovements
 {88726bad-785b-4a43-8a87-efd467d1ded2} bus:/PlayerInDanger
 {15b06244-1b58-4f6f-83df-ed3be17b5194} bus:/Reverb
 {d79a44ef-8db2-4fba-9ed1-5ee7a3175043} bus:/UI
+{fc666a9c-90d0-4247-a7cc-d5485e3d508d} bus:/WindBus
 {749d7663-dc9b-4d26-a277-69b145e781a3} event:/Ambience/BackgrounLoop
+{61b98a64-941b-42b8-a4be-1e0d43ef14a8} event:/Ambience/Wind
 {3e33e511-d942-4e7a-ad70-8f6eb3fcbd26} event:/Collectables/Key
 {34a27e87-a80a-451e-905c-b628c3db7632} event:/Collectables/MSUP
 {e4f9c9c4-c26d-4e5a-9171-f3bc43fc8641} event:/Collectables/SnakPoint Chromatic
@@ -20,23 +23,30 @@
 {cf4e7c9a-50df-4824-a3fa-0216389dce07} event:/Enemy/GhostSound 1
 {f216f814-ce12-4200-a131-e803e9447a21} event:/Enemy/GhostSound 2
 {05f6477b-cffb-4b5e-b32c-9990572216b8} event:/Enviroment/Door
+{dd7b26a3-3e5c-4e96-a90c-c1b4f0a15869} event:/Enviroment/TorcheLoop
+{d3d1c87f-13d2-46dd-a784-960b56f45cf4} event:/Letter_To_Pacsy
 {d3427cd3-ac6b-4fab-a07d-82f485601027} event:/Music/Music_Main
+{1b0c291b-fbcd-4ef3-9263-770f131f914d} event:/Music/Music_Menu
 {af6d64fb-5cf0-43a2-bda1-a42dba296146} event:/Player/Attack/PlayeerAttack_Dagger
 {a200152d-9308-402b-806c-8165d4b56abc} event:/Player/Footsteps/DashOneShot
 {e2963bac-f20e-4e8c-b455-dab4ffaed3b5} event:/Player/Footsteps/Footsteps
-{530566f1-c985-461d-b631-11d1ed49e252} event:/Player/Footsteps/Not in use/DashOneShot Old
 {87370a88-0923-4175-860c-2d2c2e4b24d1} event:/Player/Footsteps/SimpleFootStep
+{b13d2921-093d-468e-a652-1742feb4d5c5} event:/Player/Pain
 {5d436d4e-2cd7-4007-a8cc-440effe273e6} event:/UI/Hovering
 {61681e9d-f558-41ce-bfda-c35ec175f0d7} event:/UI/UI_Button_Backward
 {b3f4e5c9-42e1-4082-b6f6-2b4a0de8e066} event:/UI/UI_Button_Forward
 {1c8e5733-0e7b-4adc-9567-6ce3a9c9d9eb} event:/UI/VolumeSlider
 {c1646048-92b1-4faf-8bb9-7a509edcc953} parameter:/EnemyDistanceVolumeController
 {f614f2dd-3bad-4c21-b02a-5833c4847873} parameter:/EnemyGroupVolumeController
+{27fc9088-d32f-4609-9a57-6bf1243d4dc9} parameter:/GameEnd
 {5a8bfa0e-58cd-4893-8dd5-7da3940b9902} parameter:/GamePaused
 {0f1f16d7-979a-4412-9ef8-9fb658651918} parameter:/Ghost Game Paused
+{7811b292-e2c3-4012-8ecf-a1620d73f762} parameter:/KeyFound
 {6d077633-e32c-44d5-b771-47fa7027614f} parameter:/MASTER VOLUME
+{9490bfb9-8b3d-4a20-92e1-88e394e2c3b5} parameter:/Menu_Music_State
 {17799ead-491f-41f3-85ec-db9160335095} parameter:/MusicState
 {7cf23f13-5aba-4821-aecb-dfa89b5b4ed3} parameter:/Surface
 {6ec95567-8159-46ac-bef5-71d73280d25b} parameter:/VolumeSlider
 {d2c9be96-b91c-4afe-b8f5-95b1616cd6fd} parameter:/Waiting-Moving-Dash
 {b850e3cb-4274-4552-832c-dc9b4c0a21b0} parameter:/numSnacks
+{adf9031f-a80a-4cc4-90b4-121090f62d9f} snapshot:/Tower
