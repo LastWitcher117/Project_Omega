@@ -31,4 +31,9 @@ public class CameraGoingOnTower : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        TPNoDMG = false;
+    }
+
 }

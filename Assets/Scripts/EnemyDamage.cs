@@ -80,9 +80,14 @@ public class EnemyDamage : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        isOnCooldown = true;
+        Timer = Time.time + 1;
 
-        StartCoroutine(EnterAttackTrigger());
-       
+        //Timer += Cooldown;
+        if (insideAttackCollider == true)
+        {
+            StartCoroutine(EnterAttackTrigger());
+        }
     }
 
     /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
@@ -114,20 +119,18 @@ public class EnemyDamage : MonoBehaviour
         /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
         time = Time.time;
 
-        if (isOnCooldown == true || insideAttackCollider == true)
+        if (isOnCooldown == false && insideAttackCollider == true)
         {
-            AttackMode = true;
             if(Time.time > Timer)
             {
-               Attack();
-               isOnCooldown = false;
-               AttackMode = false;
+               Attack();               
             }
         }
 
-        if(AttackMode == false)
+        if(isOnCooldown == true)
         {
             Timer = Time.time + Cooldown;
+            isOnCooldown = false;
         }
         /*/------------------------------------------------------------------------------------------------------------------------------------------------------------/*/
 
@@ -185,10 +188,10 @@ public class EnemyDamage : MonoBehaviour
     {
         if (PlayerIsDead == false && InTutorialScene == false)
         {
+            isOnCooldown = true;
             EnemyAttack.SetActive(true);
             HP.health--;
-
-            
+         
             Dmg_Flashscreen.SetActive(true);
 
             FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);           
@@ -207,9 +210,8 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator EnterAttackTrigger()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         insideAttackCollider = false;
-        Timer = Time.time + Cooldown;
     }
 
 }

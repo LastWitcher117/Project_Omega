@@ -11,6 +11,7 @@ public class DoorTrigger : MonoBehaviour
     bool doorOpen;
 
     public GameObject YouNeedKey;
+    public GameObject EndFog;
 
     // Update is called once per frame
 
@@ -36,6 +37,7 @@ public class DoorTrigger : MonoBehaviour
 
             Door.SetBool("DoorOpen", true);
             KeyIcon.SetActive(false);
+            EndFog.SetActive(true);
             doorOpen = true;
         }
         else
