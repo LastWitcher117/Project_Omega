@@ -18,6 +18,7 @@ public class Switch_Scene : MonoBehaviour
     public GameManagerScript gm;
     public TimerCountdown TC;
     public Score_System_Script SSS;
+    public GlobalMusicParamters GMP;
 
     public float scoreAmount;
     public float pointIncreasedPersSecond;
@@ -37,11 +38,14 @@ public class Switch_Scene : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-
+        GMP.WinningMusic = true;
         TC.PlayerWon = true;
-        PM.isPause = true;
+        PM.enabled = false;
         You_Win_Screen.enabled = true;
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);  // FMOD
+
+
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);  // FMOD
+
         FindObjectOfType<AudioManager>().Play("WinSound");
         //Time.timeScale = 0f;
 

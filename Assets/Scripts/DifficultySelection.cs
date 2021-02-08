@@ -189,9 +189,5 @@ public class DifficultySelection : MonoBehaviour
         {
             PM.enabled = true;
         }
-
-        Debug.Log(" Time.timeScale =" + Time.timeScale);
-
     }
-
 }

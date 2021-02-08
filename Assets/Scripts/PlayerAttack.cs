@@ -98,9 +98,9 @@ public class PlayerAttack : MonoBehaviour
 
         public void Attack()
     {
-        
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Attack/PlayeerAttack_Dagger"); // FMOD
 
+      
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Attack/PlayeerAttack_Dagger"); // FMOD
 
         if (Enemy.GetComponent<EnemyController>() != null) 
         {
@@ -117,7 +117,7 @@ public class PlayerAttack : MonoBehaviour
         }
         if (Enemy.GetComponent<GuardianPatrol>() == null)
         {
-            Debug.Log("no enemy in range2222222");
+            Debug.Log("no enemy in range");
         }
 
 

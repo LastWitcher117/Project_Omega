@@ -19,13 +19,22 @@ public class GlobalMusicParamters : MonoBehaviour
     public bool roamingMusic;
     public bool ChasingMusic;
 
+    public bool WinningMusic;
+    public bool OnlyOneTime;
+
     public Pause_Menu PM;
     public DifficultySelection DS;
+    public DoorTrigger DT;
+    public TimerCountdown TC;
+    public Switch_Scene SS;
 
     public Health HP;
 
     string FMOD_Event_Path = "event:/Music/Music_Main";
     public FMOD.Studio.EventInstance Music_Event_Instance;
+
+    string FMOD_Event_Path_Wind = "event:/Ambience/Wind";
+    public FMOD.Studio.EventInstance Wind_Event_Instance;
 
     FMOD.Studio.Bus MasterBus;
 
@@ -43,6 +52,9 @@ public class GlobalMusicParamters : MonoBehaviour
         MasterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
         Music_Event_Instance.start();
+
+        Wind_Event_Instance = FMODUnity.RuntimeManager.CreateInstance(FMOD_Event_Path_Wind);
+        Wind_Event_Instance.start();
     }
 
     private void Update()
@@ -56,8 +68,27 @@ public class GlobalMusicParamters : MonoBehaviour
             Music_Event_Instance.setPaused(false);
         }
 
+        if (DT.hasKey == true)
+        {
+            Music_Event_Instance.setParameterByName("KeyFound", 1);
+        }
+
+
+        if(HP.health == 0)
+        {
+            Music_Event_Instance.setParameterByName("GameEnd", 2);
+        }
+
+
+        if(WinningMusic == true)
+        {
+            OnlyOneTime = true;
+            Debug.Log("i was here");
+            Music_Event_Instance.setParameterByName("GameEnd", 1);
+        }
 
         HuntingEnemy = false;
+
         foreach (var Enemy in Enemies) // Cycled alle gegner 
         {
             if (Enemy.Hunting == true) //Geht eenenmy.hunting 
@@ -94,6 +125,8 @@ public class GlobalMusicParamters : MonoBehaviour
 
             Debug.Log("Player is being Hunted");
             SwapMusic(HuntingEnemy||HuntingEnemyGuardian);
+
+
            
         }
         
@@ -119,7 +152,7 @@ public class GlobalMusicParamters : MonoBehaviour
         {
             Music_Event_Instance.setParameterByName("MusicState", 0);
         }
-
+        
 
     }
 

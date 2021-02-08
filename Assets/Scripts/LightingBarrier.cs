@@ -41,7 +41,7 @@ public class LightingBarrier : MonoBehaviour
     public Pause_Menu PM;
     public ThirdPersonMovement ay;
     public AnimationController AC;
-
+    public EnemyDamage ED;
 
     public GameObject Dmg_Flashscreen;
     public Canvas You_Lose_Screen;
@@ -81,7 +81,9 @@ public class LightingBarrier : MonoBehaviour
     {
         WasGoingAway = false;
         HP.health--;
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player/Pain", gameObject);
 
+        
         tookDamage = true;
         Dmg_Flashscreen.SetActive(true);
         StartCoroutine(Waiter());
@@ -113,7 +115,6 @@ public class LightingBarrier : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         ay.enabled = false;
 
-
         PM.enabled = false;
         You_Lose_Screen.enabled = true;
 
@@ -127,8 +128,6 @@ public class LightingBarrier : MonoBehaviour
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 0);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("EnemyGroupVolumeController", 0); // new line
 
-        PM.isPause = true;
-
         Time.timeScale = 0f;
     }
 
@@ -139,6 +138,7 @@ public class LightingBarrier : MonoBehaviour
         if (WasGoingAway == false)
         {
             HP.health--;
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player/Pain", gameObject);
             Dmg_Flashscreen.SetActive(true);
             StartCoroutine(Waiter());
             tookDamage = true;

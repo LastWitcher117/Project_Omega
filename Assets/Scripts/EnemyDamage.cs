@@ -191,7 +191,9 @@ public class EnemyDamage : MonoBehaviour
             
             Dmg_Flashscreen.SetActive(true);
 
-            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Enemy/EnemyAttack", gameObject);           
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player/Pain", gameObject);
+
             StartCoroutine(RedDamageScreenWaiter());
             StartCoroutine(VFXWaiter());
         }
