@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{6bc413e4-2e7c-42df-864f-3226fe90d309}">
+		<property name="name">
+			<value>KeyFound</value>
+		</property>
+		<relationship name="folder">
+			<destination>{db0d3cc1-7a83-4e1f-9134-b3dcfb559f97}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{7811b292-e2c3-4012-8ecf-a1620d73f762}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{7811b292-e2c3-4012-8ecf-a1620d73f762}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>NotFound</value>
+			<value>Found</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
