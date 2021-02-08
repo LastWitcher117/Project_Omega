@@ -34,7 +34,11 @@
 			<destination>{755644a5-3afe-4018-9810-8e75056fe5e1}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{27ee3b9f-00c8-43f9-a668-ebfa2d5c25d9}" />
+	<object class="EventAutomatableProperties" id="{27ee3b9f-00c8-43f9-a668-ebfa2d5c25d9}">
+		<relationship name="modulators">
+			<destination>{5fd09e6f-9ce5-471b-856f-dbb069640c97}</destination>
+		</relationship>
+	</object>
 	<object class="MarkerTrack" id="{4c97cbdc-b40c-49de-a12b-baf3eb57d348}" />
 	<object class="Timeline" id="{1a9a6cff-873a-47ff-9926-bbcef166285f}" />
 	<object class="SnapshotMasterTrack" id="{244524d6-ca95-483e-85ee-24a05dd5e123}" />
@@ -135,5 +139,16 @@
 		<relationship name="mixerStrip">
 			<destination>{fc666a9c-90d0-4247-a7cc-d5485e3d508d}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{5fd09e6f-9ce5-471b-856f-dbb069640c97}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>snapshotIntensity</value>
+		</property>
+		<property name="peakValue">
+			<value>100</value>
+		</property>
+		<property name="sustainValue">
+			<value>100</value>
+		</property>
 	</object>
 </objects>
