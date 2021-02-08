@@ -21,6 +21,11 @@ public class Random_Spawn : MonoBehaviour
     public GameObject KeyEffect3;
     public GameObject KeyEffect4;
 
+    public GameObject OwlTotem1;
+    public GameObject OwlTotem2;
+    public GameObject OwlTotem3;
+    public GameObject OwlTotem4;
+
     public float spawnLocation;
 
     public GameManagerScript gms;
@@ -35,21 +40,25 @@ public class Random_Spawn : MonoBehaviour
         {
             key1.SetActive(true);
             KeyEffect1.SetActive(true);
+            OwlTotem1.SetActive(true);
         }
         if (spawnLocation == 2)
         {
             key2.SetActive(true);
             KeyEffect2.SetActive(true);
+            OwlTotem2.SetActive(true);
         }
         if (spawnLocation == 3)
         {
             key3.SetActive(true);
             KeyEffect3.SetActive(true);
+            OwlTotem3.SetActive(true);
         }
         if (spawnLocation == 4)
         {
             key4.SetActive(true);
             KeyEffect4.SetActive(true);
+            OwlTotem4.SetActive(true);
         }
         //transform.position = positions[Random.Range(0, positions.Length)];
         //transform.position = positions(481.67, 1.669998, 189.55);
