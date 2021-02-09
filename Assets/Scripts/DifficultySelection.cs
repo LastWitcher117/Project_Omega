@@ -21,6 +21,7 @@ public class DifficultySelection : MonoBehaviour
     public GameObject AmbienceLoop;
 
     public TimerCountdown TC;
+    public Switch_Scene SS;
 
     public EnemyController EC1;
     public EnemyController EC2;
@@ -71,6 +72,8 @@ public class DifficultySelection : MonoBehaviour
 
         gms.PointsNeededForHealth = 50;
 
+        SS.PointsValueMultiplier = 2;
+
         TC.timeLeft = 2000;
 
         SelectDifficulty.SetActive(false);
@@ -98,6 +101,8 @@ public class DifficultySelection : MonoBehaviour
         GP7.StunTime = 2f;
 
         gms.PointsNeededForHealth = 200;
+
+        SS.PointsValueMultiplier = 3;
 
         TC.timeLeft = 1500;
 
@@ -127,6 +132,8 @@ public class DifficultySelection : MonoBehaviour
         GP7.StunTime = 1f;
 
         gms.PointsNeededForHealth = 2000;
+
+        SS.PointsValueMultiplier = 5;
 
         TC.timeLeft = 1000;
 
@@ -159,6 +166,8 @@ public class DifficultySelection : MonoBehaviour
         Health.health--;
 
         gms.PointsNeededForHealth = 90000000;
+
+        SS.PointsValueMultiplier = 10;
 
         TC.timeLeft = 720;
 

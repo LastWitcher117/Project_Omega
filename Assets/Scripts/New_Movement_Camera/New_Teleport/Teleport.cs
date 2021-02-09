@@ -24,9 +24,9 @@ public class Teleport : MonoBehaviour
 
             if (CameraUP.GoingUP == true)
             {
-               
+
                 StartCoroutine(TPWaiterUP());
-                
+
             }
         }
     }
@@ -46,6 +46,11 @@ public class Teleport : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         isOnDestinationDown = true;
 
+    }
+
+    private void Update()
+    {
+       
     }
 
 }

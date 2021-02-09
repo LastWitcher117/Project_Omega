@@ -19,6 +19,9 @@ public class GetWeapon : MonoBehaviour
     public GameObject ThisObject;
     public GameObject PowerStonesGround;
 
+    public GameObject WallBlocker1;
+    public GameObject WallBlocker2;
+
     public AnimationController AC;
 
     public bool inWeaponGetter = false;
@@ -71,7 +74,11 @@ public class GetWeapon : MonoBehaviour
 
             inWeaponGetter = false;
 
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/EnemyAttackAlert");
             FMODUnity.RuntimeManager.PlayOneShot("event:/UI/UI_Button_Forward");
+
+            WallBlocker1.SetActive(false);
+            WallBlocker2.SetActive(false);
         }
     }
 

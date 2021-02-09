@@ -67,7 +67,6 @@ public class GameManagerScript : MonoBehaviour
             StartCoroutine(AmbienceLoopWaiter());
         }
 
-
         if (HPUpdate == true)
         {
             HowManyPointsForHP = PointsNeededForHealth;

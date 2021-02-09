@@ -41,7 +41,7 @@ public class LightingBarrier : MonoBehaviour
     public Pause_Menu PM;
     public ThirdPersonMovement ay;
     public AnimationController AC;
-    public EnemyDamage ED;
+    public CameraGoingOnTower CGOT;
 
     public GameObject Dmg_Flashscreen;
     public Canvas You_Lose_Screen;
@@ -66,6 +66,7 @@ public class LightingBarrier : MonoBehaviour
         {
 
             CutsceneWasPlayed = true;
+            CGOT.TPNoDMG = true;
             CutsceneStart();
             
         }
@@ -215,6 +216,8 @@ public class LightingBarrier : MonoBehaviour
 
         AC.inTutorial = false;
         inCutscene = false;
+        yield return new WaitForSeconds(4);
+        CGOT.TPNoDMG = false;
     }
 
     void StopLightning()
