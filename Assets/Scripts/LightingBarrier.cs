@@ -52,8 +52,8 @@ public class LightingBarrier : MonoBehaviour
     public bool CutsceneWasPlayed = false;
     public bool inCutscene = false;
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
        /*/
         if (Input.GetKeyDown(KeyCode.Space))
@@ -77,6 +77,12 @@ public class LightingBarrier : MonoBehaviour
         }
 
     }
+
+
+ 
+
+
+
 
     private void OnTriggerEnter(Collider other)
     {
