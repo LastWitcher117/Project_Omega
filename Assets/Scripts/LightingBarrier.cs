@@ -42,6 +42,7 @@ public class LightingBarrier : MonoBehaviour
     public ThirdPersonMovement ay;
     public AnimationController AC;
     public CameraGoingOnTower CGOT;
+    public LightningBarrierSound LBS;
 
     public GameObject Dmg_Flashscreen;
     public Canvas You_Lose_Screen;
@@ -79,21 +80,24 @@ void Update()
     }
 
 
- 
+
 
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        WasGoingAway = false;
-        HP.health--;
-        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player/Pain", gameObject);
+        if (other.tag == "Player")
+        {
+            WasGoingAway = false;
+            HP.health--;
+            FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player/Pain", gameObject);
 
-        
-        tookDamage = true;
-        Dmg_Flashscreen.SetActive(true);
-        StartCoroutine(Waiter());
+
+            tookDamage = true;
+            Dmg_Flashscreen.SetActive(true);
+            StartCoroutine(Waiter());
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -186,15 +190,16 @@ void Update()
 
     IEnumerator DeactivateLightning()
     {
-        
         yield return new WaitForSeconds(3.5f);
+        LBS.GoOffSound = true;
+        yield return new WaitForSeconds(1f);
+
+        
 
         Lightning1.SetActive(false);
         Lightning2.SetActive(false);
 
         StopLightning();
-
-        
 
         StartCoroutine(BarrierToPassing());
 

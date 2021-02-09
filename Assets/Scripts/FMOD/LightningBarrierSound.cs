@@ -7,6 +7,9 @@ public class LightningBarrierSound : MonoBehaviour
 
     public DoorTrigger DT;
     public Rigidbody Test;
+    public Collider LEL;
+
+    public bool GoOffSound;
 
     FMOD.Studio.EventInstance electricBarrier;
 
@@ -24,7 +27,7 @@ public class LightningBarrierSound : MonoBehaviour
 
     private void Update()
     {
-        if(DT.hasKey == true)
+        if(GoOffSound == true)
         {
             electricBarrier.setParameterByName("StopLighting", 1f);
         }
