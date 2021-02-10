@@ -58165,7 +58165,6 @@ GameObject:
   - component: {fileID: 3074632394932347289}
   - component: {fileID: 3074632394932347288}
   - component: {fileID: 2137802401}
-  - component: {fileID: 2137802402}
   m_Layer: 9
   m_Name: Player 2
   m_TagString: Player
@@ -58238,6 +58237,7 @@ MonoBehaviour:
   yaw: 0
   pitch: 0
   YouWinScreenHere: {fileID: 0}
+  AC: {fileID: 0}
 --- !u!114 &3074632394932346978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58316,10 +58316,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   You_Lose_Screen: {fileID: 0}
   CooldownTime: 2
+  insideAttackCollider: 0
+  inTowerTP: 0
+  isOnCooldown: 0
   Dmg_Flashscreen: {fileID: 0}
   re: {fileID: 0}
   PM: {fileID: 0}
   ay: {fileID: 3074632394932346979}
+  EnemyAttack: {fileID: 0}
+  EnemyAnim: {fileID: 0}
+  HP: {fileID: 0}
+  CGOT_Blue: {fileID: 0}
+  CGOT_Orange: {fileID: 0}
+  CGOT_Pruple: {fileID: 0}
+  CGOT_Green: {fileID: 0}
+  Cooldown: 3.5
+  Timer: 0
+  time: 0
+  AttackMode: 0
+  PlayerIsDead: 0
+  InTutorialScene: 0
+  LB: {fileID: 0}
 --- !u!208 &3074632394932347289
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -58349,6 +58366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gms: {fileID: 0}
+  CollectedTreasure: 0
+  GetTreasures: {fileID: 0}
 --- !u!95 &2137802401
 Animator:
   serializedVersion: 3
@@ -58368,19 +58387,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2137802402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3074632394932346990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: -1
 --- !u!1 &3074632395901855976
 GameObject:
   m_ObjectHideFlags: 0
@@ -58431,6 +58437,7 @@ MonoBehaviour:
   AttackNow: {fileID: 0}
   AttackParticleSystem: {fileID: 441818013}
   re: {fileID: 0}
+  GMS: {fileID: 0}
   Cooldown: 0
   CooldownTime: 1
 --- !u!135 &3074632395901855978
@@ -58708,13 +58715,13 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6b0c7a0e3ff51ea4e9d89f168738e244, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03a827a7163c482449e6507c8708feb5, type: 3}
---- !u!4 &6735311967796868680 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03a827a7163c482449e6507c8708feb5, type: 3}
-  m_PrefabInstance: {fileID: 6553331133256651171}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6211433793665395954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 03a827a7163c482449e6507c8708feb5, type: 3}
+  m_PrefabInstance: {fileID: 6553331133256651171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6735311967796868680 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03a827a7163c482449e6507c8708feb5, type: 3}
   m_PrefabInstance: {fileID: 6553331133256651171}
   m_PrefabAsset: {fileID: 0}

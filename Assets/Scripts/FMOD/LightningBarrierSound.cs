@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class LightningBarrierSound : MonoBehaviour
 {
 
     public DoorTrigger DT;
-    public Rigidbody Test;
+
+   
+
+    public Rigidbody Laurent;
+    
 
     public bool GoOffSound;
 
@@ -15,20 +20,27 @@ public class LightningBarrierSound : MonoBehaviour
    
     void Start()
     {
-        Test = GetComponent<Rigidbody>();
-
         electricBarrier = FMODUnity.RuntimeManager.CreateInstance("event:/Enviroment/ElectricBarrier");
 
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(electricBarrier, transform, Test);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(electricBarrier, transform, GetComponent<Rigidbody>());
+
+        //Laurent = GetComponent<Rigidbody>();
+
+       
+
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(electricBarrier, transform, Laurent);
         electricBarrier.start();
 
+       //FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/ElectricBarrier", GetComponent<Transform>().position);
     }
 
     private void Update()
     {
-        if(GoOffSound == true)
-        {
-            electricBarrier.setParameterByName("StopLighting", 1f);
-        }
+
+         if(GoOffSound == true)
+         {
+             electricBarrier.setParameterByName("StopLighting", 1f);
+         }
+        
     }
 }

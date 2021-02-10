@@ -12,7 +12,9 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
     public GameManagerScript gms;
 
     public Health HealthComponent;
+
     public bool FirstTimeHP = false;
+    public bool ZoomTutorial = false;
 
     public Pause_Menu PM;
 
@@ -36,9 +38,9 @@ public class Tutorial_Game_Manager_Add : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f && ZoomTutorial == false)
         {
-
+            ZoomTutorial = true;
             Time.timeScale = 1f;
             TutorialZoom.gameObject.SetActive(false);
             PM.enabled = true;
