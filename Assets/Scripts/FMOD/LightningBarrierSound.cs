@@ -7,7 +7,6 @@ public class LightningBarrierSound : MonoBehaviour
 
     public DoorTrigger DT;
     public Rigidbody Test;
-    public Collider LEL;
 
     public bool GoOffSound;
 

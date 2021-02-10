@@ -6,6 +6,8 @@ public class DoorTrigger : MonoBehaviour
 {
 
     public Animator Door;
+    public Pause_Menu PM; 
+
     public GameObject KeyIcon;
     public bool hasKey;
     bool doorOpen;
@@ -26,6 +28,9 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+
+            PM.enabled = false;
+
             if (hasKey == true)
             {
                 //doorOpen == false ? FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door"): Fake() ;
@@ -59,6 +64,7 @@ public class DoorTrigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         YouNeedKey.gameObject.SetActive(false);
+        PM.enabled = true;
     }
 
 }
