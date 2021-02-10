@@ -21,6 +21,7 @@ public class Portal : MonoBehaviour
     List<PortalTraveller> trackedTravellers;
     MeshFilter screenMeshFilter;
 
+    //DAS IST EIN TEST
     void Awake()
     {
         playerCam = Camera.main;
