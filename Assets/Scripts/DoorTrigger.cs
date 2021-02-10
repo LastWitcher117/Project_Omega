@@ -24,27 +24,29 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if(hasKey == true)
+        if (other.tag == "Player")
         {
-            //doorOpen == false ? FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door"): Fake() ;
-
-            if (doorOpen == false)
+            if (hasKey == true)
             {
-                StartCoroutine(Waiter());
+                //doorOpen == false ? FMODUnity.RuntimeManager.PlayOneShot("event:/Enviroment/Door"): Fake() ;
+
+                if (doorOpen == false)
+                {
+                    StartCoroutine(Waiter());
+
+                }
+
+                Door.SetBool("DoorOpen", true);
+                KeyIcon.SetActive(false);
+                EndFog.SetActive(true);
+                doorOpen = true;
+            }
+            else
+            {
+
+                YouNeedKey.gameObject.SetActive(true);
 
             }
-
-            Door.SetBool("DoorOpen", true);
-            KeyIcon.SetActive(false);
-            EndFog.SetActive(true);
-            doorOpen = true;
-        }
-        else
-        {
-
-            YouNeedKey.gameObject.SetActive(true);
-
         }
     }
 
