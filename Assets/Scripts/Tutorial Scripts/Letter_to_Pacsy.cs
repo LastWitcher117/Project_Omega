@@ -59,20 +59,20 @@ public class Letter_to_Pacsy : MonoBehaviour
         }
 
             if (Input.GetKeyDown(KeyCode.Space) && InLetter == true && FirstTimeSpace == true)
-        {
-            PM.enabled = true;
-            AC.inTutorial = false;
-            LetterToPacsy.gameObject.SetActive(false);
+            {
+                PM.enabled = true;
+                AC.inTutorial = false;
+                LetterToPacsy.gameObject.SetActive(false);
 
-            Letter_To_Pacsy_Trigger.SetActive(false);
+                Letter_To_Pacsy_Trigger.SetActive(false);
 
-        }
+            }
 
             if(ReadSpeedToSlow == true)
-        {
-            ReadSpeedToSlow = false;
-            PacsysLetterReadSpeed.speed = 1f;
-        }
+            {
+                ReadSpeedToSlow = false;
+                PacsysLetterReadSpeed.speed = 1f;
+            }
 
     }
 
