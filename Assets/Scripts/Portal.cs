@@ -287,7 +287,7 @@ public class Portal : MonoBehaviour
             traveller.cloneMaterials[i].SetFloat("sliceOffsetDst", cloneSliceOffsetDst);
 
         }
-
+        // Easter-Egg
     }
 
     // Use custom projection matrix to align portal camera's near clip plane with the surface of the portal
