@@ -5,6 +5,8 @@ using UnityEngine;
 public class Tower_Light_Trigger : MonoBehaviour
 {
     public GameObject BonFire;
+    public Pause_Menu PM;
+
     public GameObject WindEffectOnTower;
 
   /*  public void Start()
@@ -17,6 +19,7 @@ public class Tower_Light_Trigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            PM.enabled = false;
             Debug.Log("KURWA");
             BonFire.SetActive(true);
             WindEffectOnTower.SetActive(true);
@@ -26,6 +29,7 @@ public class Tower_Light_Trigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         WindEffectOnTower.SetActive(false);
+        PM.enabled = true;
     }
 
 }
