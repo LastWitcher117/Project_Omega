@@ -4821,18 +4821,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1924237235}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 508983974}
         m_TargetAssemblyTypeName: Options_Settings, Assembly-CSharp
         m_MethodName: UiButtonSoundForward
@@ -5488,22 +5476,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1119271213}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1575610341}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1924237238}
+        m_TargetAssemblyTypeName: CreditsScript, Assembly-CSharp
+        m_MethodName: GetOutOfCredits
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17046,6 +17022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712ce7faf06a0174ab4490fee0fefc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intoCredits: 0
+  outCredits: 0
 --- !u!4 &1729624665
 Transform:
   m_ObjectHideFlags: 0
@@ -18257,6 +18235,7 @@ MonoBehaviour:
   MainMenu: {fileID: 1119271213}
   CreditsMenu: {fileID: 1575610341}
   GreenMask: {fileID: 1732845893}
+  MMM: {fileID: 1729624664}
   GhostEndScreen: {fileID: 1732845895}
   Ghostanim: 0
 --- !u!1 &1952822326

@@ -6,7 +6,8 @@ public class DoorTrigger : MonoBehaviour
 {
 
     public Animator Door;
-    public Pause_Menu PM; 
+    public Pause_Menu PM;
+    public ElectricalBarrierController EBC;
 
     public GameObject KeyIcon;
     public bool hasKey;
@@ -30,6 +31,7 @@ public class DoorTrigger : MonoBehaviour
         {
 
             PM.enabled = false;
+            EBC.dontPause = true;
 
             if (hasKey == true)
             {
@@ -65,6 +67,7 @@ public class DoorTrigger : MonoBehaviour
     {
         YouNeedKey.gameObject.SetActive(false);
         PM.enabled = true;
+        EBC.dontPause = false;
     }
 
 }

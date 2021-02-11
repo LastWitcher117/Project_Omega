@@ -42,7 +42,6 @@ public class LightingBarrier : MonoBehaviour
     public ThirdPersonMovement ay;
     public AnimationController AC;
     public CameraGoingOnTower CGOT;
-    public LightningBarrierSound LBS;
 
     public GameObject Dmg_Flashscreen;
     public Canvas You_Lose_Screen;
@@ -191,7 +190,6 @@ void Update()
     IEnumerator DeactivateLightning()
     {
         yield return new WaitForSeconds(3.5f);
-        LBS.GoOffSound = true;
         yield return new WaitForSeconds(1f);
 
         

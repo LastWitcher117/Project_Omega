@@ -9,12 +9,18 @@ public class CreditsScript : MonoBehaviour
     public GameObject CreditsMenu;
     public GameObject GreenMask;
 
+    public MainMenuMusic MMM;
+
     public Animator GhostEndScreen;
 
     public bool Ghostanim = false;
 
     public void GetIntoCredits()
     {
+
+        MMM.intoCredits = true;
+        
+
         MainMenu.SetActive(false);
         CreditsMenu.SetActive(true);
 
@@ -51,4 +57,13 @@ public class CreditsScript : MonoBehaviour
 
         GreenMask.SetActive(false);
     }
+
+    public void GetOutOfCredits()
+    {
+        MainMenu.SetActive(true);
+        CreditsMenu.SetActive(false);
+
+        MMM.outCredits = true;
+    }
+
 }

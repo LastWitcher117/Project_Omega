@@ -13,6 +13,7 @@ public class Pause_Menu : MonoBehaviour
     public bool MusicChange;
 
     public AudioSource ButtonClick;
+    public ElectricalBarrierController EBC;
 
     //FMOD
     FMOD.Studio.EventInstance fVolumeSlider;
@@ -71,6 +72,8 @@ public class Pause_Menu : MonoBehaviour
         //AudioListener.pause = false;
         GameIsPaused = false;
         isPause = false;
+        EBC.PressResume = true;
+
         FindObjectOfType<AudioManager>().Play("Theme");
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Ghost Game Paused", 1); // new line

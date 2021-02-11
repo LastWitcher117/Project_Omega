@@ -5,6 +5,9 @@ using UnityEngine;
 public class MainMenuMusic : MonoBehaviour
 {
 
+    public bool intoCredits = false;
+    public bool outCredits = false;
+
     string FMOD_Event_Path_Menu_Music = "event:/Music/Music_Menu";
     public FMOD.Studio.EventInstance Menu_Music_Event_Instance;
 
@@ -20,6 +23,18 @@ public class MainMenuMusic : MonoBehaviour
 
     void Update()
     {
+        if(intoCredits == true)
+        {
+            Menu_Music_Event_Instance.setParameterByName("Menu_Music_State", 1);
+            intoCredits = false;
+        }
+
+        if(outCredits == true)
+        {
+            Menu_Music_Event_Instance.setParameterByName("Menu_Music_State", 0);
+            outCredits = false;
+        }
+
         //if player goes credits dann das 
         //Menu_Music_Event_Instance.setParameterByName("Menu_Music_State", 1);
 
