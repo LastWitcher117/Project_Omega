@@ -5,25 +5,32 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+
+    [Header("Floats")]
+    [Space(10f)]
     float SupressTime;
     public float StunTime;
 
     public float lookRadius = 10f;
+
     public float SpeedStop;
     public float SpeedNormal = 13f;
 
     Transform target;
     NavMeshAgent agent;
-
+   // [HideInInspector]
     public bool SupressMovement;
 
+    [Header("VFX")]
+    [Space(10f)]
     public ParticleSystem VFXStunOverHead;
     public ParticleSystem VFXStunSparks;
 
-    public GameObject StartPoint;
+    [Header("Starting Point")]
+    [Space(10f)]
+    public Transform StartPoint;
 
-    public AnimationController AC;
-    public PlayerAttack PA;
+    [HideInInspector]
     public bool Hunting = false;
 
   
@@ -108,7 +115,7 @@ public class EnemyController : MonoBehaviour
 
         if(distance >= lookRadius && !SupressMovement)
         {
-            Vector3 PathToStartPoint = (StartPoint.transform.position);
+            Vector3 PathToStartPoint = (StartPoint.position);
             agent.SetDestination(PathToStartPoint);
 
             Hunting = false;
@@ -119,15 +126,6 @@ public class EnemyController : MonoBehaviour
         if (distance <= 1.0f)
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
-        }
-
-        if (PA.AttackNow.enabled == true && AC.inTutorial == true)
-        {
-            agent.speed = 0f;
-        }
-        if (PA.AttackNow.enabled == false && AC.inTutorial == false)
-        {
-            agent.speed = 13f;
         }
 
     }

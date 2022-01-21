@@ -67,12 +67,12 @@ public class GameManagerScript : MonoBehaviour
             StartCoroutine(AmbienceLoopWaiter());
         }
 
-        if (HPUpdate == true)
+        if (HPUpdate == true) //////////////
         {
             HowManyPointsForHP = PointsNeededForHealth;
         }
 
-        if (snackpoints == 100 && tenScore == false)
+        if (snackpoints == 100 && tenScore == false) ///////////////
         {
 
             float angle = -90f;
@@ -85,7 +85,7 @@ public class GameManagerScript : MonoBehaviour
 
         }
 
-        if (GT.CollectedTreasure == true)
+        if (GT.CollectedTreasure == true)////////////////
         {
             PointsNeededForHealth = PointsNeededForHealth + 1000;
             hasCollectedTreasure = true;
@@ -108,7 +108,7 @@ public class GameManagerScript : MonoBehaviour
                                  
         }
 
-        if (SignalFromTrigger == true)
+        if (SignalFromTrigger == true) /////////////
         {
             hasKey = true;
             KeyIconImage = GameObject.Find("Canvas (Snackpoints&Key)").GetComponent<Image>();
@@ -119,7 +119,7 @@ public class GameManagerScript : MonoBehaviour
 
         MS = FindObjectOfType<ThirdPersonMovement>().speed;
 
-        if (MSUP == true)
+        if (MSUP == true) //////////
         {
             MSUP_Screen.SetActive(true);
 

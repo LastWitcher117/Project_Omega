@@ -13,6 +13,13 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    public GameManagerNew GMN;
+
+    private void Start()
+    {
+        GMN = FindObjectOfType<GameManagerNew>();
+    }
+
     void Update()
     {
 
@@ -33,6 +40,11 @@ public class Health : MonoBehaviour
         if (health > numOfHearts)
         {
             health = numOfHearts;
+        }
+
+        if(health <= 0)
+        {
+            GMN.GameOver();
         }
 
         for (int i = 0; i < hearts.Length; i++)

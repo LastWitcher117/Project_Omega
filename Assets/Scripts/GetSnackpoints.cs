@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class GetSnackpoints : MonoBehaviour
 {
-
+    [HideInInspector]
     public GameManagerScript gms;
     int numSnack = 0;
 
 
-   /* private void Start()
+   private void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Collectables/SnakPoint Chromatic");
-    }*/
+        gms = FindObjectOfType<GameManagerScript>();
+    }
+
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Snackpoint")

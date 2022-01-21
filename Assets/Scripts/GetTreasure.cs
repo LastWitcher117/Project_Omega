@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class GetTreasure : MonoBehaviour
 {
-    public GameManagerScript gms;
-    public bool CollectedTreasure;
+    private GameManagerScript gms;
+
+    [HideInInspector]
+    [SerializeField] public bool CollectedTreasure;
     public GameObject GetTreasures;
+
+    private void Start()
+    {
+
+        gms = FindObjectOfType<GameManagerScript>();
+
+    }
 
     void OnTriggerEnter(Collider other)
     {
