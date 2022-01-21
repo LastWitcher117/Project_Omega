@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Collectibles : MonoBehaviour
 {
+    [HideInInspector]
     public GameManagerScript gms;
 
+    private void Start()
+    {
+        gms = FindObjectOfType<GameManagerScript>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
