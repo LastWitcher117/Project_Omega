@@ -130,7 +130,7 @@ public class GameManagerNew : MonoBehaviour
         #region Input Pause
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseMenu();
+            //PauseMenu();
         }
         #endregion Input Pause
     }
